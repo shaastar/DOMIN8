@@ -1,0 +1,7 @@
+{
+  "name": "DOMIN8",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
