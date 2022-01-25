@@ -1,20 +1,41 @@
 <ion-tabs>
+  <!-- <ion-tab-bar slot="bottom">
+    <button class="play-tab" (click)="play()">
+      <ion-label> PLAY</ion-label>
+      <ion-img src="../assets/images/domin53.png"></ion-img>
+    </button>
 
-  <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="tab1">
-      <ion-icon name="triangle"></ion-icon>
-      <ion-label>Tab 1</ion-label>
-    </ion-tab-button>
-
-    <ion-tab-button tab="tab2">
-      <ion-icon name="ellipse"></ion-icon>
-      <ion-label>Tab 2</ion-label>
-    </ion-tab-button>
-
-    <ion-tab-button tab="tab3">
-      <ion-icon name="square"></ion-icon>
-      <ion-label>Tab 3</ion-label>
-    </ion-tab-button>
-  </ion-tab-bar>
-
+    <button class="explore-tab" (click)="explore()">
+      <ion-label>EXPLORE</ion-label>
+      <ion-label>domin5.3</ion-label>
+      <ion-img src="../assets/images/domino5.png"></ion-img>
+    </button>
+  </ion-tab-bar> -->
+  <!-- <ion-grid> -->
+  <ion-row>
+    <ion-col class="play-btn" size="6">
+      <ion-row>
+        <ion-col size="6">PLAY</ion-col>
+        <ion-col size="6">
+          <ion-img src="../assets/images/domin53.png"></ion-img>
+        </ion-col>
+      </ion-row>
+    </ion-col>
+    <ion-col class="explore-btn" size="6">
+      <ion-row>
+        <ion-col class="col1" size="7">EXPLORE</ion-col>
+        <ion-col class="col2" size="5"> domin5.3 </ion-col>
+      </ion-row>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="4"><div class="home-btn"></div></ion-col>
+    <ion-col size="4">
+      <ion-img src="../assets/images/domin_menu.png"></ion-img>
+    </ion-col>
+    <ion-col size="4"
+      ><span class="ins"><ion-icon name="logo-instagram"></ion-icon></span
+    ></ion-col>
+  </ion-row>
+  <!-- </ion-grid> -->
 </ion-tabs>
