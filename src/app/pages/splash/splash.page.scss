@@ -6,11 +6,8 @@ ion-content {
   --padding-top: 75px;
 
   ion-img {
-    margin-top: 90px;
+    margin-top: 70px;
   }
-  // ion-footer {
-  //   --padding-bottom: 150px;
-  // }
   .text-animation {
     padding-top: 80px;
     font-size: 26px;
@@ -24,7 +21,7 @@ ion-content {
     animation-fill-mode: forwards;
   }
 }
-
+// ---------animation key frames----------
 @keyframes fadeAnimation {
   from {
     // background-color: red;
@@ -34,4 +31,10 @@ ion-content {
     // background-color: yellow;
     opacity: 1;
   }
+}
+// ----------animation key frames--------
+
+ion-footer {
+  background-color: #e7e7e7;
+  height: 150px;
 }

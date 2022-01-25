@@ -1,0 +1,28 @@
+ion-content {
+  --padding-top: 18px;
+  div {
+    margin-left: 20px;
+    width: 240px;
+    display: flex;
+    span {
+      margin-right: 7px;
+      font-family: staatliches;
+      h1 {
+        font-size: 28px;
+        font-weight: 700;
+      }
+      .eng {
+        color: var(--ion-color-success);
+      }
+      ion-icon {
+        margin-top: 17px;
+        font-size: 38px;
+      }
+    }
+  }
+  ion-img {
+    margin-top: 150px;
+    margin-left: 22px;
+    margin-right: 22px;
+  }
+}
