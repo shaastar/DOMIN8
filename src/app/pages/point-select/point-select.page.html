@@ -1,11 +1,30 @@
-<ion-header>
+<ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-title>point-select</ion-title>
+    <ion-buttons color="dark" slot="start">
+      <ion-back-button defaultHref=""></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-buttons slot="start">
-    <ion-back-button></ion-back-button>
-  </ion-buttons>
+  <div class="div-img">
+    <ion-img src="../../assets/images/domin8.png"></ion-img>
+  </div>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12">
+        <div class="div-btn-points"><ion-label>100 Points</ion-label></div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <div class="div-btn-points"><ion-label>200 Points</ion-label></div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <div class="div-btn-points"><ion-label>Custom</ion-label></div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

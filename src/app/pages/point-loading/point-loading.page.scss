@@ -1,0 +1,45 @@
+ion-content {
+  .div-btn-points {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    // height: 82px;
+    // border: solid 5px #000000;
+    // border-radius: 15px;
+    // background-color: #eee9dc;
+    ion-label {
+      font-family: staatliches;
+      font-size: 33px;
+      font-weight: 900;
+    }
+  }
+  .div-img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2px;
+    //   margin-top: 90px;
+    // margin-left: 24px;
+    // margin-right: 24px;
+    ion-img {
+      width: 200px;
+    }
+  }
+  .loading-img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    //   margin-top: 90px;
+    // margin-left: 24px;
+    // margin-right: 24px;
+    ion-img {
+      box-shadow: 2px 3px 13px 3px #888888;
+      width: 350px;
+    }
+  }
+}

@@ -16,6 +16,14 @@ const routes: Routes = [
     path: 'point-select',
     loadChildren: () => import('./pages/point-select/point-select.module').then( m => m.PointSelectPageModule)
   },
+  {
+    path: 'point-loading',
+    loadChildren: () => import('./pages/point-loading/point-loading.module').then( m => m.PointLoadingPageModule)
+  },
+  {
+    path: 'scores',
+    loadChildren: () => import('./pages/scores/scores.module').then( m => m.ScoresPageModule)
+  },
   // {
   //   path: 'language',
   //   loadChildren: () => import('./pages/language/language.module').then( m => m.LanguagePageModule)

@@ -11,7 +11,7 @@ export class TabsPage {
 
   play() {
     // this.router.navigate(['/section'], { queryParams: { id: number } });
-    this.router.navigate(['/tabs/tab1']);
+    this.router.navigate(['/tabs/point-select']);
   }
 
   explore() {

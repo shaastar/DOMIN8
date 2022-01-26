@@ -1,0 +1,41 @@
+ion-content {
+  .div-img {
+    width: 100%;
+    margin-top: 90px;
+    // margin-left: 24px;
+    // margin-right: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    ion-img {
+      width: 335px;
+    }
+  }
+  ion-grid {
+    margin-top: 13px;
+    ion-row {
+      ion-col {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        div {
+          width: 155px;
+          height: 82px;
+          border: solid 5px #000000;
+          border-radius: 15px;
+          background-color: #eee9dc;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          ion-label {
+            font-family: staatliches;
+            font-size: 30px;
+            font-weight: 750;
+          }
+        }
+      }
+    }
+  }
+}

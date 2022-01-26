@@ -1,0 +1,124 @@
+ion-header {
+  .div-btn-points {
+    width: 100%;
+    padding-right: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    // height: 82px;
+    // border: solid 5px #000000;
+    // border-radius: 15px;
+    // background-color: #eee9dc;
+    ion-label {
+      font-family: staatliches;
+      font-size: 33px;
+      font-weight: 900;
+    }
+  }
+}
+ion-content {
+  ion-grid {
+    margin-top: 0;
+    padding-top: 0;
+    .row-round {
+      border-bottom: solid 5px #000000;
+      padding: 0;
+      ion-col {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        div {
+          margin: 10px;
+          ion-label {
+            font-family: staatliches;
+            font-size: 20px;
+            font-weight: 650;
+          }
+        }
+        .div-btn-points {
+          width: 145px;
+          height: 76px;
+          border: solid 5px #000000;
+          border-radius: 13px;
+          background-color: #eee9dc;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          ion-label {
+            font-family: staatliches;
+            font-size: 28px;
+            font-weight: 700;
+          }
+        }
+        .add-scores {
+          //   color: var(--ion-color-primary);
+          font-family: staatliches;
+          font-size: 30px;
+          font-weight: 700;
+        }
+      }
+    }
+    .row-total-score {
+      ion-col {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .div-img {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 2px;
+          //   margin-top: 90px;
+          // margin-left: 24px;
+          // margin-right: 24px;
+          ion-img {
+            width: 200px;
+          }
+        }
+        ion-label {
+          font-family: staatliches;
+          font-size: 36px;
+          font-weight: 650;
+        }
+        .label-secondary {
+          color: var(--ion-color-secondary);
+        }
+        .label-primary {
+          color: var(--ion-color-primary);
+        }
+      }
+    }
+  }
+}
+
+ion-footer {
+  ion-row {
+    ion-col {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .div-btn-points {
+        width: 145px;
+        height: 78px;
+        border: solid 5px #000000;
+        border-radius: 15px;
+        background-color: #eee9dc;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        ion-label {
+          color: var(--ion-color-success);
+          font-family: staatliches;
+          font-size: 28px;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}

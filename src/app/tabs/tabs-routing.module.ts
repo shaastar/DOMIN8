@@ -30,6 +30,20 @@ const routes: Routes = [
           ),
       },
       {
+        path: 'point-select',
+        loadChildren: () =>
+          import('../pages/point-select/point-select.module').then(
+            (m) => m.PointSelectPageModule
+          ),
+      },
+      {
+        path: 'scores',
+        loadChildren: () =>
+          import('../pages/scores/scores.module').then(
+            (m) => m.ScoresPageModule
+          ),
+      },
+      {
         path: '',
         redirectTo: '/tabs/language',
         pathMatch: 'full',
@@ -44,6 +58,16 @@ const routes: Routes = [
   {
     path: 'language',
     redirectTo: '/tabs/language',
+    pathMatch: 'full',
+  },
+  {
+    path: 'point-select',
+    redirectTo: '/tabs/point-select',
+    pathMatch: 'full',
+  },
+  {
+    path: 'scores',
+    redirectTo: '/tabs/scores',
     pathMatch: 'full',
   },
 ];
