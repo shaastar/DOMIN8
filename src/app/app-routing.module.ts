@@ -24,6 +24,30 @@ const routes: Routes = [
     path: 'scores',
     loadChildren: () => import('./pages/scores/scores.module').then( m => m.ScoresPageModule)
   },
+  {
+    path: 'main-menu',
+    loadChildren: () => import('./pages/main-menu/main-menu.module').then( m => m.MainMenuPageModule)
+  },
+  {
+    path: 'about',
+    loadChildren: () => import('./pages/about/about.module').then( m => m.AboutPageModule)
+  },
+  {
+    path: 'teams',
+    loadChildren: () => import('./pages/teams/teams.module').then( m => m.TeamsPageModule)
+  },
+  {
+    path: 'calendar',
+    loadChildren: () => import('./pages/calendar/calendar.module').then( m => m.CalendarPageModule)
+  },
+  {
+    path: 'link',
+    loadChildren: () => import('./pages/link/link.module').then( m => m.LinkPageModule)
+  },
+  {
+    path: 'congrats',
+    loadChildren: () => import('./pages/congrats/congrats.module').then( m => m.CongratsPageModule)
+  },
   // {
   //   path: 'language',
   //   loadChildren: () => import('./pages/language/language.module').then( m => m.LanguagePageModule)

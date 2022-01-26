@@ -1,0 +1,60 @@
+ion-header {
+  ion-toolbar {
+    height: 40px;
+    padding-top: 3px;
+    margin-top: 3px;
+  }
+  .div-img {
+    width: 100%;
+    margin-top: 0;
+    // margin-left: 24px;
+    // margin-right: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    ion-img {
+      width: 185px;
+    }
+  }
+}
+
+ion-content {
+  ion-grid {
+    margin-top: 50px;
+    ion-row {
+      padding-bottom: 10px;
+      ion-col {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        div {
+          width: 140px;
+          height: 75px;
+          border: solid 5px #000000;
+          border-radius: 15px;
+          background-color: #eee9dc;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          ion-label {
+            font-family: staatliches;
+            font-size: 30px;
+            font-weight: 750;
+          }
+        }
+        .div-about {
+          color: var(--ion-color-secondary);
+        }
+        .div-teams {
+          color: var(--ion-color-success);
+        }
+        .div-calendar {
+          color: var(--ion-color-primary);
+        }
+        .div-link {
+          // color: var(--ion-color-dark);
+        }
+      }
+    }
+  }
+}
