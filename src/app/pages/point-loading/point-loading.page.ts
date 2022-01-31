@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-point-loading',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./point-loading.page.scss'],
 })
 export class PointLoadingPage implements OnInit {
-
-  constructor() { }
+  constructor(private router: Router) {}
 
   ngOnInit() {
+    setTimeout(() => {
+      this.router.navigate(['scores']);
+    }, 5000);
   }
-
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-// import { Animation, AnimationController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-splash',
@@ -7,16 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./splash.page.scss'],
 })
 export class SplashPage implements OnInit {
-  constructor() // private animationCtrl: AnimationController // hddh
-  {
-    // this.animationCtrl
-    //   .create()
-    //   .addElement(document.querySelector('.text-animation'))
-    //   .duration(9000)
-    //   .iterations(Infinity)
-    //   // .fromTo('transform', 'translateX(0px)', 'translateX(100px)')
-    //   .fromTo('opacity', '0', '1');
-  }
+  constructor(private router: Router) {}
 
-  ngOnInit() {}
+  ngOnInit() 
+  {
+    setTimeout(() => {
+      this.router.navigate(['language']);
+  }, 5000);
+  }
 }

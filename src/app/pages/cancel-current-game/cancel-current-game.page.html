@@ -19,11 +19,17 @@
   </div>
   <ion-grid>
     <ion-row>
-      <ion-col class="col-continue" size="6">
+      <ion-col class="col-continue ion-activatable ripple-parent" size="6">
+        <ion-tab-button tab="scores">
+          <ion-ripple-effect></ion-ripple-effect>
         <ion-label>CONTINUE</ion-label>
+      </ion-tab-button>
       </ion-col>
-      <ion-col class="cancel" size="6">
-        <ion-label>CANCEL</ion-label>
+      <ion-col class="cancel ion-activatable ripple-parent" size="6">
+        <ion-tab-button tab="scores">
+          <ion-ripple-effect></ion-ripple-effect>
+          <ion-label>CANCEL</ion-label>
+        </ion-tab-button>
       </ion-col>
     </ion-row>
   </ion-grid>

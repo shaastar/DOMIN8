@@ -30,10 +30,14 @@
   <ion-grid class="grid-btn">
     <ion-row>
       <ion-col class="col-continue" size="6">
-        <ion-label>CONTINUE</ion-label>
+        <ion-tab-button (click)="continueButton()">
+          <ion-label>CONTINUE</ion-label>
+        </ion-tab-button>
       </ion-col>
       <ion-col class="cancel" size="6">
-        <ion-label>CANCEL</ion-label>
+        <ion-tab-button (click)="cancelButton()">
+          <ion-label>CANCEL</ion-label>
+        </ion-tab-button>
       </ion-col>
     </ion-row>
   </ion-grid>
