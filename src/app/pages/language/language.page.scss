@@ -1,6 +1,6 @@
 ion-content {
   --padding-top: 18px;
-  div {
+  .div-lang {
     margin-left: 20px;
     width: 240px;
     display: flex;
@@ -20,9 +20,17 @@ ion-content {
       }
     }
   }
-  ion-img {
-    margin-top: 150px;
-    margin-left: 22px;
-    margin-right: 22px;
+  .div-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    ion-img {
+      margin-top: 150px;
+      margin-left: 22px;
+      margin-right: 22px;
+      width: 85%;
+      max-width: 450px;
+    }
   }
 }

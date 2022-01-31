@@ -18,50 +18,45 @@ ion-header {
 
 ion-content {
   ion-grid {
-    margin-top: 15px;
-    // ion-row {
-    //   padding-bottom: 0;
-    //   ion-col {
-    //     display: flex;
-    //     justify-content: center;
-    //     align-items: center;
-    //     .div-about {
-    //       width: 140px;
-    //       height: 75px;
-    //       border: solid 5px #000000;
-    //       border-radius: 15px;
-    //       background-color: #eee9dc;
-    //       display: flex;
-    //       justify-content: center;
-    //       align-items: center;
-    //       ion-label {
-    //         font-family: staatliches;
-    //         font-size: 30px;
-    //         font-weight: 750;
-    //       }
-    //       .label-about {
-    //         color: var(--ion-color-secondary);
-    //       }
-    //     }
-    //   }
-    // }
+    margin-top: 2%;
     .div-p {
       width: 100%;
       margin-top: 0;
       padding-left: 10px;
       padding-right: 10px;
       font-family: staatliches;
-      font-size: 22px;
-      font-weight: 600;
       .col-p {
         display: flex;
         justify-content: center;
         align-items: center;
-        div {
+        text-align: center;
+        ion-label {
           margin-top: 30px;
           width: 250px;
-          //   ion-img {
-          //   }
+          line-height: 65px;
+          ion-img {
+            width: 300px;
+          }
+          .div1 {
+            font-size: 35px;
+            font-weight: 700;
+          }
+          .div2 {
+            h1 {
+              margin-top: 10px;
+              margin-bottom: 10px;
+              font-size: 30px;
+              font-weight: 800;
+            }
+          }
+          .div3 {
+            font-size: 30px;
+            font-weight: 650;
+          }
+          .div4 {
+            font-size: 28px;
+            font-weight: 650;
+          }
         }
       }
     }

@@ -1,13 +1,20 @@
 ion-content {
   //   --padding-bottom: 100px;
-  --height: 100%;
-  --padding-end: 12%;
-  --padding-start: 12%;
+  // --height: 100%;
+  // --padding-end: 12%;
+  // --padding-start: 12%;
   --padding-top: 75px;
+  .div-domin-img {
+    display: flex;
+    justify-content: center;
 
-  ion-img {
-    margin-top: 70px;
+    ion-img {
+      margin-top: 70px;
+      width: 85%;
+      max-width: 450px;
+    }
   }
+
   .text-animation {
     padding-top: 80px;
     font-size: 26px;
@@ -19,6 +26,17 @@ ion-content {
     animation-name: fadeAnimation;
     animation-duration: 6s;
     animation-fill-mode: forwards;
+  }
+  .div-gif-footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    ion-img {
+      width: 60%;
+      max-width: 500px;
+    }
   }
 }
 // ---------animation key frames----------
@@ -34,7 +52,7 @@ ion-content {
 }
 // ----------animation key frames--------
 
-ion-footer {
-  background-color: #e7e7e7;
-  height: 150px;
-}
+// ion-footer {
+//   background-color: #e7e7e7;
+//   height: 150px;
+// }

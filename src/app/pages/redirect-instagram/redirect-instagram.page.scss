@@ -1,0 +1,89 @@
+ion-content {
+    .div-img {
+      width: 100%;
+      margin-top: 70px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      ion-img {
+        width: 360px;
+      }
+    }
+    .div-label {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 50px;
+      padding-left: 45px;
+      padding-right: 45px;
+      margin-bottom: 10px;
+      text-align: center;
+  
+      .label-text {
+        font-family: staatliches;
+        font-size: 34px;
+        font-weight: 600;
+        color: #000000;
+        div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .div-domin{
+            margin-top: -5px;
+        }
+      }
+    }
+    .grid-btn {
+      margin-top: 50px;
+      margin-bottom: 30px;
+      ion-row {
+        border-bottom: solid 5px #000000;
+        ion-col {
+          padding: 0;
+          margin: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+            ion-label {
+                padding: 10px;
+                padding-top: 2px;
+              font-family: staatliches;
+              font-size: 27px;
+              font-weight: 800;
+              line-height: 70px;
+            }
+        }
+        .col-continue {
+          border-right: solid 5px #000000;
+        }
+      }
+    }
+  }
+  
+//   ion-footer {
+//       ion-row {
+//         ion-col {
+//           display: flex;
+//           justify-content: center;
+//           align-items: center;
+//           .div-btn-points {
+//             width: 145px;
+//             height: 78px;
+//             border: solid 5px #000000;
+//             border-radius: 15px;
+//             background-color: #eee9dc;
+//             display: flex;
+//             justify-content: center;
+//             align-items: center;
+//             ion-label {
+//               color: var(--ion-color-success);
+//               font-family: staatliches;
+//               font-size: 28px;
+//               font-weight: 700;
+//             }
+//           }
+//         }
+//       }
+//     }

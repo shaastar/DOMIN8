@@ -38,3 +38,13 @@ ion-header {
     --background: #e7e7e7;
   }
 }
+
+.splitz-popover .popover-content {
+  width: 300px !important;
+  height: 350px !important;
+  border-radius: 25px;
+  padding: 25px;
+  text-align: center;
+  font-family: Circular;
+  margin-top: 50px;
+}
