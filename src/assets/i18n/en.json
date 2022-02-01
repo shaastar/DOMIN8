@@ -1,0 +1,11 @@
+{
+    "Language":{
+        "language":"LANGUAGE"
+    },
+
+    "Tabs":{
+        "PLAY": "PLAY",
+        "EXPLORE": "EXPLORE"
+
+    }
+}

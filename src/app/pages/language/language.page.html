@@ -1,8 +1,11 @@
-
 <ion-content>
   <div class="div-lang">
-    <span><h1>LANGUAGE:</h1></span> <span><h1 class="eng">ENGLISH</h1></span
-    ><span><ion-icon name="caret-down-outline"></ion-icon></span>
+    <span><h1>LANGUAGE:</h1></span>
+    <span (click)="openSelectLanguage()"
+      ><h1 class="eng">{{selectedLanguage}}</h1></span
+    ><span (click)="openSelectLanguage()"
+      ><ion-icon name="caret-down-outline"></ion-icon
+    ></span>
   </div>
   <div class="div-img">
     <ion-img src="../../assets/images/domin8.png"></ion-img>
