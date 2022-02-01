@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { LanguagePageRoutingModule } from './language-routing.module';
+import { RedirectLinkPageRoutingModule } from './redirect-link-routing.module';
 
-import { LanguagePage } from './language.page';
+import { RedirectLinkPage } from './redirect-link.page';
 
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -15,9 +15,8 @@ import { TranslateModule } from '@ngx-translate/core';
     CommonModule,
     FormsModule,
     IonicModule,
-    LanguagePageRoutingModule,
-    TranslateModule,
+    RedirectLinkPageRoutingModule,TranslateModule
   ],
-  declarations: [LanguagePage],
+  declarations: [RedirectLinkPage]
 })
-export class LanguagePageModule {}
+export class RedirectLinkPageModule {}

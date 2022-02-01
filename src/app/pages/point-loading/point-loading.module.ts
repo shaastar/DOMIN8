@@ -8,13 +8,16 @@ import { PointLoadingPageRoutingModule } from './point-loading-routing.module';
 
 import { PointLoadingPage } from './point-loading.page';
 
+import { TranslateModule } from '@ngx-translate/core';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PointLoadingPageRoutingModule
+    PointLoadingPageRoutingModule,
+    TranslateModule,
   ],
-  declarations: [PointLoadingPage]
+  declarations: [PointLoadingPage],
 })
 export class PointLoadingPageModule {}

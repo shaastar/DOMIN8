@@ -8,12 +8,14 @@ import { LinkPageRoutingModule } from './link-routing.module';
 
 import { LinkPage } from './link.page';
 
+import { TranslateModule } from '@ngx-translate/core';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    LinkPageRoutingModule
+    LinkPageRoutingModule,TranslateModule
   ],
   declarations: [LinkPage]
 })

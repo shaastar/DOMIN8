@@ -8,12 +8,14 @@ import { RedirectInstagramPageRoutingModule } from './redirect-instagram-routing
 
 import { RedirectInstagramPage } from './redirect-instagram.page';
 
+import { TranslateModule } from '@ngx-translate/core';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RedirectInstagramPageRoutingModule
+    RedirectInstagramPageRoutingModule, TranslateModule
   ],
   declarations: [RedirectInstagramPage]
 })

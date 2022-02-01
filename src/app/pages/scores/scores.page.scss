@@ -10,9 +10,10 @@ ion-header {
     // border: solid 5px #000000;
     // border-radius: 15px;
     // background-color: #eee9dc;
-    .label-selected-ponts {
-      font-family: staatliches;
-      font-size: 33px;
+    .label-selected-points {
+      font-family: Anton;
+      font-size: 19px;
+      font-style: italic;
       font-weight: 900;
     }
   }
@@ -49,8 +50,8 @@ ion-header {
           }
           ion-label {
             font-family: staatliches;
-            font-size: 36px;
-            font-weight: 650;
+            font-size: 28px;
+            font-weight: 700;
           }
           .label-secondary {
             color: var(--ion-color-secondary);
@@ -73,8 +74,8 @@ ion-header {
             ion-input {
               text-align: center;
               font-family: staatliches;
-              font-size: 30px;
-              font-weight: 650;
+              font-size: 24px;
+              font-weight: 700;
             }
           }
         }
@@ -101,19 +102,19 @@ ion-content {
           ion-input {
             text-align: center;
             font-family: staatliches;
-            font-size: 30px;
-            font-weight: 650;
+            font-size: 24px;
+            font-weight: 700;
           }
         }
         div {
           margin: 10px;
           ion-label {
-            font-family: staatliches;
-            font-size: 30px;
-            font-weight: 650;
+            font-family: ANTON;
+            font-size: 19px;
+            font-weight: 700;
           }
         }
-
+        
         .div-btn-points {
           width: 145px;
           height: 76px;
@@ -124,17 +125,18 @@ ion-content {
           justify-content: center;
           align-items: center;
           ion-label {
-            font-family: staatliches;
-            font-size: 28px;
+            font-family: Anton;
+            font-size: 19px;
+            font-style: italic;
             font-weight: 700;
           }
         }
-        .add-scores {
-          //   color: var(--ion-color-primary);
-          font-family: staatliches;
-          font-size: 30px;
-          font-weight: 700;
-        }
+        // .add-scores {
+        //   //   color: var(--ion-color-primary);
+        //   font-family: staatliches;
+        //   font-size: 24px;
+        //   font-weight: 700;
+        // }
       }
     }
   }
@@ -157,8 +159,9 @@ ion-footer {
         align-items: center;
         ion-label {
           color: var(--ion-color-success);
-          font-family: staatliches;
-          font-size: 28px;
+          font-family: Anton;
+          font-size: 19px;
+          font-style: italic;
           font-weight: 700;
         }
       }

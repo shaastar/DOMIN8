@@ -8,12 +8,14 @@ import { CongratsPageRoutingModule } from './congrats-routing.module';
 
 import { CongratsPage } from './congrats.page';
 
+import { TranslateModule } from '@ngx-translate/core';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    CongratsPageRoutingModule
+    CongratsPageRoutingModule, TranslateModule
   ],
   declarations: [CongratsPage]
 })

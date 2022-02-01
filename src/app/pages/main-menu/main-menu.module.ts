@@ -8,12 +8,13 @@ import { MainMenuPageRoutingModule } from './main-menu-routing.module';
 
 import { MainMenuPage } from './main-menu.page';
 
+import { TranslateModule } from '@ngx-translate/core';
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    MainMenuPageRoutingModule
+    MainMenuPageRoutingModule,TranslateModule
   ],
   declarations: [MainMenuPage]
 })

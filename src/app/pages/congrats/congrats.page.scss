@@ -24,7 +24,8 @@ ion-content {
       margin-top: 0;
       padding-left: 10px;
       padding-right: 10px;
-      font-family: staatliches;
+      font-family: Anton;
+      font-style: italic;
       .col-p {
         display: flex;
         justify-content: center;
@@ -33,28 +34,29 @@ ion-content {
         ion-label {
           margin-top: 30px;
           width: 250px;
-          line-height: 65px;
+          line-height: 45px;
           ion-img {
-            width: 300px;
+            width: 200px;
+            margin-left: 30px;
           }
           .div1 {
-            font-size: 35px;
+            font-size: 17px;
             font-weight: 700;
           }
           .div2 {
             h1 {
               margin-top: 10px;
               margin-bottom: 10px;
-              font-size: 30px;
+              font-size: 33px;
               font-weight: 800;
             }
           }
           .div3 {
-            font-size: 30px;
+            font-size: 20px;
             font-weight: 650;
           }
           .div4 {
-            font-size: 28px;
+            font-size: 20px;
             font-weight: 650;
           }
         }

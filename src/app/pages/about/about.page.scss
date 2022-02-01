@@ -37,23 +37,15 @@ ion-content {
           justify-content: center;
           align-items: center;
           ion-label {
-            font-family: staatliches;
-            font-size: 30px;
+            font-family: Anton;
+            font-size: 19px;
+            font-style: italic;
             font-weight: 750;
           }
           .label-about {
             color: var(--ion-color-secondary);
           }
         }
-        //   .div-teams{
-        //       color: var(--ion-color-success);
-        //   }
-        //   .div-calendar{
-        //       color: var(--ion-color-primary);
-        //   }
-        //   .div-link{
-        //       // color: var(--ion-color-dark);
-        //   }
       }
     }
     .div-p {
@@ -61,8 +53,9 @@ ion-content {
       margin-top: 0;
       padding-left: 10px;
       padding-right: 10px;
-      font-family: staatliches;
-      font-size: 22px;
+      font-family: Anton;
+      font-size: 14px;
+      font-style: italic;
       font-weight: 600;
       .col-p {
         display: flex;

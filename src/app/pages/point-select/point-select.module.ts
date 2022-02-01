@@ -8,13 +8,16 @@ import { PointSelectPageRoutingModule } from './point-select-routing.module';
 
 import { PointSelectPage } from './point-select.page';
 
+import { TranslateModule } from '@ngx-translate/core';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PointSelectPageRoutingModule
+    PointSelectPageRoutingModule,
+    TranslateModule,
   ],
-  declarations: [PointSelectPage]
+  declarations: [PointSelectPage],
 })
 export class PointSelectPageModule {}

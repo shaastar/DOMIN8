@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { CancelCurrentGamePageRoutingModule } from './cancel-current-game-routing.module';
 
 import { CancelCurrentGamePage } from './cancel-current-game.page';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    CancelCurrentGamePageRoutingModule
+    CancelCurrentGamePageRoutingModule,
+    TranslateModule
   ],
   declarations: [CancelCurrentGamePage]
 })

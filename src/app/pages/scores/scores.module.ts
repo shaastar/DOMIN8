@@ -8,13 +8,16 @@ import { ScoresPageRoutingModule } from './scores-routing.module';
 
 import { ScoresPage } from './scores.page';
 
+import { TranslateModule } from '@ngx-translate/core';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ScoresPageRoutingModule
+    ScoresPageRoutingModule,
+    TranslateModule,
   ],
-  declarations: [ScoresPage]
+  declarations: [ScoresPage],
 })
 export class ScoresPageModule {}

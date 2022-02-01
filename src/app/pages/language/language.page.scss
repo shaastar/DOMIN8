@@ -6,17 +6,19 @@ ion-content {
     display: flex;
     span {
       margin-right: 7px;
-      font-family: staatliches;
+      font-family: Anton;
       h1 {
-        font-size: 28px;
+        font-family: Anton;
+        font-size: 19px;
+        font-style: italic;
         font-weight: 700;
       }
       .eng {
         color: var(--ion-color-success);
       }
       ion-icon {
-        margin-top: 17px;
-        font-size: 38px;
+        margin-top: 19px;
+        font-size: 24px;
       }
     }
   }

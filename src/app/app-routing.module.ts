@@ -32,6 +32,10 @@ const routes: Routes = [
       ),
   },
   // {
+  //   path: 'redirect-link',
+  //   loadChildren: () => import('./pages/redirect-link/redirect-link.module').then( m => m.RedirectLinkPageModule)
+  // },
+  // {
   //   path: 'scores',
   //   loadChildren: () =>
   //     import('./pages/scores/scores.module').then((m) => m.ScoresPageModule),

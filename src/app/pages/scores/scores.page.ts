@@ -6,10 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./scores.page.scss'],
 })
 export class ScoresPage implements OnInit {
+  team1: string = 'TEAM I';
+  team2: string = 'TEAM II';
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

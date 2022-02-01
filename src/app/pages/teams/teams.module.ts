@@ -8,12 +8,14 @@ import { TeamsPageRoutingModule } from './teams-routing.module';
 
 import { TeamsPage } from './teams.page';
 
+import { TranslateModule } from '@ngx-translate/core';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    TeamsPageRoutingModule
+    TeamsPageRoutingModule, TranslateModule
   ],
   declarations: [TeamsPage]
 })

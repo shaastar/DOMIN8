@@ -4,38 +4,40 @@
       <ion-back-button class="btn-back" defaultHref=""></ion-back-button>
     </ion-buttons>
     <div class="div-btn-points">
-      <ion-label class="label-selected-ponts">100 Points</ion-label>
+      <ion-label class="label-selected-points"
+        >100 {{'points'| translate}}</ion-label
+      >
     </div>
   </ion-toolbar>
   <ion-toolbar>
     <div class="div-totalscore">
-    <ion-grid fixed>
-      <ion-row class="row-total-score">
-        <ion-col size="3"
-          ><ion-label class="label-secondary">55</ion-label></ion-col
-        >
-        <ion-col size="6"
-          ><div class="div-img">
-            <ion-img src="../../assets/images/domin8.png"></ion-img></div
-        ></ion-col>
-        <ion-col size="3"
-          ><ion-label class="label-primary">40</ion-label></ion-col
-        >
-      </ion-row>
-      <ion-row class="row-round">
-        <ion-col size="6" style="border-right: solid 5px #000000">
-          <ion-item lines="none" color="none">
-            <ion-input type="text" placeholder="team1"></ion-input>
-          </ion-item>
-        </ion-col>
-        <ion-col size="6">
-          <ion-item lines="none" color="none">
-            <ion-input type="text" placeholder="team2"></ion-input>
-          </ion-item>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </div>
+      <ion-grid fixed>
+        <ion-row class="row-total-score">
+          <ion-col size="3"
+            ><ion-label class="label-secondary">55</ion-label></ion-col
+          >
+          <ion-col size="6"
+            ><div class="div-img">
+              <ion-img src="../../assets/images/domin8.png"></ion-img></div
+          ></ion-col>
+          <ion-col size="3"
+            ><ion-label class="label-primary">40</ion-label></ion-col
+          >
+        </ion-row>
+        <ion-row class="row-round">
+          <ion-col size="6" style="border-right: solid 5px #000000">
+            <ion-item lines="none" color="none">
+              <ion-input type="text" [(ngModel)]="team1"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="6">
+            <ion-item lines="none" color="none">
+              <ion-input type="text" [(ngModel)]="team2"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
   </ion-toolbar>
 </ion-header>
 
@@ -49,7 +51,9 @@
         <!-- <ion-label style="margin-left: 35px" class="add-scores">30</ion-label> -->
       </ion-col>
       <ion-col size="6 ">
-        <div class="div-btn-points"><ion-label>Round 1</ion-label></div>
+        <div class="div-btn-points">
+          <ion-label>{{'round'|translate}} 1</ion-label>
+        </div>
       </ion-col>
       <ion-col size="3">
         <ion-item lines="none" color="none" class="add-scores">
@@ -66,7 +70,9 @@
         <!-- <ion-label style="margin-left: 35px" class="add-scores">25</ion-label> -->
       </ion-col>
       <ion-col size="6">
-        <div class="div-btn-points"><ion-label>Round 2</ion-label></div>
+        <div class="div-btn-points">
+          <ion-label>{{'round'|translate}} 2</ion-label>
+        </div>
       </ion-col>
       <ion-col size="3">
         <ion-item lines="none" color="none" class="add-scores">
@@ -83,7 +89,9 @@
         <!-- <ion-label style="margin-left: 35px" class="add-scores">25</ion-label> -->
       </ion-col>
       <ion-col size="6">
-        <div class="div-btn-points"><ion-label>Round 3</ion-label></div>
+        <div class="div-btn-points">
+          <ion-label>{{'round'|translate}} 3</ion-label>
+        </div>
       </ion-col>
       <ion-col size="3">
         <ion-item lines="none" color="none" class="add-scores">
@@ -100,7 +108,9 @@
         <!-- <ion-label style="margin-left: 35px" class="add-scores">25</ion-label> -->
       </ion-col>
       <ion-col size="6">
-        <div class="div-btn-points"><ion-label>Round 4</ion-label></div>
+        <div class="div-btn-points">
+          <ion-label>{{'round'|translate}} 4</ion-label>
+        </div>
       </ion-col>
       <ion-col size="3">
         <ion-item lines="none" color="none" class="add-scores">
@@ -117,7 +127,9 @@
         <!-- <ion-label style="margin-left: 35px" class="add-scores">25</ion-label> -->
       </ion-col>
       <ion-col size="6">
-        <div class="div-btn-points"><ion-label>Round 5</ion-label></div>
+        <div class="div-btn-points">
+          <ion-label>{{'round'|translate}} 5</ion-label>
+        </div>
       </ion-col>
       <ion-col size="3">
         <ion-item lines="none" color="none" class="add-scores">
@@ -134,7 +146,9 @@
         <!-- <ion-label style="margin-left: 35px" class="add-scores">25</ion-label> -->
       </ion-col>
       <ion-col size="6">
-        <div class="div-btn-points"><ion-label>Round 6</ion-label></div>
+        <div class="div-btn-points">
+          <ion-label>{{'round'|translate}} 6</ion-label>
+        </div>
       </ion-col>
       <ion-col size="3">
         <ion-item lines="none" color="none" class="add-scores">
@@ -153,7 +167,7 @@
         <div class="div-btn-points">
           <ion-label class="ion-activatable ripple-parent">
             <ion-ripple-effect></ion-ripple-effect>
-            New Game</ion-label
+            {{'New_game'|translate}}</ion-label
           >
         </div>
       </ion-tab-button>

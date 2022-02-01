@@ -24,7 +24,8 @@ ion-tabs {
         ion-label {
           font-family: Anton;
           font-size: 19px;
-          font-weight: 700;
+          font-style: italic;
+          font-weight: 800;
           color: var(--ion-color-primary);
         }
       }
@@ -50,7 +51,8 @@ ion-tabs {
         align-items: center;
         font-family: Anton;
         font-size: 19px;
-        font-weight: 700;
+        font-style: italic;
+        font-weight: 800;
         color: var(--ion-color-secondary);
       }
       .div-label2 {
@@ -59,6 +61,7 @@ ion-tabs {
         align-items: center;
         font-family: Anton;
         font-size: 13px;
+        font-style: italic;
         font-weight: 900;
       }
     }

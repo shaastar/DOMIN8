@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-cancel-current-game',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CancelCurrentGamePage implements OnInit {
 
-  constructor() { }
+  constructor(private Translate: TranslateService) { }
 
   ngOnInit() {
   }

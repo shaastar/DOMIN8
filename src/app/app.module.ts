@@ -13,8 +13,8 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateConfigService } from './services/translate-config.service';
 
-export function LanguageLoader(http: HttpClient) {
-  return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 @NgModule({
   declarations: [AppComponent],
@@ -24,10 +24,11 @@ export function LanguageLoader(http: HttpClient) {
     IonicModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
+    TranslateModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
-        useFactory: LanguageLoader,
+        useFactory: HttpLoaderFactory,
         deps: [HttpClient],
       },
     }),

@@ -79,6 +79,13 @@ const routes: Routes = [
           ).then((m) => m.RedirectInstagramPageModule),
       },
       {
+        path: 'redirect-link',
+        loadChildren: () =>
+          import(
+            '../pages/redirect-link/redirect-link.module'
+          ).then((m) => m.RedirectLinkPageModule),
+      },
+      {
         path: '',
         redirectTo: '/tabs/language',
         pathMatch: 'full',
@@ -142,7 +149,12 @@ const routes: Routes = [
   },
   {
     path: 'redirect-instagram',
-    redirectTo: '/tabs/cancel-current-game',
+    redirectTo: '/tabs/redirect-instagram',
+    pathMatch: 'full',
+  },
+  {
+    path: 'redirect-link',
+    redirectTo: '/tabs/redirect-link',
     pathMatch: 'full',
   },
 ];

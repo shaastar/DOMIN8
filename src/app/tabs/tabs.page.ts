@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
+// import { TranslateService } from '@ngx-translate/core';
+
 @Component({
   selector: 'app-tabs',
   templateUrl: 'tabs.page.html',
