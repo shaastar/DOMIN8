@@ -15,8 +15,9 @@ import { TranslateModule } from '@ngx-translate/core';
     CommonModule,
     FormsModule,
     IonicModule,
-    RedirectLinkPageRoutingModule,TranslateModule
+    RedirectLinkPageRoutingModule,
+    TranslateModule,
   ],
-  declarations: [RedirectLinkPage]
+  declarations: [RedirectLinkPage],
 })
 export class RedirectLinkPageModule {}

@@ -14,74 +14,73 @@ ion-header {
       font-family: Anton;
       font-size: 19px;
       font-style: italic;
-      font-weight: 900;
     }
   }
   ion-toolbar {
     // --background: aqua;
-    .div-totalscore{
+    .div-totalscore {
       width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
-    ion-grid {
-      padding: 0;
-      margin: 0;
-      .row-total-score {
-        ion-col {
-          padding: 0;
-          margin: 0;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          .div-img {
-            width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
+      ion-grid {
+        padding: 0;
+        margin: 0;
+        .row-total-score {
+          ion-col {
+            padding: 0;
+            margin: 0;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 2px;
-            //   margin-top: 90px;
-            // margin-left: 24px;
-            // margin-right: 24px;
-            ion-img {
-              width: 200px;
+            .div-img {
+              width: 100%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin-top: 2px;
+              //   margin-top: 90px;
+              // margin-left: 24px;
+              // margin-right: 24px;
+              ion-img {
+                width: 200px;
+              }
+            }
+            ion-label {
+              font-family: staatliches;
+              font-size: 28px;
+              font-weight: 700;
+            }
+            .label-secondary {
+              color: var(--ion-color-secondary);
+            }
+            .label-primary {
+              color: var(--ion-color-primary);
             }
           }
-          ion-label {
-            font-family: staatliches;
-            font-size: 28px;
-            font-weight: 700;
-          }
-          .label-secondary {
-            color: var(--ion-color-secondary);
-          }
-          .label-primary {
-            color: var(--ion-color-primary);
-          }
         }
-      }
-      .row-round {
-        border-bottom: solid 5px #000000;
-        padding: 0;
-        ion-col {
+        .row-round {
+          border-bottom: solid 5px #000000;
           padding: 0;
-          margin: 0;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          ion-item {
-            ion-input {
-              text-align: center;
-              font-family: staatliches;
-              font-size: 24px;
-              font-weight: 700;
+          ion-col {
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            ion-item {
+              ion-input {
+                text-align: center;
+                font-family: staatliches;
+                font-size: 24px;
+                font-weight: 700;
+              }
             }
           }
         }
       }
     }
-  }
   }
 }
 ion-content {
@@ -111,13 +110,12 @@ ion-content {
           ion-label {
             font-family: ANTON;
             font-size: 19px;
-            font-weight: 700;
           }
         }
-        
+
         .div-btn-points {
-          width: 145px;
-          height: 76px;
+          width: 125px;
+          height: 66px;
           border: solid 5px #000000;
           border-radius: 13px;
           background-color: #dfd7c3;
@@ -128,7 +126,6 @@ ion-content {
             font-family: Anton;
             font-size: 19px;
             font-style: italic;
-            font-weight: 700;
           }
         }
         // .add-scores {
@@ -141,7 +138,7 @@ ion-content {
     }
   }
 
-  .div-addround{
+  .div-addround {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -157,14 +154,14 @@ ion-content {
       align-items: center;
       ion-label {
         display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
         font-family: Anton;
         font-size: 19px;
         font-style: italic;
-        font-weight: 700;
-      }}
+      }
+    }
   }
 }
 
@@ -175,8 +172,9 @@ ion-footer {
       justify-content: center;
       align-items: center;
       .div-btn-points {
-        width: 145px;
-        height: 78px;
+        width: 125px;
+        height: 68px;
+        margin-left: 20px;
         border: solid 5px #000000;
         border-radius: 15px;
         background-color: #eee9dc;
@@ -189,7 +187,6 @@ ion-footer {
           font-family: Anton;
           font-size: 19px;
           font-style: italic;
-          font-weight: 700;
         }
       }
     }

@@ -25,11 +25,10 @@ ion-tabs {
           font-family: Anton;
           font-size: 19px;
           font-style: italic;
-          font-weight: 800;
           color: var(--ion-color-primary);
         }
       }
-      .div-img-play{
+      .div-img-play {
         // background-color: aqua;
         width: 100% !important;
         display: flex;
@@ -38,7 +37,8 @@ ion-tabs {
         margin-top: 2px;
         ion-img {
           width: 100px;
-        }}
+        }
+      }
     }
     .col-explore-btn {
       display: inline-block;
@@ -52,7 +52,6 @@ ion-tabs {
         font-family: Anton;
         font-size: 19px;
         font-style: italic;
-        font-weight: 800;
         color: var(--ion-color-secondary);
       }
       .div-label2 {
@@ -62,7 +61,6 @@ ion-tabs {
         font-family: Anton;
         font-size: 13px;
         font-style: italic;
-        font-weight: 900;
       }
     }
     ion-col {
@@ -81,7 +79,6 @@ ion-tabs {
       }
       .ins {
         font-size: 55px;
-        font-weight: 500;
       }
     }
   }

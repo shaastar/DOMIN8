@@ -38,13 +38,12 @@ ion-content {
           align-items: center;
           ion-label {
             display: flex;
-          justify-content: center;
-          align-items: center;
-          text-align: center;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
             font-family: Anton;
             font-size: 19px;
             font-style: italic;
-            font-weight: 750;
           }
           .label-about {
             color: var(--ion-color-secondary);
@@ -60,7 +59,6 @@ ion-content {
       font-family: Anton;
       font-size: 14px;
       font-style: italic;
-      font-weight: 600;
       .col-p {
         display: flex;
         justify-content: center;
@@ -75,7 +73,6 @@ ion-content {
           }
           ion-label {
             float: right;
-            font-weight: 800;
           }
         }
       }

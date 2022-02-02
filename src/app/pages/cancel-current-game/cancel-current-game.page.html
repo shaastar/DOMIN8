@@ -21,9 +21,13 @@
   <!-- for Spanish -->
   <div *ngIf="lang=='sp'" class="div-label">
     <ion-label class="label-text"
-      >Will <ion-text color="primary">void</ion-text> current game and
-      <ion-text color="secondary">start</ion-text> a new one</ion-label
-    >
+      ><div style="display: inline-block">
+        <ion-text color="primary">Anulará</ion-text> el juego actual
+      </div>
+      <div style="display: inline-block">
+        y <ion-text color="secondary">comenzará</ion-text> uno nuevo
+      </div>
+    </ion-label>
   </div>
   <ion-grid>
     <ion-row>

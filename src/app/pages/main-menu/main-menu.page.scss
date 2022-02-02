@@ -28,7 +28,7 @@ ion-content {
         justify-content: center;
         align-items: center;
         div {
-          width: 140px;
+          width: 120px;
           height: 75px;
           border: solid 5px #000000;
           border-radius: 15px;
@@ -38,13 +38,12 @@ ion-content {
           align-items: center;
           ion-label {
             display: flex;
-          justify-content: center;
-          align-items: center;
-          text-align: center;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
             font-family: Anton;
             font-size: 19px;
             font-style: italic;
-            font-weight: 750;
           }
         }
         .div-about {
@@ -56,9 +55,9 @@ ion-content {
         .div-calendar {
           color: var(--ion-color-primary);
         }
-        .div-link {
-          // color: var(--ion-color-dark);
-        }
+        // .div-link {
+        //   // color: var(--ion-color-dark);
+        // }
       }
     }
   }
