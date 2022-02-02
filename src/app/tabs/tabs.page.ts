@@ -11,12 +11,12 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class TabsPage {
   constructor(private router: Router) {}
 
-  play() {
-    // this.router.navigate(['/section'], { queryParams: { id: number } });
-    this.router.navigate(['/tabs/point-select']);
-  }
+  // play() {
+  //   // this.router.navigate(['/section'], { queryParams: { id: number } });
+  //   this.router.navigate(['/tabs/point-select']);
+  // }
 
-  explore() {
-    this.router.navigate(['/tabs/tab2']);
-  }
+  // explore() {
+  //   this.router.navigate(['/tabs/tab2']);
+  // }
 }

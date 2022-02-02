@@ -22,7 +22,8 @@
     <div class="div-p">
       <ion-row>
         <ion-col class="col-p" size="12">
-          <div>
+          <!-- for English -->
+          <div *ngIf="lang==='en'">
             <p>
               DOMIN8 is run by a team of customizing experts that facilitate
               gaming for all domino aficionados. We provide users with
@@ -37,6 +38,21 @@
               created by our experts and upgrade your wardrobe with
               <ion-text color="success">n</ion-text>ew apparel. Enjoy your
               leisure time with us.
+            </p>
+            <ion-label>-DOMIN<ion-text color="primary">8</ion-text></ion-label>
+          </div>
+          <!-- for spanish -->
+          <div *ngIf="lang==='sp'">
+            <p>
+              DOMIN8 es dirigido por un equipo de expertos en personalizaciones
+              que proveen facilidades para los jugadores de dominó. Nosotros les
+              brindamos a nuestros usuarios todo lo que necesitan para equipar y
+              enriquecer su experiencia al jugar dominó. Explora nuestra página
+              de Instagram, @domin5.3 donde puedes ordenar personalizaciones
+              luego de navegar nuestra aplicación móvil. En nuestro Instagram,
+              descubrirás creaciones innovadoras de nuestros expertos y podrás
+              adquirir nuevo vestuario representando nuestra marca.  Disfruta tu
+              tiempo libre con nosotros.
             </p>
             <ion-label>-DOMIN<ion-text color="primary">8</ion-text></ion-label>
           </div>

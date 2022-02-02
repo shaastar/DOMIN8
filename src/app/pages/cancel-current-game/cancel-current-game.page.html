@@ -11,7 +11,15 @@
     <ion-img src="../../assets/images/domin8.png"></ion-img>
   </div>
 
-  <div class="div-label">
+  <!-- for English -->
+  <div *ngIf="lang=='en'" class="div-label">
+    <ion-label class="label-text"
+      >Will <ion-text color="primary">void</ion-text> current game and
+      <ion-text color="secondary">start</ion-text> a new one</ion-label
+    >
+  </div>
+  <!-- for Spanish -->
+  <div *ngIf="lang=='sp'" class="div-label">
     <ion-label class="label-text"
       >Will <ion-text color="primary">void</ion-text> current game and
       <ion-text color="secondary">start</ion-text> a new one</ion-label
@@ -22,8 +30,8 @@
       <ion-col class="col-continue ion-activatable ripple-parent" size="6">
         <ion-tab-button tab="scores">
           <ion-ripple-effect></ion-ripple-effect>
-        <ion-label>{{'continue'| translate}}</ion-label>
-      </ion-tab-button>
+          <ion-label>{{'continue'| translate}}</ion-label>
+        </ion-tab-button>
       </ion-col>
       <ion-col class="cancel ion-activatable ripple-parent" size="6">
         <ion-tab-button tab="scores">
@@ -38,7 +46,9 @@
 <ion-footer class="ion-no-border">
   <ion-row>
     <ion-col size="12">
-      <div class="div-btn-points"><ion-label>{{'New_game'|translate}}</ion-label></div>
+      <div class="div-btn-points">
+        <ion-label>{{'New_game'|translate}}</ion-label>
+      </div>
     </ion-col>
   </ion-row>
 </ion-footer>

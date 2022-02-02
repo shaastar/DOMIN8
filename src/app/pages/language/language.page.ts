@@ -34,7 +34,8 @@ export class LanguagePage implements OnInit {
             icon: 'share',
             handler: () => {
               console.log('English Selected');
-              this.selectedLanguage = "ENGLISH"
+              this.selectedLanguage = "ENGLISH";
+              localStorage.setItem('lang', 'en');
               this.selectLanguage('en');
             },
           },
@@ -44,6 +45,7 @@ export class LanguagePage implements OnInit {
             handler: () => {
               console.log('Spanish Selected');
               this.selectedLanguage = "SPANISH"
+              localStorage.setItem('lang', 'sp');
               this.selectLanguage('sp');
             },
           },

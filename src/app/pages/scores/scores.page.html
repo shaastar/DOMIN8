@@ -5,7 +5,7 @@
     </ion-buttons>
     <div class="div-btn-points">
       <ion-label class="label-selected-points"
-        >100 {{'points'| translate}}</ion-label
+        >{{selectedPointNumber}} {{'points'| translate}}</ion-label
       >
     </div>
   </ion-toolbar>
@@ -158,6 +158,16 @@
       </ion-col>
     </ion-row>
   </ion-grid>
+  <div class="div-addround">
+    <ion-tab-button>
+    <div class="div-btn-points ion-activatable" (click)="addNewRound()">
+      <ion-ripple-effect></ion-ripple-effect>
+      <ion-label>
+        {{'add_Round'|translate}}</ion-label>
+    </div>
+    </ion-tab-button>
+  </div>
+  
 </ion-content>
 
 <ion-footer class="ion-no-border">

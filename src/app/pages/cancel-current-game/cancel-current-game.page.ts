@@ -7,7 +7,7 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./cancel-current-game.page.scss'],
 })
 export class CancelCurrentGamePage implements OnInit {
-
+  lang:string = localStorage.getItem('lang');
   constructor(private Translate: TranslateService) { }
 
   ngOnInit() {

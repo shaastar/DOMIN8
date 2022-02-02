@@ -120,7 +120,7 @@ ion-content {
           height: 76px;
           border: solid 5px #000000;
           border-radius: 13px;
-          background-color: #eee9dc;
+          background-color: #dfd7c3;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -140,6 +140,28 @@ ion-content {
       }
     }
   }
+
+  .div-addround{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .div-btn-points {
+      width: 145px;
+      height: 50px;
+      border: solid 5px #000000;
+      border-radius: 13px;
+      background-color: #eee9dc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      ion-label {
+        font-family: Anton;
+        font-size: 19px;
+        font-style: italic;
+        font-weight: 700;
+      }}
+  }
 }
 
 ion-footer {
@@ -157,6 +179,7 @@ ion-footer {
         display: flex;
         justify-content: center;
         align-items: center;
+        text-align: center;
         ion-label {
           color: var(--ion-color-success);
           font-family: Anton;

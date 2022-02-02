@@ -20,7 +20,7 @@ ion-content {
         display: flex;
         justify-content: center;
         align-items: center;
-        div {
+        .div-btn-points {
           width: 155px;
           height: 82px;
           border: solid 5px #000000;
@@ -36,6 +36,37 @@ ion-content {
             font-weight: 880;
           }
         }
+      }
+    }
+  }
+  .div-custominput {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    ion-item {
+      width: 50%;
+      ion-input {
+        text-align: center;
+        font-family: staatliches;
+        font-size: 18px;
+        font-weight: 600;
+      }
+    }
+    .div-ok {
+      width: 70px;
+      height: 50px;
+      border: solid 3px #000000;
+      border-radius: 15px;
+      background-color: #eee9dc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      ion-label {
+        font-family: Anton;
+        font-size: 19px;
+        font-style: italic;
+        font-weight: 680;
       }
     }
   }

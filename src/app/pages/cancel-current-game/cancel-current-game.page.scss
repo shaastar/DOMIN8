@@ -39,14 +39,14 @@ ion-content {
         display: flex;
         justify-content: center;
         align-items: center;
-          ion-label {
-              padding: 5px;
-              padding-bottom: 10px;
-              padding-top: 3px;
-            font-family: staatliches;
-            font-size: 24px;
-            font-weight: 650;
-          }
+        ion-label {
+          padding: 5px;
+          padding-bottom: 10px;
+          padding-top: 3px;
+          font-family: staatliches;
+          font-size: 21px;
+          font-weight: 650;
+        }
       }
       .col-continue {
         border-right: solid 5px #000000;
@@ -56,28 +56,28 @@ ion-content {
 }
 
 ion-footer {
-    ion-row {
-      ion-col {
+  ion-row {
+    ion-col {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .div-btn-points {
+        width: 145px;
+        height: 78px;
+        border: solid 5px #000000;
+        border-radius: 15px;
+        background-color: #eee9dc;
         display: flex;
         justify-content: center;
         align-items: center;
-        .div-btn-points {
-          width: 145px;
-          height: 78px;
-          border: solid 5px #000000;
-          border-radius: 15px;
-          background-color: #eee9dc;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          ion-label {
-            color: var(--ion-color-success);
-            font-family: Anton;
-            font-size: 19px;
-            font-style: italic;
-            font-weight: 700;
-          }
+        ion-label {
+          color: var(--ion-color-success);
+          font-family: Anton;
+          font-size: 19px;
+          font-style: italic;
+          font-weight: 700;
         }
       }
     }
   }
+}
