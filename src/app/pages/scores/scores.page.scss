@@ -156,6 +156,10 @@ ion-content {
       justify-content: center;
       align-items: center;
       ion-label {
+        display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
         font-family: Anton;
         font-size: 19px;
         font-style: italic;

@@ -31,7 +31,7 @@ export class LanguagePage implements OnInit {
         buttons: [
           {
             text: 'English',
-            icon: 'share',
+            icon: 'language-outline',
             handler: () => {
               console.log('English Selected');
               this.selectedLanguage = "ENGLISH";
@@ -41,7 +41,7 @@ export class LanguagePage implements OnInit {
           },
           {
             text: 'Spanish',
-            icon: 'caret-forward-circle',
+            icon: 'language-outline',
             handler: () => {
               console.log('Spanish Selected');
               this.selectedLanguage = "SPANISH"

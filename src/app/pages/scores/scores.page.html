@@ -14,25 +14,25 @@
       <ion-grid fixed>
         <ion-row class="row-total-score">
           <ion-col size="3"
-            ><ion-label class="label-secondary">55</ion-label></ion-col
+            ><ion-label class="label-secondary">{{temptotalscore1}}</ion-label></ion-col
           >
           <ion-col size="6"
             ><div class="div-img">
               <ion-img src="../../assets/images/domin8.png"></ion-img></div
           ></ion-col>
           <ion-col size="3"
-            ><ion-label class="label-primary">40</ion-label></ion-col
+            ><ion-label class="label-primary">{{temptotalscore2}}</ion-label></ion-col
           >
         </ion-row>
         <ion-row class="row-round">
           <ion-col size="6" style="border-right: solid 5px #000000">
             <ion-item lines="none" color="none">
-              <ion-input type="text" [(ngModel)]="team1"></ion-input>
+              <ion-input type="text" [(ngModel)]="team1Name"></ion-input>
             </ion-item>
           </ion-col>
           <ion-col size="6">
             <ion-item lines="none" color="none">
-              <ion-input type="text" [(ngModel)]="team2"></ion-input>
+              <ion-input type="text" [(ngModel)]="team2Name"></ion-input>
             </ion-item>
           </ion-col>
         </ion-row>
@@ -43,21 +43,21 @@
 
 <ion-content>
   <ion-grid>
-    <ion-row class="row-round">
+    <ion-row class="row-round" *ngFor="let score of gameScore;  let i = index">
       <ion-col size="3">
         <ion-item lines="none" color="none" class="add-scores">
-          <ion-input type="number" placeholder="30"></ion-input>
+          <ion-input disabled type="number" [value]="score.roundscore1"></ion-input>
         </ion-item>
         <!-- <ion-label style="margin-left: 35px" class="add-scores">30</ion-label> -->
       </ion-col>
       <ion-col size="6 ">
         <div class="div-btn-points">
-          <ion-label>{{'round'|translate}} 1</ion-label>
+          <ion-label>{{'round'|translate}} {{i+1}}</ion-label>
         </div>
       </ion-col>
       <ion-col size="3">
         <ion-item lines="none" color="none" class="add-scores">
-          <ion-input type="number" placeholder="3"></ion-input>
+          <ion-input disabled type="number" [value]="score.roundscore2"></ion-input>
         </ion-item>
         <!-- <ion-label class="add-scores">-</ion-label> -->
       </ion-col>
@@ -65,28 +65,27 @@
     <ion-row class="row-round">
       <ion-col size="3">
         <ion-item lines="none" color="none" class="add-scores">
-          <ion-input type="number" placeholder="25"></ion-input>
+          <ion-input [(ngModel)]="temproundscore1" (ngModelChange)="tempScoreChange(temproundscore1, 'team1')" type="number" placeholder="25"></ion-input>
         </ion-item>
         <!-- <ion-label style="margin-left: 35px" class="add-scores">25</ion-label> -->
       </ion-col>
       <ion-col size="6">
         <div class="div-btn-points">
-          <ion-label>{{'round'|translate}} 2</ion-label>
+          <ion-label>{{'round'|translate}} {{gameScore.length + 1}}</ion-label>
         </div>
       </ion-col>
       <ion-col size="3">
         <ion-item lines="none" color="none" class="add-scores">
-          <ion-input type="number" placeholder="40"></ion-input>
+          <ion-input [(ngModel)]="temproundscore2" (ngModelChange)="tempScoreChange(temproundscore2, 'team2')" type="number" placeholder="40"></ion-input>
         </ion-item>
         <!-- <ion-label class="add-scores">40</ion-label> -->
       </ion-col>
     </ion-row>
-    <ion-row class="row-round">
+    <!-- <ion-row class="row-round">
       <ion-col size="3">
         <ion-item lines="none" color="none" class="add-scores">
           <ion-input type="number" placeholder="25"></ion-input>
         </ion-item>
-        <!-- <ion-label style="margin-left: 35px" class="add-scores">25</ion-label> -->
       </ion-col>
       <ion-col size="6">
         <div class="div-btn-points">
@@ -97,7 +96,6 @@
         <ion-item lines="none" color="none" class="add-scores">
           <ion-input type="number" placeholder="40"></ion-input>
         </ion-item>
-        <!-- <ion-label class="add-scores">40</ion-label> -->
       </ion-col>
     </ion-row>
     <ion-row class="row-round">
@@ -105,7 +103,6 @@
         <ion-item lines="none" color="none" class="add-scores">
           <ion-input type="number" placeholder="25"></ion-input>
         </ion-item>
-        <!-- <ion-label style="margin-left: 35px" class="add-scores">25</ion-label> -->
       </ion-col>
       <ion-col size="6">
         <div class="div-btn-points">
@@ -116,7 +113,6 @@
         <ion-item lines="none" color="none" class="add-scores">
           <ion-input type="number" placeholder="40"></ion-input>
         </ion-item>
-        <!-- <ion-label class="add-scores">40</ion-label> -->
       </ion-col>
     </ion-row>
     <ion-row class="row-round">
@@ -124,7 +120,6 @@
         <ion-item lines="none" color="none" class="add-scores">
           <ion-input type="number" placeholder="25"></ion-input>
         </ion-item>
-        <!-- <ion-label style="margin-left: 35px" class="add-scores">25</ion-label> -->
       </ion-col>
       <ion-col size="6">
         <div class="div-btn-points">
@@ -135,7 +130,6 @@
         <ion-item lines="none" color="none" class="add-scores">
           <ion-input type="number" placeholder="40"></ion-input>
         </ion-item>
-        <!-- <ion-label class="add-scores">40</ion-label> -->
       </ion-col>
     </ion-row>
     <ion-row class="row-round">
@@ -143,7 +137,6 @@
         <ion-item lines="none" color="none" class="add-scores">
           <ion-input type="number" placeholder="25"></ion-input>
         </ion-item>
-        <!-- <ion-label style="margin-left: 35px" class="add-scores">25</ion-label> -->
       </ion-col>
       <ion-col size="6">
         <div class="div-btn-points">
@@ -154,9 +147,8 @@
         <ion-item lines="none" color="none" class="add-scores">
           <ion-input type="number" placeholder="40"></ion-input>
         </ion-item>
-        <!-- <ion-label class="add-scores">40</ion-label> -->
       </ion-col>
-    </ion-row>
+    </ion-row> -->
   </ion-grid>
   <div class="div-addround">
     <ion-tab-button>
