@@ -30,6 +30,7 @@ export class ScoresPage implements OnInit {
     //   () => console.log('success'),
     //   () => console.log('error')
     // );
+    this.lang = localStorage.getItem('lang');
     if (this.lang == 'en') {
       this.team1Name = 'TEAM I';
       this.team2Name = 'TEAM II';

@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./about.page.scss'],
 })
 export class AboutPage implements OnInit {
+  constructor() {}
+  lang: string = localStorage.getItem('lang');
+  ngOnInit() {}
 
-  constructor() { }
- lang:string = localStorage.getItem('lang');
-  ngOnInit() {
+  ionViewWillEnter() {
+    this.lang = localStorage.getItem('lang');
   }
-
 }

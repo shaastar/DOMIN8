@@ -13,4 +13,7 @@ export class CancelCurrentGamePage implements OnInit {
   ngOnInit() {
   }
 
+  ionViewWillEnter() {
+    this.lang = localStorage.getItem('lang');
+  }
 }
