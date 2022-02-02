@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Location } from "@angular/common";
+import { Router, ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-redirect-link',
@@ -7,17 +8,18 @@ import { Location } from "@angular/common";
   styleUrls: ['./redirect-link.page.scss'],
 })
 export class RedirectLinkPage implements OnInit {
+  constructor(private location: Location, private router: Router) {}
 
-  constructor(private location: Location) { }
+  ngOnInit() {}
 
-  ngOnInit() {
-  }
-
-  cancelButton(){
+  cancelButton() {
     this.location.back();
   }
-  continueButton(){
+  continueButton() {
     // this should use link also
-    this.location.back();
+    var url = 'https://linktr.ee/domin5.3';
+    window.open(url);
+    this.router.navigate(['tabs/main-menu']);
+    // this.location.back();
   }
 }

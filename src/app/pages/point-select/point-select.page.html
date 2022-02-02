@@ -50,14 +50,11 @@
         type="number"
         [(ngModel)]="selectedPoint"
         (ngModelChange)="addCustomPoint(selectedPoint)"
-        placeholder="add custom point"
+        placeholder="Add custom point"
       ></ion-input>
     </ion-item>
   </div>
-  <div
-    class="div-custominput"
-    *ngIf="selectedPointNumber>200 && selectedPointNumber<2001"
-  >
+  <div class="div-custominput" *ngIf="selectedPointNumber<2001">
     <div class="div-ok" (click)="setSelectedPoint()">
       <ion-label>{{'ok'| translate}}</ion-label>
     </div>
