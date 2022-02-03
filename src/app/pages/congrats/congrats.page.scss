@@ -1,6 +1,5 @@
 ion-header {
-  ion-toolbar {
-  }
+  // ion-toolbar {}
   .div-img {
     width: 100%;
     margin-top: 0;
@@ -9,6 +8,65 @@ ion-header {
     align-items: center;
     ion-img {
       width: 185px;
+    }
+  }
+  ion-toolbar {
+    .div-totalscore {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      ion-grid {
+        padding: 0;
+        margin: 0;
+        .row-total-score {
+          ion-col {
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .div-img {
+              width: 100%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin-top: 2px;
+              ion-img {
+                width: 200px;
+              }
+            }
+            ion-label {
+              font-family: staatliches;
+              font-size: 28px;
+            }
+            .label-secondary {
+              color: var(--ion-color-secondary);
+            }
+            .label-primary {
+              color: var(--ion-color-primary);
+            }
+          }
+        }
+        .row-round {
+          border-bottom: solid 5px #000000;
+          padding: 0;
+          ion-col {
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            ion-item {
+              ion-input {
+                text-align: center;
+                font-family: staatliches;
+                font-size: 24px;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }

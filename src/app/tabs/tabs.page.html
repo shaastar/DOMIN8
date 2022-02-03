@@ -2,15 +2,21 @@
 <ion-tabs>
   <ion-row>
     <ion-col class="col-play-btn" size="6">
-      <div class="div-btn-play"><ion-label>{{'PLAY'|translate}}</ion-label></div>
-      <div class="div-img-play">
+      <div class="div-btn-play" (click)="play()">
+        <ion-label>{{'PLAY'|translate}}</ion-label>
+      </div>
+      <div class="div-img-play" (click)="play()">
         <ion-img src="../assets/images/domin gif.jpg"></ion-img>
       </div>
       <!-- <ion-img src="../assets/images/domin53.png"></ion-img> -->
     </ion-col>
     <ion-col class="col-explore-btn" size="6">
-      <div class="div-label1" size="7"><ion-label>{{'EXPLORE'|translate}}</ion-label></div>
-      <div class="div-label2" size="5"><ion-label>@domin5.3</ion-label></div>
+      <div class="div-label1" (click)="explore()">
+        <ion-label>{{'EXPLORE'|translate}}</ion-label>
+      </div>
+      <div class="div-label2" (click)="explore()">
+        <ion-label>@domin5.3</ion-label>
+      </div>
     </ion-col>
   </ion-row>
   <ion-row>

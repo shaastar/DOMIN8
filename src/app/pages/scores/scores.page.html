@@ -4,7 +4,6 @@
       <ion-back-button
         defaultHref=""
         class="btn-back"
-        (click)="backBtn()"
         color="success"
       ></ion-back-button>
     </ion-buttons>
@@ -85,8 +84,9 @@
           <ion-input
             [(ngModel)]="temproundscore1"
             (ngModelChange)="tempScoreChange(temproundscore1, 'team1')"
+            (ionBlur)="focusout()"
             type="number"
-            placeholder="25"
+            placeholder="0"
           ></ion-input>
         </ion-item>
         <!-- <ion-label style="margin-left: 35px" class="add-scores">25</ion-label> -->
@@ -101,8 +101,9 @@
           <ion-input
             [(ngModel)]="temproundscore2"
             (ngModelChange)="tempScoreChange(temproundscore2, 'team2')"
+            (ionBlur)="focusout()"
             type="number"
-            placeholder="40"
+            placeholder="0"
           ></ion-input>
         </ion-item>
         <!-- <ion-label class="add-scores">40</ion-label> -->

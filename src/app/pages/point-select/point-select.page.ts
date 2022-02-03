@@ -20,8 +20,19 @@ export class PointSelectPage implements OnInit {
   ) {}
 
   ngOnInit() {}
+  ionViewWillEnter() {
+    this.customBtn = false;
+
+    localStorage.setItem('gamescore', null);
+    this.pointService.gameScore = [];
+    this.pointService.winTeamName = '';
+    this.pointService.lossTeamName = '';
+    this.pointService.team1Total = 0;
+    this.pointService.team2Total = 0;
+  }
   backBtn() {
-    this.location.back();
+    // this.location.back();
+    this.router.navigate(['/tabs/language']);
   }
 
   toggleCustomPoint() {

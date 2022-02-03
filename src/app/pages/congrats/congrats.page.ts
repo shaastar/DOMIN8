@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
-
+import { PointsHandlerService } from '../../services/points-handler.service';
+import { Router, ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-congrats',
   templateUrl: './congrats.page.html',
@@ -8,15 +9,27 @@ import { Location } from '@angular/common';
 })
 export class CongratsPage implements OnInit {
   lang: string = localStorage.getItem('lang');
-  constructor(private location: Location) {}
+  constructor(
+    private location: Location,
+    private pointService: PointsHandlerService,
+    private router: Router
+  ) {}
+  winTeamName = this.pointService.winTeamName;
+  score1 = this.pointService.team1Total;
+  score2 = this.pointService.team2Total;
 
   ngOnInit() {}
 
   backBtn() {
-    this.location.back();
+    // this.location.back();
+    this.router.navigate(['/tabs/point-select']);
   }
 
   ionViewWillEnter() {
     this.lang = localStorage.getItem('lang');
+
+    this.winTeamName = this.pointService.winTeamName;
+    this.score1 = this.pointService.team1Total;
+    this.score2 = this.pointService.team2Total;
   }
 }

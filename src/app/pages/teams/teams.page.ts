@@ -9,9 +9,15 @@ import { Location } from '@angular/common';
 export class TeamsPage implements OnInit {
   constructor(private location: Location) {}
 
+  teams = JSON.parse(localStorage.getItem('teams'));
+
   ngOnInit() {}
 
   backBtn() {
     this.location.back();
+  }
+
+  ionViewWillEnter(){
+   this.teams = JSON.parse(localStorage.getItem('teams'));
   }
 }

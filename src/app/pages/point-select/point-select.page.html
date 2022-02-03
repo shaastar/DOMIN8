@@ -58,7 +58,7 @@
       ></ion-input>
     </ion-item>
   </div>
-  <div class="div-custominput" *ngIf="selectedPointNumber<2001">
+  <div class="div-custominput" *ngIf="customBtn && selectedPointNumber<2001">
     <div class="div-ok" (click)="setSelectedPoint()">
       <ion-label>{{'ok'| translate}}</ion-label>
     </div>

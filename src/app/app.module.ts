@@ -16,6 +16,10 @@ import { TranslateConfigService } from './services/translate-config.service';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
+
+//app availability
+// import { AppAvailability } from '@ionic-native/app-availability/ngx';
+// import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -35,6 +39,8 @@ export function HttpLoaderFactory(http: HttpClient) {
   ],
   providers: [
     TranslateConfigService,
+    // AppAvailability,
+    // InAppBrowser,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
   ],
   bootstrap: [AppComponent],
