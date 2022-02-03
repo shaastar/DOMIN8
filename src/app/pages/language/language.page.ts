@@ -16,6 +16,14 @@ export class LanguagePage implements OnInit {
     // this.selectedLanguage = this.translateConfigService.getDefaultLanguage();
   }
 
+  ionViewWillEnter(){
+  let lang = localStorage.getItem('lang');
+  if(lang && lang == 'sp'){
+    this.selectedLanguage = "SPANISH";
+  }
+  }
+
+
   selectLanguage(language: string) {
     this.translateConfigService.setLanguage(language);
   }

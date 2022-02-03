@@ -18,6 +18,6 @@ export class PointLoadingPage implements OnInit {
   ngOnInit() {
     setTimeout(() => {
       this.router.navigate(['scores']);
-    }, 5000);
+    }, 2000);
   }
 }
