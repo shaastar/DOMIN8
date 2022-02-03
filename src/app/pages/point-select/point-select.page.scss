@@ -32,7 +32,6 @@ ion-content {
           ion-label {
             font-family: Anton;
             font-size: 19px;
-            font-style: italic;
           }
         }
       }
@@ -48,14 +47,13 @@ ion-content {
       ion-input {
         text-align: center;
         font-family: staatliches;
-        font-size: 18px;
-        font-weight: 600;
+        font-size: 20px;
       }
     }
     .div-ok {
-      width: 70px;
-      height: 50px;
-      border: solid 3px #000000;
+      width: 150px;
+      height: 80px;
+      border: solid 4px #000000;
       border-radius: 15px;
       background-color: #eee9dc;
       display: flex;
@@ -64,7 +62,6 @@ ion-content {
       ion-label {
         font-family: Anton;
         font-size: 19px;
-        font-style: italic;
       }
     }
   }

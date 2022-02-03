@@ -1,13 +1,8 @@
 ion-header {
-  ion-toolbar {
-    // padding-top: 3px;
-    // margin-top: 3px;
-  }
+  // ion-toolbar {}
   .div-img {
     width: 100%;
     margin-top: 0;
-    // margin-left: 24px;
-    // margin-right: 24px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,21 +33,11 @@ ion-content {
           ion-label {
             font-family: Anton;
             font-size: 19px;
-            font-style: italic;
           }
           .label-about {
             color: var(--ion-color-secondary);
           }
         }
-        //   .div-teams{
-        //       color: var(--ion-color-success);
-        //   }
-        //   .div-calendar{
-        //       color: var(--ion-color-primary);
-        //   }
-        //   .div-link{
-        //       // color: var(--ion-color-dark);
-        //   }
       }
     }
     .div-p {
@@ -62,7 +47,6 @@ ion-content {
       padding-right: 10px;
       font-family: Anton;
       font-size: 15px;
-      font-style: italic;
       .col-li {
         display: flex;
         justify-content: center;

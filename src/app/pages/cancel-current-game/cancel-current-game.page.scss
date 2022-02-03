@@ -23,7 +23,6 @@ ion-content {
     .label-text {
       font-family: Anton;
       font-size: 20px;
-      font-style: italic;
       color: #000000;
     }
   }
@@ -40,11 +39,10 @@ ion-content {
         align-items: center;
         ion-label {
           padding: 5px;
-          padding-bottom: 10px;
-          padding-top: 3px;
+          padding-bottom: 8px;
+          padding-top: 7px;
           font-family: staatliches;
-          font-size: 21px;
-          font-weight: 650;
+          font-size: 24px;
         }
       }
       .col-continue {
@@ -73,7 +71,6 @@ ion-footer {
           color: var(--ion-color-success);
           font-family: Anton;
           font-size: 19px;
-          font-style: italic;
         }
       }
     }

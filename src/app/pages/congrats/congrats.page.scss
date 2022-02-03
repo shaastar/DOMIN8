@@ -1,7 +1,5 @@
 ion-header {
   ion-toolbar {
-    // padding-top: 3px;
-    // margin-top: 3px;
   }
   .div-img {
     width: 100%;
@@ -24,7 +22,6 @@ ion-content {
       padding-left: 10px;
       padding-right: 10px;
       font-family: Anton;
-      font-style: italic;
       .col-p {
         display: flex;
         justify-content: center;
@@ -41,7 +38,7 @@ ion-content {
           .div0 {
             font-family: Yellowtail;
             font-size: 41.5px;
-            transform: rotate(-10deg);
+            transform: rotate(-8deg);
           }
           .div1 {
             font-size: 17px;

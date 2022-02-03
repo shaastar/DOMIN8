@@ -1,8 +1,4 @@
 ion-content {
-  //   --padding-bottom: 100px;
-  // --height: 100%;
-  // --padding-end: 12%;
-  // --padding-start: 12%;
   --padding-top: 75px;
   .div-domin-img {
     display: flex;
@@ -19,7 +15,6 @@ ion-content {
     padding-top: 80px;
     font-family: Anton;
     font-size: 24px;
-    font-style: italic;
     display: flex;
     justify-content: center;
     // margin-left: 32%;
@@ -43,17 +38,10 @@ ion-content {
 // ---------animation key frames----------
 @keyframes fadeAnimation {
   from {
-    // background-color: red;
     opacity: 0;
   }
   to {
-    // background-color: yellow;
     opacity: 1;
   }
 }
 // ----------animation key frames--------
-
-// ion-footer {
-//   background-color: #e7e7e7;
-//   height: 150px;
-// }

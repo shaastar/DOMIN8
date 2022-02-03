@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PointsHandlerService } from '../../services/points-handler.service';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 // import { Insomnia } from '@awesome-cordova-plugins/insomnia/ngx';
 
@@ -15,6 +16,7 @@ export class ScoresPage implements OnInit {
   team1Name: string = '';
   team2Name: string = '';
   constructor(
+    private location: Location,
     private pointService: PointsHandlerService,
     private router: Router // private insomnia: Insomnia
   ) {}
@@ -23,6 +25,10 @@ export class ScoresPage implements OnInit {
 
   ngOnInit() {
     this.gameScore = [];
+  }
+
+  backBtn() {
+    this.location.back();
   }
 
   ionViewWillEnter() {
@@ -48,15 +54,15 @@ export class ScoresPage implements OnInit {
 
   temptotalscore1: number = 0;
   temptotalscore2: number = 0;
-  temproundscore1: string = "";
-  temproundscore2: string = "";
+  temproundscore1: string = '';
+  temproundscore2: string = '';
 
   // gameScore: Array<any>=[];
   gameScoreObj = {
     totalscore1: 0,
     totalscore2: 0,
-    roundscore1: "",
-    roundscore2: "",
+    roundscore1: '',
+    roundscore2: '',
   };
 
   tempScoreChange(roundScore, team) {
@@ -76,8 +82,8 @@ export class ScoresPage implements OnInit {
 
     // this.pointService.gameScore.push(this.gameScoreObj);
     this.pointService.gameScore.length;
-    this.temproundscore1 ="";
-    this.temproundscore2 ="";
+    this.temproundscore1 = '';
+    this.temproundscore2 = '';
 
     this.gameScore = this.pointService.gameScore;
     console.log(this.team1Name);

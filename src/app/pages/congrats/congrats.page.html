@@ -1,7 +1,11 @@
 <ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-buttons color="dark" slot="start">
-      <ion-back-button defaultHref=""></ion-back-button>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref=""
+        (click)="backBtn()"
+        color="success"
+      ></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
   <div class="div-img">
@@ -14,22 +18,33 @@
     <div class="div-p">
       <ion-row>
         <ion-col class="col-p" size="12">
-            <ion-label>
-              <!-- <ion-img src="../../assets/images/congrats.png"></ion-img> -->
-              <div class="div0">{{'congrats'| translate}}!</div>
-              <div class="div1">{{'to_the' | translate}}</div>
-              <div class="div2">
-                <ion-text color="success">
-                  <h1>JOHN & MIKE {{'team' | translate}}</h1>
-                </ion-text>
-              </div>
-              <div class="div3">
-                {{'for'| translate}} <ion-text color="secondary">{{'domin8ing'|translate}} </ion-text>
-              </div>
-              <div class="div4"><b>
-                {{'this'| translate}} <ion-text color="primary">{{'match'| translate}}</ion-text>!</b>
-              </div>
-            </ion-label>
+          <ion-label>
+            <!-- <ion-img src="../../assets/images/congrats.png"></ion-img> -->
+            <div class="div0">{{'congrats'| translate}}!</div>
+            <div class="div1">{{'to_the' | translate}}</div>
+            <!-- for English Language -->
+            <div *ngIf="lang=='en'" class="div2">
+              <ion-text color="success">
+                <h1>JOHN & MIKE Team</h1>
+              </ion-text>
+            </div>
+            <!-- for spanish Language -->
+            <div *ngIf="lang=='sp'" class="div2">
+              <ion-text color="success">
+                <h1>EQUIPO </h1><h1> JOHN & MIKE</h1>
+              </ion-text>
+            </div>
+            <div class="div3">
+              {{'for'| translate}}
+              <ion-text color="secondary">{{'domin8ing'|translate}} </ion-text>
+            </div>
+            <div class="div4">
+              <b>
+                {{'this'| translate}}
+                <ion-text color="primary">{{'match'| translate}}</ion-text>!</b
+              >
+            </div>
+          </ion-label>
         </ion-col>
       </ion-row>
     </div>

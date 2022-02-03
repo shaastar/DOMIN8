@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PointsHandlerService } from '../../services/points-handler.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-point-select',
@@ -12,9 +13,16 @@ export class PointSelectPage implements OnInit {
 
   selectedPoint: string;
   selectedPointNumber: number;
-  constructor(private pointService: PointsHandlerService,private router:Router) {}
+  constructor(
+    private pointService: PointsHandlerService,
+    private router: Router,
+    private location: Location
+  ) {}
 
   ngOnInit() {}
+  backBtn() {
+    this.location.back();
+  }
 
   toggleCustomPoint() {
     this.customBtn = !this.customBtn;

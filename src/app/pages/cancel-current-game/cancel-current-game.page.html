@@ -1,7 +1,11 @@
 <ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-buttons mode="md" color="dark" slot="start">
-      <ion-back-button defaultHref=""></ion-back-button>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref=""
+        (click)="backBtn()"
+        color="success"
+      ></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>

@@ -1,13 +1,8 @@
 ion-header {
-  ion-toolbar {
-    // padding-top: 3px;
-    // margin-top: 3px;
-  }
+  // ion-toolbar {}
   .div-img {
     width: 100%;
     margin-top: 0;
-    // margin-left: 24px;
-    // margin-right: 24px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,7 +37,6 @@ ion-content {
             text-align: center;
             font-family: Anton;
             font-size: 19px;
-            font-style: italic;
           }
         }
         .div-about {

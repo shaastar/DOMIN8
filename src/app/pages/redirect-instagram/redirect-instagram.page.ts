@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Location } from "@angular/common";
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-redirect-instagram',
@@ -7,16 +7,14 @@ import { Location } from "@angular/common";
   styleUrls: ['./redirect-instagram.page.scss'],
 })
 export class RedirectInstagramPage implements OnInit {
+  constructor(private location: Location) {}
 
-  constructor(private location: Location) { }
+  ngOnInit() {}
 
-  ngOnInit() {
-  }
-
-  cancelButton(){
+  cancelButton() {
     this.location.back();
   }
-  continueButton(){
+  continueButton() {
     // this should use instagram link also
     this.location.back();
   }

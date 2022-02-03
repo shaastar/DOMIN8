@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-about',
@@ -6,11 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./about.page.scss'],
 })
 export class AboutPage implements OnInit {
-  constructor() {}
+  constructor(private location: Location) {}
   lang: string = localStorage.getItem('lang');
   ngOnInit() {}
 
   ionViewWillEnter() {
     this.lang = localStorage.getItem('lang');
+  }
+
+  backBtn(){
+    this.location.back();
   }
 }
