@@ -12,6 +12,8 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateConfigService } from './services/translate-config.service';
+import { AppAvailability } from '@awesome-cordova-plugins/app-availability/ngx';
+import { InAppBrowser } from '@awesome-cordova-plugins/in-app-browser/ngx';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -39,8 +41,8 @@ export function HttpLoaderFactory(http: HttpClient) {
   ],
   providers: [
     TranslateConfigService,
-    // AppAvailability,
-    // InAppBrowser,
+    AppAvailability,
+    InAppBrowser,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
   ],
   bootstrap: [AppComponent],

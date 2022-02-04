@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
-// import { Platform } from '@ionic/angular';
+import { Platform } from '@ionic/angular';
 // import { AppAvailability } from '@ionic-native/app-availability/ngx';
-// import {
-//   InAppBrowser,
-//   InAppBrowserObject,
-// } from '@ionic-native/in-app-browser/ngx';
+import { AppAvailability } from '@awesome-cordova-plugins/app-availability/ngx';
+
+
+import { InAppBrowser, InAppBrowserObject } from '@awesome-cordova-plugins/in-app-browser/ngx';
+
 
 @Component({
   selector: 'app-redirect-instagram',
@@ -15,9 +16,9 @@ import { Location } from '@angular/common';
 export class RedirectInstagramPage implements OnInit {
   constructor(
     private location: Location,
-    // public platform: Platform,
-    // private appAvailability: AppAvailability,
-    // private inAppBrowser: InAppBrowser
+    public platform: Platform,
+    private appAvailability: AppAvailability,
+    private inAppBrowser: InAppBrowser
   ) {}
 
   ngOnInit() {}
@@ -27,39 +28,38 @@ export class RedirectInstagramPage implements OnInit {
   }
   continueButton(appName) {
     // this should use instagram link also
-    this.location.back();
-    // let app;
+    let app;
 
-    // if (this.platform.is('ios')) {
-    //   app = 'instagram://';
-    // } else if (this.platform.is('android')) {
-    //   app = 'com.instagram.android';
-    // } else {
-    //   const browser: InAppBrowserObject = this.inAppBrowser.create(
-    //     'https://www.instagram.com/' + appName
-    //   );
-    //   return;
-    // }
+    if (this.platform.is('ios')) {
+      app = 'instagram://';
+    } else if (this.platform.is('android')) {
+      app = 'com.instagram.android';
+    } else {
+      const browser: InAppBrowserObject = this.inAppBrowser.create(
+        'https://www.instagram.com/' + appName
+      );
+      return;
+    }
 
-    // this.appAvailability.check(app).then(
-    //   (yes: boolean) => {
-    //     console.log(app + ' is available');
-    //     // Success
-    //     // App exists
-    //     const browser: InAppBrowserObject = this.inAppBrowser.create(
-    //       'instagram://user?username=' + appName,
-    //       '_system'
-    //     );
-    //   },
-    //   (no: boolean) => {
-    //     // Error
-    //     // App does not exist
-    //     // Open Web URL
-    //     const browser: InAppBrowserObject = this.inAppBrowser.create(
-    //       'https://www.instagram.com/' + appName,
-    //       '_system'
-    //     );
-    //   }
-    // );
+    this.appAvailability.check(app).then(
+      (yes: boolean) => {
+        console.log(app + ' is available');
+        // Success
+        // App exists
+        const browser: InAppBrowserObject = this.inAppBrowser.create(
+          'instagram://user?username=' + appName,
+          '_system'
+        );
+      },
+      (no: boolean) => {
+        // Error
+        // App does not exist
+        // Open Web URL
+        const browser: InAppBrowserObject = this.inAppBrowser.create(
+          'https://www.instagram.com/' + appName,
+          '_system'
+        );
+      }
+    );
   }
 }
