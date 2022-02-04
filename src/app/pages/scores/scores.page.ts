@@ -3,7 +3,7 @@ import { PointsHandlerService } from '../../services/points-handler.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
-// import { Insomnia } from '@awesome-cordova-plugins/insomnia/ngx';
+import { Insomnia } from '@awesome-cordova-plugins/insomnia/ngx';
 
 @Component({
   selector: 'app-scores',
@@ -18,7 +18,8 @@ export class ScoresPage implements OnInit {
   constructor(
     private location: Location,
     private pointService: PointsHandlerService,
-    private router: Router // private insomnia: Insomnia
+    private router: Router, 
+     private insomnia: Insomnia
   ) {
     this.gameScore = [];
   }
@@ -34,10 +35,10 @@ export class ScoresPage implements OnInit {
   }
 
   ionViewWillEnter() {
-    // this.insomnia.keepAwake().then(
-    //   () => console.log('success'),
-    //   () => console.log('error')
-    // );
+    this.insomnia.keepAwake().then(
+      () => console.log('success'),
+      () => console.log('error')
+    );
 
     this.selectedPointNumber = this.pointService.selectedPoint;
 
@@ -58,10 +59,10 @@ export class ScoresPage implements OnInit {
     }
   }
   ionViewDidLeave() {
-    // this.insomnia.allowSleepAgain().then(
-    //   () => console.log('success'),
-    //   () => console.log('error')
-    // );
+    this.insomnia.allowSleepAgain().then(
+      () => console.log('success'),
+      () => console.log('error')
+    );
     // localStorage.setItem('gamescore', JSON.stringify(this.gameScore));
     // this.gameScore = [];
   }
