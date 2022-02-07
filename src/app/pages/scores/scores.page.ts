@@ -3,7 +3,11 @@ import { PointsHandlerService } from '../../services/points-handler.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { Insomnia } from '@awesome-cordova-plugins/insomnia/ngx';
+import { PopoverController, ModalController, Platform } from '@ionic/angular';
+import { AddTeamNameComponent } from '../../components/add-team-name/add-team-name.component';
+
+// import { Insomnia } from '@awesome-cordova-plugins/insomnia/ngx';
+import { Insomnia } from '@ionic-native/insomnia/ngx';
 
 @Component({
   selector: 'app-scores',
@@ -13,13 +17,17 @@ import { Insomnia } from '@awesome-cordova-plugins/insomnia/ngx';
 export class ScoresPage implements OnInit {
   lang: string = localStorage.getItem('lang');
   selectedPointNumber: number = this.pointService.selectedPoint;
-  team1Name: string = '';
-  team2Name: string = '';
+  team1: string = '';
+  team2: string = '';
+
   constructor(
     private location: Location,
     private pointService: PointsHandlerService,
-    private router: Router, 
-     private insomnia: Insomnia
+    private router: Router,
+    private insomnia: Insomnia,
+    //  private popover: PopoverController,
+    private modalCtrl: ModalController,
+    private platform: Platform
   ) {
     this.gameScore = [];
   }
@@ -43,13 +51,13 @@ export class ScoresPage implements OnInit {
     this.selectedPointNumber = this.pointService.selectedPoint;
 
     this.lang = localStorage.getItem('lang');
-    if (this.team1Name == '' && this.team2Name == '') {
+    if (this.team1 == '' && this.team2 == '') {
       if (this.lang == 'en') {
-        this.team1Name = 'TEAM I';
-        this.team2Name = 'TEAM II';
+        this.team1 = 'TEAM I';
+        this.team2 = 'TEAM II';
       } else if (this.lang == 'sp') {
-        this.team1Name = 'EQUIPO I';
-        this.team2Name = 'EQUIPO II';
+        this.team1 = 'EQUIPO I';
+        this.team2 = 'EQUIPO II';
       }
     }
 
@@ -101,8 +109,10 @@ export class ScoresPage implements OnInit {
       if (this.temptotalscore2 > this.temptotalscore1) {
         // ---this is team2(rightside) winning---
         // ---but both are greater than selected points---
-        this.pointService.winTeamName = this.team2Name;
-        this.pointService.lossTeamName = this.team1Name;
+        this.pointService.winTeamName1 = this.pointService.team2Name1;
+        this.pointService.winTeamName2 = this.pointService.team2Name2;
+        this.pointService.lossTeamName1 = this.pointService.team1Name1;
+        this.pointService.lossTeamName2 = this.pointService.team1Name2;
 
         // console.log('win1');
         this.resetValues();
@@ -111,8 +121,10 @@ export class ScoresPage implements OnInit {
       else if (this.temptotalscore2 != this.temptotalscore1) {
         // ---this is team1(leftside) winning---
         // ---could be both are greater than selected points---
-        this.pointService.winTeamName = this.team1Name;
-        this.pointService.lossTeamName = this.team2Name;
+        this.pointService.winTeamName1 = this.pointService.team1Name1;
+        this.pointService.winTeamName2 = this.pointService.team1Name2;
+        this.pointService.lossTeamName1 = this.pointService.team2Name1;
+        this.pointService.lossTeamName2 = this.pointService.team2Name2;
 
         // console.log('win2');
         this.resetValues();
@@ -120,8 +132,10 @@ export class ScoresPage implements OnInit {
     } else if (this.temptotalscore2 >= this.selectedPointNumber) {
       // this is team2(rightside) winning
       // and only selected point pass by team2
-      this.pointService.winTeamName = this.team2Name;
-      this.pointService.lossTeamName = this.team1Name;
+      this.pointService.winTeamName1 = this.pointService.team2Name1;
+      this.pointService.winTeamName2 = this.pointService.team2Name2;
+      this.pointService.lossTeamName1 = this.pointService.team1Name1;
+      this.pointService.lossTeamName2 = this.pointService.team1Name2;
 
       // console.log('win3');
       this.resetValues();
@@ -146,25 +160,74 @@ export class ScoresPage implements OnInit {
   }
 
   addNewRound() {
-    this.totalScore1 = this.temptotalscore1;
-    this.totalScore2 = this.temptotalscore2;
-    var gameScoreObj = {
-      totalscore1: 0,
-      totalscore2: 0,
-      roundscore1: '',
-      roundscore2: '',
-    };
-    gameScoreObj.roundscore1 = this.temproundscore1;
-    gameScoreObj.roundscore2 = this.temproundscore2;
-    gameScoreObj.totalscore1 = this.temptotalscore1;
-    gameScoreObj.totalscore2 = this.temptotalscore2;
+    if (this.temproundscore1 >= '0' && this.temproundscore2 >= '0') {
+      this.totalScore1 = this.temptotalscore1;
+      this.totalScore2 = this.temptotalscore2;
+      var gameScoreObj = {
+        totalscore1: 0,
+        totalscore2: 0,
+        roundscore1: '',
+        roundscore2: '',
+      };
+      gameScoreObj.roundscore1 = this.temproundscore1;
+      gameScoreObj.roundscore2 = this.temproundscore2;
+      gameScoreObj.totalscore1 = this.temptotalscore1;
+      gameScoreObj.totalscore2 = this.temptotalscore2;
 
-    this.pointService.gameScore.push(gameScoreObj);
-    this.temproundscore1 = '';
-    this.temproundscore2 = '';
+      this.pointService.gameScore.push(gameScoreObj);
+      this.temproundscore1 = '';
+      this.temproundscore2 = '';
 
-    this.gameScore = this.pointService.gameScore;
-    console.log(this.team1Name);
-    console.log(this.team2Name);
+      this.gameScore = this.pointService.gameScore;
+      console.log(this.team1);
+      console.log(this.team2);
+    }
+  }
+
+  // async createPopover(splitzAmount) {
+  //   const popover = await this.popover.create({
+  //     component: AddTeamNameComponent,
+  //     componentProps: {
+  //       splitzAmount: splitzAmount,
+  //       // currencyCode: this.selectedCurrency.code,
+  //     },
+  //     mode: 'md',
+  //     cssClass: 'splitz-popover',
+  //     showBackdrop: true,
+  //   });
+  //   return await popover.present().catch((err) => {
+  //     console.log(err);
+  //   });
+  // }
+
+  async presentModal(teamname) {
+    const modal = await this.modalCtrl.create({
+      component: AddTeamNameComponent,
+      cssClass: 'class-player-model',
+      componentProps: {
+        teamName: teamname,
+        // 'firstName': 'Douglas',
+        // 'lastName': 'Adams',
+        // 'middleInitial': 'N'
+      },
+    });
+    modal.onDidDismiss().then((data) => {
+      // const user = data['data']; // Here's your selected user!
+      if (
+        this.pointService.team1Name1 != '' &&
+        this.pointService.team1Name2 != ''
+      ) {
+        this.team1 =
+          this.pointService.team1Name1 + ' + ' + this.pointService.team1Name2;
+      }
+      if (
+        this.pointService.team2Name1 != '' &&
+        this.pointService.team2Name2 != ''
+      ) {
+        this.team2 =
+          this.pointService.team2Name1 + ' + ' + this.pointService.team2Name2;
+      }
+    });
+    return await modal.present();
   }
 }

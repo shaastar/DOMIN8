@@ -18,6 +18,8 @@ import { InAppBrowser } from '@awesome-cordova-plugins/in-app-browser/ngx';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
+import { Insomnia } from '@ionic-native/insomnia/ngx'; 
+// import { Insomnia } from '@awesome-cordova-plugins/insomnia/ngx';
 
 //app availability
 // import { AppAvailability } from '@ionic-native/app-availability/ngx';
@@ -43,6 +45,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     TranslateConfigService,
     AppAvailability,
     InAppBrowser,
+    Insomnia,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
   ],
   bootstrap: [AppComponent],

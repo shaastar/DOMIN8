@@ -34,13 +34,13 @@
         </ion-row>
         <ion-row class="row-round">
           <ion-col size="6" style="border-right: solid 5px #000000">
-            <ion-item lines="none" color="none">
-              <ion-input type="text" [(ngModel)]="team1Name"></ion-input>
+            <ion-item (click)="presentModal(team1)" lines="none" color="none">
+              <ion-label type="text">{{team1}}</ion-label>
             </ion-item>
           </ion-col>
           <ion-col size="6">
-            <ion-item lines="none" color="none">
-              <ion-input type="text" [(ngModel)]="team2Name"></ion-input>
+            <ion-item (click)="presentModal(team2)" lines="none" color="none">
+              <ion-label type="text">{{team2}}</ion-label>
             </ion-item>
           </ion-col>
         </ion-row>
@@ -60,7 +60,6 @@
             [value]="score.roundscore1"
           ></ion-input>
         </ion-item>
-        <!-- <ion-label style="margin-left: 35px" class="add-scores">30</ion-label> -->
       </ion-col>
       <ion-col size="6 ">
         <div class="div-btn-points">

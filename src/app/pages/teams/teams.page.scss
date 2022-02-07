@@ -1,5 +1,4 @@
 ion-header {
-  // ion-toolbar {}
   .div-img {
     width: 100%;
     margin-top: 0;
@@ -15,13 +14,13 @@ ion-header {
 ion-content {
   ion-grid {
     margin-top: 70px;
-    ion-row {
+    .row-label {
       padding-bottom: 0;
       ion-col {
         display: flex;
         justify-content: center;
         align-items: center;
-        .div-about {
+        .div-teams {
           width: 140px;
           height: 75px;
           border: solid 5px #000000;
@@ -40,27 +39,79 @@ ion-content {
         }
       }
     }
-    .div-p {
-      width: 100%;
-      margin-top: 0;
-      padding-left: 10px;
-      padding-right: 10px;
-      font-family: Anton;
-      font-size: 15px;
-      .col-li {
-        display: flex;
-        justify-content: center;
+    .row-head {
+      border-bottom: solid 5px #000000;
+      padding: 0;
+      ion-col {
+        display: inline-block;
         align-items: center;
-        div {
-          width: 450px;
-          li {
-            line-height: 27px;
-            margin-bottom: 3px;
-            margin-top: 3px;
-            text-align: justify;
-          }
+        padding: 0;
+        margin: 0;
+        ion-label {
+          // text-align: center;
+          font-family: Staatliches;
+          font-size: 19px;
+        }
+        .label-w {
+          text-align: right;
+          float: right;
+        }
+        .label-l {
+          text-align: left;
         }
       }
     }
+    .row-content {
+      ion-col {
+        ion-label {
+          display: flex;
+          justify-content: center;
+          text-align: center;
+          font-family: Staatliches;
+          font-size: 19px;
+        }
+      }
+      .label1 {
+        float: left;
+        text-align: left;
+      }
+      .label2 {
+        float: left;
+        text-align: left;
+      }
+      .label3 {
+        // float: right;
+        text-align: right;
+        margin-right: 5px;
+      }
+      .label4 {
+        margin-left: 5px;
+      }
+      .label5 {
+        text-align: right;
+      }
+    }
+    // .div-p {
+    //   width: 100%;
+    //   margin-top: 0;
+    //   padding-left: 10px;
+    //   padding-right: 10px;
+    //   font-family: Anton;
+    //   font-size: 15px;
+    //   .col-li {
+    //     display: flex;
+    //     justify-content: center;
+    //     align-items: center;
+    //     div {
+    //       width: 450px;
+    //       li {
+    //         line-height: 27px;
+    //         margin-bottom: 3px;
+    //         margin-top: 3px;
+    //         text-align: justify;
+    //       }
+    //     }
+    //   }
+    // }
   }
 }

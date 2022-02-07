@@ -10,6 +10,8 @@ import { ScoresPage } from './scores.page';
 
 import { TranslateModule } from '@ngx-translate/core';
 
+import { AddTeamNameComponent } from '../../components/add-team-name/add-team-name.component';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -18,6 +20,6 @@ import { TranslateModule } from '@ngx-translate/core';
     ScoresPageRoutingModule,
     TranslateModule,
   ],
-  declarations: [ScoresPage],
+  declarations: [ScoresPage, AddTeamNameComponent],
 })
 export class ScoresPageModule {}

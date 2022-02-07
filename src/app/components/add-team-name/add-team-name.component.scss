@@ -1,16 +1,4 @@
 ion-header {
-  .div-btn-points {
-    width: 100%;
-    padding-right: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
-    .label-selected-points {
-      font-family: Anton;
-      font-size: 19px;
-    }
-  }
   ion-toolbar {
     .div-totalscore {
       width: 100%;
@@ -27,19 +15,21 @@ ion-header {
             display: flex;
             justify-content: center;
             align-items: center;
-            .div-img {
-              width: 100%;
+            text-align: center;
+            .div-btn-points {
+              width: 125px;
+              height: 66px;
+              border: solid 5px #000000;
+              border-radius: 13px;
+              background-color: #dfd7c3;
               display: flex;
               justify-content: center;
               align-items: center;
-              margin-top: 2px;
-              ion-img {
-                width: 200px;
+              text-align: center;
+              ion-label {
+                font-family: Anton;
+                font-size: 19px;
               }
-            }
-            ion-label {
-              font-family: staatliches;
-              font-size: 28px;
             }
             .label-secondary {
               color: var(--ion-color-secondary);
@@ -61,9 +51,24 @@ ion-header {
             ion-item {
               ion-label {
                 text-align: center;
+                font-family: Staatliches;
+                font-size: 19px;
+              }
+
+              ion-input {
+                text-align: center;
                 font-family: staatliches;
                 font-size: 24px;
+                font-weight: 500;
               }
+            }
+            .plus-mark {
+              font-family: staatliches;
+              font-size: 32px;
+            }
+            .item-player-name {
+              margin-top: 20px;
+              margin-bottom: 20px;
             }
           }
         }
@@ -85,7 +90,6 @@ ion-content {
         justify-content: center;
         align-items: center;
         ion-item {
-          // margin: 10px;
           ion-input {
             text-align: center;
             font-family: staatliches;
@@ -115,12 +119,6 @@ ion-content {
             font-size: 19px;
           }
         }
-        // .add-scores {
-        //   //   color: var(--ion-color-primary);
-        //   font-family: staatliches;
-        //   font-size: 24px;
-        //   font-weight: 700;
-        // }
       }
     }
   }
@@ -160,7 +158,35 @@ ion-footer {
       .div-btn-points {
         width: 125px;
         height: 68px;
-        // margin-left: 15px;
+        border: solid 5px #000000;
+        border-radius: 15px;
+        background-color: #eee9dc;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        ion-label {
+          color: var(--ion-color-success);
+          font-family: Anton;
+          font-size: 19px;
+        }
+      }
+    }
+  }
+}
+
+ion-footer {
+  --background: #e7e7e7;
+  ion-row {
+    background-color: #e7e7e7;
+    ion-col {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .div-btn-points {
+        width: 125px;
+        height: 68px;
+        margin-bottom: 5px;
         border: solid 5px #000000;
         border-radius: 15px;
         background-color: #eee9dc;

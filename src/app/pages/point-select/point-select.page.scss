@@ -1,4 +1,25 @@
 ion-content {
+  --padding-top: 18px;
+  .div-lang {
+    margin-left: 20px;
+    width: 240px;
+    display: flex;
+    span {
+      margin-right: 7px;
+      font-family: Anton;
+      h1 {
+        font-family: Anton;
+        font-size: 19px;
+      }
+      .eng {
+        color: var(--ion-color-success);
+      }
+      ion-icon {
+        margin-top: 19px;
+        font-size: 24px;
+      }
+    }
+  }
   .div-img {
     width: 100%;
     margin-top: 90px;
@@ -30,6 +51,11 @@ ion-content {
           justify-content: center;
           align-items: center;
           ion-label {
+            font-family: Anton;
+            font-size: 19px;
+          }
+          ion-input {
+            text-align: center;
             font-family: Anton;
             font-size: 19px;
           }

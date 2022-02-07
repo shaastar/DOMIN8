@@ -57,21 +57,6 @@ export class LanguagePage implements OnInit {
               this.selectLanguage('sp');
             },
           },
-          // {
-          //   text: 'Favorite',
-          //   icon: 'heart',
-          //   handler: () => {
-          //     console.log('Favorite clicked');
-          //   },
-          // },
-          // {
-          //   text: 'Cancel',
-          //   icon: 'close',
-          //   role: 'cancel',
-          //   handler: () => {
-          //     console.log('Cancel clicked');
-          //   }
-          // }
         ],
       })
       .then((res) => {
