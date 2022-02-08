@@ -12,6 +12,6 @@ export class SplashPage implements OnInit {
   ngOnInit() {
     setTimeout(() => {
       this.router.navigate(['tabs/point-select']);
-    }, 4000);
+    }, 6000);
   }
 }

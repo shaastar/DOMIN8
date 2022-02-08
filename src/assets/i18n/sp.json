@@ -1,6 +1,7 @@
 {
   "splash_text": "Initiate and Dominate - the Domino Effect",
   "language": "LENGUAJE",
+  "languageName" : "ESPAÑOL",
   "PLAY": "JUGAR",
   "EXPLORE": "EXPLORAR",
   "points": "Puntos",
@@ -15,7 +16,7 @@
   "will_void_game": "Anulará el juego actual y comenzará uno nuevo",
   "continue": "CONTINUAR",
   "cancel": "CANCELAR",
-  "congrats": "Felicitaciones",
+  "congrats": "¡Felicitaciones!",
   "to_the": "al",
   "for": "por",
   "domin8ing": "DOMIN8R",

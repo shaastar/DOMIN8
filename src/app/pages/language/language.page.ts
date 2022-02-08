@@ -19,7 +19,7 @@ export class LanguagePage implements OnInit {
   ionViewWillEnter(){
   let lang = localStorage.getItem('lang');
   if(lang && lang == 'sp'){
-    this.selectedLanguage = "SPANISH";
+    this.selectedLanguage = "ESPAÑOL";
   }
   }
 
@@ -52,7 +52,7 @@ export class LanguagePage implements OnInit {
             icon: 'language-outline',
             handler: () => {
               console.log('Spanish Selected');
-              this.selectedLanguage = "SPANISH"
+              this.selectedLanguage = "ESPAÑOL"
               localStorage.setItem('lang', 'sp');
               this.selectLanguage('sp');
             },

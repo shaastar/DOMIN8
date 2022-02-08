@@ -1,6 +1,8 @@
+import { Platform } from '@ionic/angular';
 import { Component } from '@angular/core';
 import { TranslateConfigService } from './services/translate-config.service';
 import { TranslateService } from '@ngx-translate/core';
+import { SplashScreen } from '@capacitor/splash-screen';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -9,12 +11,21 @@ import { TranslateService } from '@ngx-translate/core';
 export class AppComponent {
   constructor(
     private translate: TranslateService,
-    private translateConfig: TranslateConfigService
+    private translateConfig: TranslateConfigService,
+    private platform : Platform
   ) {
     this.initializeApp();
   }
 
   initializeApp() {
+    this.platform.ready().then(() => {
+      setTimeout(() => {
+        SplashScreen.hide({
+          fadeOutDuration: 2000,
+        });
+      }, 2000);
+    })
+    
     if (localStorage.getItem('lang')) {
       // this.translate.setDefaultLang(localStorage.getItem('lang'));
       // this.translate.use(localStorage.getItem('lang'));

@@ -31,6 +31,7 @@
     "@capacitor/haptics": "1.1.4",
     "@capacitor/ios": "^3.4.0",
     "@capacitor/keyboard": "1.2.1",
+    "@capacitor/splash-screen": "^1.2.1",
     "@capacitor/status-bar": "1.0.7",
     "@fontsource/anton": "^4.5.1",
     "@fontsource/staatliches": "^4.5.1",
