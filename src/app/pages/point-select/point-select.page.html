@@ -1,26 +1,17 @@
-<!-- <ion-header class="ion-no-border">
+<ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button
-        defaultHref=""
-        (click)="backBtn()"
-        color="success"
-      ></ion-back-button>
-    </ion-buttons>
+    <div class="div-lang">
+      <span><h1>{{'language'| translate}}:</h1></span>
+      <span (click)="openSelectLanguage()"
+        ><h1 class="eng">{{selectedLanguage}}</h1></span
+      ><span (click)="openSelectLanguage()"
+        ><ion-icon name="caret-down-outline"></ion-icon
+      ></span>
+    </div>
   </ion-toolbar>
-</ion-header> -->
+</ion-header>
 
 <ion-content>
-  <!-- language selecing section -->
-  <div class="div-lang">
-    <span><h1>{{'language'| translate}}:</h1></span>
-    <span (click)="openSelectLanguage()"
-      ><h1 class="eng">{{selectedLanguage}}</h1></span
-    ><span (click)="openSelectLanguage()"
-      ><ion-icon name="caret-down-outline"></ion-icon
-    ></span>
-  </div>
-  <!-- language selecing section end -->
   <div class="div-img">
     <ion-img src="../../assets/images/domin8.png"></ion-img>
   </div>
@@ -74,29 +65,10 @@
             class="div-btn-points ion-activatable ripple-parent"
             (click)="setSelectedPoint()"
           >
-            <!-- <ion-label>200 {{'points'| translate}}</ion-label> -->
             <ion-label>{{'accept'| translate}}</ion-label>
           </div>
         </ion-tab-button>
       </ion-col>
     </ion-row>
   </ion-grid>
-  <!-- <div class="div-custominput">
-    <ion-item lines="none" color="none">
-      <ion-input
-        type="number"
-        [(ngModel)]="selectedPoint"
-        (ngModelChange)="addCustomPoint(selectedPoint)"
-        placeholder="Add custom point"
-      ></ion-input>
-    </ion-item>
-  </div> -->
-  <!-- <div
-    class="div-custominput"
-    *ngIf="customBtn && selectedPointNumber>0 && selectedPointNumber<2001"
-  >
-    <div class="div-ok" (click)="setSelectedPoint()">
-      <ion-label>{{'accept'| translate}}</ion-label>
-    </div>
-  </div> -->
 </ion-content>
