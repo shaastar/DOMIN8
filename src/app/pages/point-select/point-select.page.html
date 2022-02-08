@@ -70,7 +70,7 @@
       <ion-col size="12">
         <ion-tab-button>
           <div
-            *ngIf="customBtn && selectedPointNumber>0 && selectedPointNumber<2001"
+            *ngIf="customBtn && selectedPointNumber>=1 && selectedPointNumber<2001"
             class="div-btn-points ion-activatable ripple-parent"
             (click)="setSelectedPoint()"
           >

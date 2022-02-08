@@ -77,6 +77,9 @@
                 <ion-text color="primary">{{'match'| translate}}</ion-text>!</b
               >
             </div>
+            <div *ngIf="score1 == 0 || score2 == 0" class="div0">
+              {{'goat'| translate}}!
+            </div>
           </ion-label>
         </ion-col>
       </ion-row>

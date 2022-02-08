@@ -9,14 +9,23 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['tabs.page.scss'],
 })
 export class TabsPage {
+  playClicked = false;
+  exploreClicked = false;
   constructor(private router: Router) {}
 
   play() {
     // this.router.navigate(['/section'], { queryParams: { id: number } });
-    this.router.navigate(['/tabs/point-select']);
+    this.playClicked = true;
+    setTimeout(() => {
+        this.playClicked = false;
+      }, 5550);
   }
 
   explore() {
-    this.router.navigate(['/tabs/redirect-instagram']);
+    // this.router.navigate(['/tabs/redirect-instagram']);
+    this.exploreClicked = true;
+    setTimeout(() => {
+      this.exploreClicked = false;
+    }, 5550);
   }
 }

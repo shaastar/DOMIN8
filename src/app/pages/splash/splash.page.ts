@@ -9,10 +9,9 @@ import { Router } from '@angular/router';
 export class SplashPage implements OnInit {
   constructor(private router: Router) {}
 
-  ngOnInit() 
-  {
-    setTimeout(() => {
-      this.router.navigate(['language']);
-  }, 5000);
+  ngOnInit() {
+    // setTimeout(() => {
+    //   this.router.navigate(['tabs/point-select']);
+    // }, 5000);
   }
 }

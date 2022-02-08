@@ -52,12 +52,12 @@ export class ScoresPage implements OnInit {
 
     this.lang = localStorage.getItem('lang');
     if (this.team1 == '' && this.team2 == '') {
-      if (this.lang == 'en') {
-        this.team1 = 'TEAM I';
-        this.team2 = 'TEAM II';
-      } else if (this.lang == 'sp') {
+      if (this.lang == 'sp') {
         this.team1 = 'EQUIPO I';
         this.team2 = 'EQUIPO II';
+      } else {
+        this.team1 = 'TEAM I';
+        this.team2 = 'TEAM II';
       }
     }
 
@@ -160,7 +160,12 @@ export class ScoresPage implements OnInit {
   }
 
   addNewRound() {
-    if (this.temproundscore1 >= '0' && this.temproundscore2 >= '0') {
+    if (this.temproundscore1 >= '0' || this.temproundscore2 >= '0') {
+      if (this.temproundscore1 == '') {
+        this.temproundscore1 = '0';
+      } else if (this.temproundscore2 == '') {
+        this.temproundscore2 = '0';
+      }
       this.totalScore1 = this.temptotalscore1;
       this.totalScore2 = this.temptotalscore2;
       var gameScoreObj = {
@@ -182,6 +187,7 @@ export class ScoresPage implements OnInit {
       console.log(this.team1);
       console.log(this.team2);
     }
+    this.checkPointandTotal();
   }
 
   // async createPopover(splitzAmount) {

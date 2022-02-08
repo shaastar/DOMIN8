@@ -1,5 +1,5 @@
 ion-content {
-  --padding-top: 18px;
+  // --padding-top: 8px;
   .div-lang {
     margin-left: 20px;
     width: 240px;
@@ -22,14 +22,15 @@ ion-content {
   }
   .div-img {
     width: 100%;
-    margin-top: 90px;
+    // margin-top: 8%;
     // margin-left: 24px;
     // margin-right: 24px;
     display: flex;
     justify-content: center;
     align-items: center;
     ion-img {
-      width: 335px;
+      width: 65%;
+      max-width: 335px;
     }
   }
   ion-grid {
@@ -42,7 +43,7 @@ ion-content {
         justify-content: center;
         align-items: center;
         .div-btn-points {
-          width: 155px;
+          width: 147px;
           height: 82px;
           border: solid 5px #000000;
           border-radius: 15px;

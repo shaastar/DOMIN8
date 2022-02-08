@@ -19,6 +19,7 @@ ion-content {
     justify-content: center;
     // margin-left: 32%;
 
+    // transform-origin: 100% 50%;
     animation-name: fadeAnimation;
     animation-duration: 6s;
     animation-fill-mode: forwards;
@@ -37,11 +38,25 @@ ion-content {
 }
 // ---------animation key frames----------
 @keyframes fadeAnimation {
-  from {
-    opacity: 0;
+  // from {
+  //   opacity: 0;
+  // }
+  // to {
+  //   opacity: 1;
+  // }
+  0% {
+    display: none;
+        opacity: 0;
+    // transform: translateX(0%);
   }
-  to {
-    opacity: 1;
+  75%{
+    display: block;
+        opacity: 0.3;
+  }
+  100% {
+    display: block;
+    opacity: 0.5;
+    // transform: translateX(100%);
   }
 }
 // ----------animation key frames--------

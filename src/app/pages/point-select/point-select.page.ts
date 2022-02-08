@@ -87,6 +87,7 @@ export class PointSelectPage implements OnInit {
 
   toggleCustomPoint() {
     this.customBtn = !this.customBtn;
+    this.selectedPoint = '0';
   }
   addSelectedPoint(point: string) {
     this.selectedPoint = point;

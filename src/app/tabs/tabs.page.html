@@ -2,20 +2,30 @@
 <ion-tabs>
   <ion-row>
     <ion-col class="col-play-btn" size="6">
-      <div class="div-btn-play" (click)="play()">
+      <div *ngIf="!playClicked" class="div-btn-play" (click)="play()">
         <ion-label>{{'PLAY'|translate}}</ion-label>
       </div>
-      <div class="div-img-play" (click)="play()">
+      <div *ngIf="!playClicked" class="div-img-play" (click)="play()">
         <ion-img src="../assets/images/domin gif.jpg"></ion-img>
+      </div>
+      <div *ngIf="playClicked" class="div-gifimg-play" (click)="play()">
+        <ion-img src="../../assets/images/DOMINO GIF1.gif"></ion-img>
       </div>
       <!-- <ion-img src="../assets/images/domin53.png"></ion-img> -->
     </ion-col>
     <ion-col class="col-explore-btn" size="6">
-      <div class="div-label1" (click)="explore()">
+      <div *ngIf="!exploreClicked" class="div-label1" (click)="explore()">
         <ion-label>{{'EXPLORE'|translate}}</ion-label>
       </div>
-      <div class="div-label2" (click)="explore()">
+      <div *ngIf="!exploreClicked" class="div-label2" (click)="explore()">
         <ion-label>@domin5.3</ion-label>
+      </div>
+      <div *ngIf="exploreClicked" class="div-explore-clicked" (click)="explore()">
+        <ion-label
+          ><ion-text color="secondary">@do</ion-text
+          ><ion-text color="success">min</ion-text
+          ><ion-text color="primary">5.3</ion-text>
+        </ion-label>
       </div>
     </ion-col>
   </ion-row>
