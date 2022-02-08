@@ -1,21 +1,21 @@
-ion-content {
-  .div-btn-points {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 25px;
-    ion-label {
-      font-family: Anton;
-      font-size: 19px;
-    }
+.div-btn-points {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+  ion-label {
+    font-family: Anton;
+    font-size: 19px;
   }
+}
+ion-content {
   .div-img {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 2px;
+    margin-top: 5vh;
     ion-img {
       width: 200px;
     }

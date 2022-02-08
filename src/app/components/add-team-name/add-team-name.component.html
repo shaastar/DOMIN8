@@ -35,6 +35,7 @@
           <ion-col size="5">
             <ion-item lines="none" color="none" class="item-player-name">
               <ion-input
+                (ionChange)="team1Changed()"
                 [(ngModel)]="tempplayer1"
                 type="text"
                 placeholder="JOHN"
@@ -47,6 +48,7 @@
           <ion-col size="5">
             <ion-item lines="none" color="none" class="item-player-name">
               <ion-input
+                (ionChange)="team2Changed()"
                 [(ngModel)]="tempplayer2"
                 type="text"
                 placeholder="MIKE"
@@ -59,8 +61,19 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content> 
-  
+<ion-content>
+  <ion-item
+    class="team-item"
+    (click)="teamClicked(team)"
+    lines="full"
+    *ngFor="let team of teams"
+  >
+    <ion-label>
+      {{ team.teamname1 }}
+      <ion-icon *ngIf="team.teamname2" name="add"></ion-icon>
+      {{ team.teamname2 ? team.teamname2 : "" }}
+    </ion-label>
+  </ion-item>
 </ion-content>
 
 <ion-footer class="ion-no-border">

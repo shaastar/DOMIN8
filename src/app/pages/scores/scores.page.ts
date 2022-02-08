@@ -54,10 +54,18 @@ export class ScoresPage implements OnInit {
     if (this.team1 == '' && this.team2 == '') {
       if (this.lang == 'sp') {
         this.team1 = 'EQUIPO I';
+        this.pointService.team1Name1 = 'EQUIPO I';
+        this.pointService.team1Name2 = null;
         this.team2 = 'EQUIPO II';
+        this.pointService.team2Name1 = 'EQUIPO II';
+        this.pointService.team2Name2 = null;
       } else {
         this.team1 = 'TEAM I';
+        this.pointService.team1Name1 = 'TEAM I';
+        this.pointService.team1Name2 = null;
         this.team2 = 'TEAM II';
+        this.pointService.team2Name1 = 'TEAM II';
+        this.pointService.team2Name2 = null;
       }
     }
 
@@ -125,13 +133,9 @@ export class ScoresPage implements OnInit {
         this.pointService.winTeamName2 = this.pointService.team1Name2;
         this.pointService.lossTeamName1 = this.pointService.team2Name1;
         this.pointService.lossTeamName2 = this.pointService.team2Name2;
-
-        // console.log('win2');
         this.resetValues();
       }
     } else if (this.temptotalscore2 >= this.selectedPointNumber) {
-      // this is team2(rightside) winning
-      // and only selected point pass by team2
       this.pointService.winTeamName1 = this.pointService.team2Name1;
       this.pointService.winTeamName2 = this.pointService.team2Name2;
       this.pointService.lossTeamName1 = this.pointService.team1Name1;
@@ -190,21 +194,6 @@ export class ScoresPage implements OnInit {
     this.checkPointandTotal();
   }
 
-  // async createPopover(splitzAmount) {
-  //   const popover = await this.popover.create({
-  //     component: AddTeamNameComponent,
-  //     componentProps: {
-  //       splitzAmount: splitzAmount,
-  //       // currencyCode: this.selectedCurrency.code,
-  //     },
-  //     mode: 'md',
-  //     cssClass: 'splitz-popover',
-  //     showBackdrop: true,
-  //   });
-  //   return await popover.present().catch((err) => {
-  //     console.log(err);
-  //   });
-  // }
 
   async presentModal(teamname) {
     const modal = await this.modalCtrl.create({
@@ -212,26 +201,22 @@ export class ScoresPage implements OnInit {
       cssClass: 'class-player-model',
       componentProps: {
         teamName: teamname,
-        // 'firstName': 'Douglas',
-        // 'lastName': 'Adams',
-        // 'middleInitial': 'N'
       },
     });
     modal.onDidDismiss().then((data) => {
-      // const user = data['data']; // Here's your selected user!
       if (
         this.pointService.team1Name1 != '' &&
         this.pointService.team1Name2 != ''
       ) {
-        this.team1 =
-          this.pointService.team1Name1 + ' + ' + this.pointService.team1Name2;
+        this.team1 = `${this.pointService.team1Name1} ${this.pointService.team1Name2? ' + ' + this.pointService.team1Name2 : ''}`
+      
       }
       if (
         this.pointService.team2Name1 != '' &&
         this.pointService.team2Name2 != ''
       ) {
-        this.team2 =
-          this.pointService.team2Name1 + ' + ' + this.pointService.team2Name2;
+        this.team2 = `${this.pointService.team2Name1} ${this.pointService.team2Name2? ' + ' + this.pointService.team2Name2 : ''}`
+       
       }
     });
     return await modal.present();

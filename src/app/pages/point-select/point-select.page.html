@@ -48,11 +48,12 @@
             >{{'custom'| translate}}</ion-label
           >
           <ion-input
+             #inputs
             *ngIf="customBtn"
             type="number"
             [(ngModel)]="selectedPoint"
             (ngModelChange)="addCustomPoint(selectedPoint)"
-            placeholder="Add custom point"
+            placeholder="0"
           ></ion-input>
         </div>
       </ion-col>

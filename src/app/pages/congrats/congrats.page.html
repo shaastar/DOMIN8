@@ -55,7 +55,7 @@
             <div class="div0">{{'congrats'| translate}}!</div>
             <div class="div1">{{'to_the' | translate}}</div>
             <!-- for English Language -->
-            <div *ngIf="lang=='en'" class="div2">
+            <div *ngIf="lang!=='sp'" class="div2">
               <ion-text color="success">
                 <h1>{{winTeamName}} Team</h1>
               </ion-text>

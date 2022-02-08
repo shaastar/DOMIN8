@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { PointsHandlerService } from '../../services/points-handler.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import { ActionSheetController } from '@ionic/angular';
+import { ActionSheetController, IonInput } from '@ionic/angular';
 
 import { TranslateConfigService } from '../../services/translate-config.service';
 
@@ -14,9 +14,9 @@ import { TranslateConfigService } from '../../services/translate-config.service'
 export class PointSelectPage implements OnInit {
   selectedLanguage: string = 'ENGLISH';
   customBtn: boolean = false;
-
   selectedPoint: string;
   selectedPointNumber: number;
+  @ViewChild("customInput") customInput : IonInput;
   constructor(
     private pointService: PointsHandlerService,
     private router: Router,
@@ -28,12 +28,10 @@ export class PointSelectPage implements OnInit {
   ngOnInit() {}
   ionViewWillEnter() {
     this.customBtn = false;
-
     let lang = localStorage.getItem('lang');
     if (lang && lang == 'sp') {
       this.selectedLanguage = 'SPANISH';
     }
-
     localStorage.setItem('gamescore', null);
     this.pointService.gameScore = [];
     this.pointService.winTeamName1 = '';
@@ -87,7 +85,11 @@ export class PointSelectPage implements OnInit {
 
   toggleCustomPoint() {
     this.customBtn = !this.customBtn;
-    this.selectedPoint = '0';
+   // this.selectedPoint = '0';
+    // if(this.customBtn){
+    //   console.log("Here");
+    //   this.customInput.setFocus();
+    // }
   }
   addSelectedPoint(point: string) {
     this.selectedPoint = point;

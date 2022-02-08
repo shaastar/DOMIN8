@@ -14,8 +14,7 @@ export class CongratsPage implements OnInit {
     private pointService: PointsHandlerService,
     private router: Router
   ) {}
-  winTeamName =
-    this.pointService.winTeamName1 + ' + ' + this.pointService.winTeamName2;
+  winTeamName;
   score1 = this.pointService.team1Total;
   score2 = this.pointService.team2Total;
 
@@ -27,10 +26,11 @@ export class CongratsPage implements OnInit {
   }
 
   ionViewWillEnter() {
-    this.lang = localStorage.getItem('lang');
+    console.log("WINTEAM", this.pointService.winTeamName1 + ' + ' + this.pointService.winTeamName2);
 
-    this.winTeamName =
-      this.pointService.winTeamName1 + ' + ' + this.pointService.winTeamName2;
+    this.lang = localStorage.getItem('lang');
+    this.winTeamName = `${this.pointService.winTeamName1} ${this.pointService.winTeamName2? ' + ' + this.pointService.winTeamName2 : ''}`
+    
     this.score1 = this.pointService.team1Total;
     this.score2 = this.pointService.team2Total;
   }

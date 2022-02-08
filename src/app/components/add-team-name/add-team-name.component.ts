@@ -12,6 +12,8 @@ export class AddTeamNameComponent implements OnInit {
   @Input() teamName: string;
   tempplayer1;
   tempplayer2;
+  teams = [];
+  teamsUnfiltered = [];
 
   constructor(
     private location: Location,
@@ -23,15 +25,21 @@ export class AddTeamNameComponent implements OnInit {
     this.location.back();
   }
   dismiss() {
-    // using the injected ModalController this page
-    // can "dismiss" itself and optionally pass back data
     this.modalController.dismiss({
       dismissed: true,
     });
   }
-  ngOnInit() {}
 
-  ionViewWillEnter() {}
+  teamClicked(team) {
+    this.tempplayer1 = team.teamname1;
+    this.tempplayer2 = team.teamname2;
+  }
+
+  ngOnInit() {
+    this.teams = JSON.parse(localStorage.getItem('teams'));
+    this.teamsUnfiltered = this.teams;
+    console.log(this.teams);
+  }
 
   addTeam() {
     if (this.teamName == 'EQUIPO I' || this.teamName == 'TEAM I') {
@@ -47,5 +55,42 @@ export class AddTeamNameComponent implements OnInit {
     this.modalController.dismiss({
       dismissed: true,
     });
+  }
+
+  team1Changed() {
+    this.resetChanges();
+    if (this.tempplayer1) {
+      console.log('Here');
+
+      this.teams = this.teams.filter((team) => {
+        if (team.teamname1) {
+          return (
+            team.teamname1
+              .toLowerCase()
+              .indexOf(this.tempplayer1.toLowerCase()) > -1
+          );
+        }
+      });
+    }
+  }
+
+  team2Changed() {
+    this.resetChanges();
+    if (this.tempplayer2) {
+      this.teams = this.teams.filter((team) => {
+        if (team.teamname2) {
+          return (
+            team.teamname2
+              .toLowerCase()
+              .indexOf(this.tempplayer2.toLowerCase()) > -1
+          );
+        }
+      });
+    }
+  }
+
+
+  resetChanges() {
+    this.teams = this.teamsUnfiltered;
   }
 }
