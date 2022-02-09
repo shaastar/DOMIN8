@@ -93,4 +93,92 @@ ion-tabs {
       }
     }
   }
+  .txt-start {
+    animation-name: animationFadeIn;
+    animation-duration: 0.1s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+  }
+
+  #txt1 {
+    animation-delay: 0.5s;
+  }
+  #txt2 {
+    animation-delay: 0.6s;
+  }
+  #txt3 {
+    animation-delay: 0.7s;
+  }
+  #txt4 {
+    animation-delay: 0.8s;
+  }
+  #txt5 {
+    animation-delay: 0.9s;
+  }
+  #txt6 {
+    animation-delay: 1s;
+  }
+  #txt7 {
+    animation-delay: 1.1s;
+  }
+  #txt8 {
+    animation-delay: 1.2s;
+  }
+  #txt9 {
+    animation-delay: 1.3s;
+  }
+
+  // Animation for Explore btn txt hiding
+  .txt-hide {
+    animation-name: animationTextHide;
+    animation-duration: 0.05s;
+    animation-fill-mode: forwards;
+    opacity: 1;
+  }
+  #txt-hide1 {
+    animation-delay: 0.5s;
+  }
+  #txt-hide2 {
+    animation-delay: 0.55s;
+  }
+  #txt-hide3 {
+    animation-delay: 0.6s;
+  }
+  #txt-hide4 {
+    animation-delay: 0.65s;
+  }
+  #txt-hide5 {
+    animation-delay: 0.7s;
+  }
+  #txt-hide6 {
+    animation-delay: 0.75s;
+  }
+  #txt-hide7 {
+    animation-delay: 0.8s;
+  }
+  #txt-hide8 {
+    animation-delay: 0.85s;
+  }
+  #txt-hide9 {
+    animation-delay: 0.9s;
+  }
 }
+
+// ---------animation key frames----------
+@keyframes animationFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes animationTextHide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+// ----------animation key frames--------

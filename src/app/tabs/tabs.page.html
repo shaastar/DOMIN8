@@ -20,11 +20,25 @@
       <div *ngIf="!exploreClicked" class="div-label2" (click)="explore()">
         <ion-label>@domin5.3</ion-label>
       </div>
-      <div *ngIf="exploreClicked" class="div-explore-clicked" (click)="explore()">
+      <div
+        *ngIf="exploreClicked"
+        class="div-explore-clicked"
+        (click)="explore()"
+      >
         <ion-label
-          ><ion-text color="secondary">@do</ion-text
-          ><ion-text color="success">min</ion-text
-          ><ion-text color="primary">5.3</ion-text>
+          ><ion-text color="secondary">
+            <span [class]="className1" [id]="id1">@</span>
+            <span [class]="className1" [id]="id2">d</span>
+            <span [class]="className1" [id]="id3">o</span> </ion-text
+          ><ion-text color="success">
+            <span [class]="className1" [id]="id4">m</span>
+            <span [class]="className1" [id]="id5">i</span>
+            <span [class]="className1" [id]="id6">n</span> </ion-text
+          ><ion-text color="primary">
+            <span [class]="className1" [id]="id7">5</span>
+            <span [class]="className1" [id]="id8">.</span>
+            <span [class]="className1" [id]="id9">3</span>
+          </ion-text>
         </ion-label>
       </div>
     </ion-col>

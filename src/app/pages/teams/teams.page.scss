@@ -21,7 +21,7 @@ ion-content {
         justify-content: center;
         align-items: center;
         .div-teams {
-          width: 140px;
+          width: 137px;
           height: 75px;
           border: solid 5px #000000;
           border-radius: 15px;
@@ -70,25 +70,31 @@ ion-content {
           font-family: Staatliches;
           font-size: 19px;
         }
-      }
-      .label1 {
-        float: left;
-        text-align: left;
-      }
-      .label2 {
-        float: left;
-        text-align: left;
-      }
-      .label3 {
-        // float: right;
-        text-align: right;
-        margin-right: 5px;
-      }
-      .label4 {
-        margin-left: 5px;
-      }
-      .label5 {
-        text-align: right;
+
+        .team-names {
+          display: flex;
+          justify-content: left;
+          text-align: left;
+          .label1 {
+            float: left;
+            text-align: left;
+          }
+          .label2 {
+            float: left;
+            text-align: left;
+          }
+        }
+        .label3 {
+          // float: right;
+          text-align: right;
+          margin-right: 5px;
+        }
+        .label4 {
+          margin-left: 5px;
+        }
+        .label5 {
+          text-align: right;
+        }
       }
     }
     // .div-p {

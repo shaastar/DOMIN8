@@ -16,7 +16,7 @@ export class PointSelectPage implements OnInit {
   customBtn: boolean = false;
   selectedPoint: string;
   selectedPointNumber: number;
-  @ViewChild("customInput") customInput : IonInput;
+  @ViewChild('customInput') customInput: IonInput;
   constructor(
     private pointService: PointsHandlerService,
     private router: Router,
@@ -57,7 +57,7 @@ export class PointSelectPage implements OnInit {
         mode: 'md',
         buttons: [
           {
-            text: 'English',
+            text: 'ENGLISH',
             icon: 'language-outline',
             handler: () => {
               console.log('English Selected');
@@ -67,7 +67,7 @@ export class PointSelectPage implements OnInit {
             },
           },
           {
-            text: 'Spanish',
+            text: 'ESPAÑOL',
             icon: 'language-outline',
             handler: () => {
               console.log('Spanish Selected');
@@ -85,7 +85,8 @@ export class PointSelectPage implements OnInit {
 
   toggleCustomPoint() {
     this.customBtn = !this.customBtn;
-   // this.selectedPoint = '0';
+    this.selectedPoint = '0';
+    this.selectedPointNumber = Number(this.selectedPoint);
     // if(this.customBtn){
     //   console.log("Here");
     //   this.customInput.setFocus();
@@ -104,7 +105,7 @@ export class PointSelectPage implements OnInit {
     console.log(this.selectedPointNumber);
     this.pointService.selectedPoint = this.selectedPointNumber;
 
-    this.router.navigate(['tabs/scores']);
+    this.router.navigate(['point-loading']);
   }
 
   customPointOk() {}

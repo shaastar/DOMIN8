@@ -17,8 +17,8 @@ ion-header {
             align-items: center;
             text-align: center;
             .div-btn-points {
-              width: 125px;
-              height: 66px;
+              width: 134px;
+              height: 73px;
               border: solid 5px #000000;
               border-radius: 13px;
               background-color: #dfd7c3;
@@ -30,12 +30,6 @@ ion-header {
                 font-family: Anton;
                 font-size: 19px;
               }
-            }
-            .label-secondary {
-              color: var(--ion-color-secondary);
-            }
-            .label-primary {
-              color: var(--ion-color-primary);
             }
           }
         }
@@ -77,105 +71,9 @@ ion-header {
   }
 }
 ion-content {
-  .team-item{
-    --background : #e7e7e7;
+  .team-item {
+    --background: #e7e7e7;
     border-bottom: solid 2px #000000;
-  }
-  ion-grid {
-    margin-top: 0;
-    padding-top: 0;
-    .row-round {
-      border-bottom: solid 5px #000000;
-      padding: 0;
-      ion-col {
-        padding: 0;
-        margin: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        ion-item {
-          ion-input {
-            text-align: center;
-            font-family: staatliches;
-            font-size: 24px;
-            font-weight: 700;
-          }
-        }
-        div {
-          margin: 10px;
-          ion-label {
-            font-family: ANTON;
-            font-size: 19px;
-          }
-        }
-
-        .div-btn-points {
-          width: 125px;
-          height: 66px;
-          border: solid 5px #000000;
-          border-radius: 13px;
-          background-color: #dfd7c3;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          ion-label {
-            font-family: Anton;
-            font-size: 19px;
-          }
-        }
-      }
-    }
-  }
-
-  .div-addround {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    .div-btn-points {
-      width: 125px;
-      height: 65px;
-      border: solid 5px #000000;
-      border-radius: 13px;
-      background-color: #eee9dc;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      ion-label {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        font-family: Anton;
-        font-size: 18px;
-      }
-    }
-  }
-}
-
-ion-footer {
-  ion-row {
-    ion-col {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      .div-btn-points {
-        width: 125px;
-        height: 68px;
-        border: solid 5px #000000;
-        border-radius: 15px;
-        background-color: #eee9dc;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        ion-label {
-          color: var(--ion-color-success);
-          font-family: Anton;
-          font-size: 19px;
-        }
-      }
-    }
   }
 }
 
@@ -188,8 +86,8 @@ ion-footer {
       justify-content: center;
       align-items: center;
       .div-btn-points {
-        width: 125px;
-        height: 68px;
+        width: 132px;
+        height: 73px;
         margin-bottom: 5px;
         border: solid 5px #000000;
         border-radius: 15px;

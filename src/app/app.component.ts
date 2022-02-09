@@ -14,7 +14,7 @@ export class AppComponent {
     private translateConfig: TranslateConfigService,
     private platform : Platform
   ) {
-    this.initializeApp();
+    this.initializeApp(); 
   }
 
   initializeApp() {

@@ -1,29 +1,30 @@
 ion-content {
   --padding-top: 75px;
-  .div-domin-img {
+  // .div-domin-img {
+  //   display: flex;
+  //   justify-content: center;
+
+  //   ion-img {
+  //     margin-top: 70px;
+  //     width: 85%;
+  //     max-width: 450px;
+  //   }
+  // }
+
+  .div-img {
+    width: 100%;
+    margin-top: 2vh;
     display: flex;
     justify-content: center;
-
-    ion-img {
-      margin-top: 70px;
-      width: 85%;
-      max-width: 450px;
+    align-items: center;
+    div {
+      width: 65%;
+      max-width: 335px;
+      ion-img {
+      }
     }
   }
 
-  .text-animation {
-    padding-top: 80px;
-    font-family: Anton;
-    font-size: 24px;
-    display: flex;
-    justify-content: center;
-    // margin-left: 32%;
-
-    // transform-origin: 100% 50%;
-    animation-name: fadeAnimation;
-    animation-duration: 6s;
-    animation-fill-mode: forwards;
-  }
   .div-gif-footer {
     width: 100%;
     display: flex;
@@ -35,28 +36,267 @@ ion-content {
       max-width: 500px;
     }
   }
+  .text-animation {
+    padding-top: 80px;
+    font-family: Anton;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    // margin-left: 32%;
+
+    // transform-origin: 100% 50%;
+    // animation-name: fadeAnimation;
+    // animation-duration: 6s;
+    // animation-delay: 4s;
+    // animation-fill-mode: forwards;
+  }
+
+  .txt-start {
+    animation-name: animationFadeIn;
+    animation-duration: 0.1s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+  }
+
+  #txt1 {
+    animation-delay: 2s;
+  }
+  #txt2 {
+    animation-delay: 2.1s;
+  }
+  #txt3 {
+    animation-delay: 2.2s;
+  }
+  #txt4 {
+    animation-delay: 2.3s;
+  }
+  #txt5 {
+    animation-delay: 2.4s;
+  }
+  #txt6 {
+    animation-delay: 2.5s;
+  }
+  #txt7 {
+    animation-delay: 2.6s;
+  }
+  #txt8 {
+    animation-delay: 2.7s;
+  }
+  // space here
+  #txt9 {
+    animation-delay: 2.9s;
+  }
+  #txt10 {
+    animation-delay: 3s;
+  }
+  #txt11 {
+    animation-delay: 3.1s;
+  }
+  // space here
+  #txt12 {
+    animation-delay: 3.3s;
+  }
+  #txt13 {
+    animation-delay: 3.4s;
+  }
+  #txt14 {
+    animation-delay: 3.5s;
+  }
+  #txt15 {
+    animation-delay: 3.6s;
+  }
+  #txt16 {
+    animation-delay: 3.7s;
+  }
+  #txt17 {
+    animation-delay: 3.8s;
+  }
+  #txt18 {
+    animation-delay: 3.9s;
+  }
+  #txt19 {
+    animation-delay: 4s;
+  }
+  #txt20 {
+    animation-delay: 4.2s;
+  }
+  #txt21 {
+    animation-delay: 4.3s;
+  }
+  #txt22 {
+    animation-delay: 4.4s;
+  }
+  #txt23 {
+    animation-delay: 4.5s;
+  }
+  #txt24 {
+    animation-delay: 4.7s;
+  }
+  #txt25 {
+    animation-delay: 4.8s;
+  }
+  #txt26 {
+    animation-delay: 4.9s;
+  }
+  #txt27 {
+    animation-delay: 5s;
+  }
+  #txt28 {
+    animation-delay: 5.1s;
+  }
+  #txt29 {
+    animation-delay: 5.2s;
+  }
+  #txt30 {
+    animation-delay: 5.4s;
+  }
+  #txt31 {
+    animation-delay: 5.5s;
+  }
+  #txt32 {
+    animation-delay: 5.6s;
+  }
+  #txt33 {
+    animation-delay: 5.7s;
+  }
+  #txt34 {
+    animation-delay: 5.8s;
+  }
+  #txt35 {
+    animation-delay: 5.9s;
+  }
+
+  // for text hiding agin
+  .txt-hide {
+    animation-name: animationTextHide;
+    animation-duration: 0.05s;
+    animation-fill-mode: forwards;
+    opacity: 1;
+  }
+  #txt-hide1 {
+    animation-delay: 1.5s;
+  }
+  #txt-hide2 {
+    animation-delay: 1.525s;
+  }
+  #txt-hide3 {
+    animation-delay: 1.55s;
+  }
+  #txt-hide4 {
+    animation-delay: 1.575s;
+  }
+  #txt-hide5 {
+    animation-delay: 1.6s;
+  }
+  #txt-hide6 {
+    animation-delay: 1.625s;
+  }
+  #txt-hide7 {
+    animation-delay: 1.65s;
+  }
+  #txt-hide8 {
+    animation-delay: 1.675s;
+  }
+  // space here
+  #txt-hide9 {
+    animation-delay: 1.725s;
+  }
+  #txt-hide10 {
+    animation-delay: 1.75s;
+  }
+  #txt-hide11 {
+    animation-delay: 1.775s;
+  }
+  // space here
+  #txt-hide12 {
+    animation-delay: 1.825s;
+  }
+  #txt-hide13 {
+    animation-delay: 1.85s;
+  }
+  #txt-hide14 {
+    animation-delay: 1.875s;
+  }
+  #txt-hide15 {
+    animation-delay: 1.9s;
+  }
+  #txt-hide16 {
+    animation-delay: 1.925s;
+  }
+  #txt-hide17 {
+    animation-delay: 1.95s;
+  }
+  #txt-hide18 {
+    animation-delay: 1.975s;
+  }
+  #txt-hide19 {
+    animation-delay: 2s;
+  }
+  // space here
+  #txt-hide20 {
+    animation-delay: 2.05s;
+  }
+  #txt-hide21 {
+    animation-delay: 2.075s;
+  }
+  #txt-hide22 {
+    animation-delay: 2.1s;
+  }
+  #txt-hide23 {
+    animation-delay: 2.15s;
+  }
+  #txt-hide24 {
+    animation-delay: 2.175s;
+  }
+  #txt-hide25 {
+    animation-delay: 2.2s;
+  }
+  #txt-hide26 {
+    animation-delay: 2.225s;
+  }
+  #txt-hide27 {
+    animation-delay: 2.25s;
+  }
+  #txt-hide28 {
+    animation-delay: 2.275s;
+  }
+  #txt-hide29 {
+    animation-delay: 2.3s;
+  }
+  #txt-hide30 {
+    animation-delay: 2.35s;
+  }
+  #txt-hide31 {
+    animation-delay: 2.375s;
+  }
+  #txt-hide32 {
+    animation-delay: 2.4s;
+  }
+  #txt-hide33 {
+    animation-delay: 2.425s;
+  }
+  #txt-hide34 {
+    animation-delay: 2.45s;
+  }
+  #txt-hide35 {
+    animation-delay: 2.475s;
+  }
 }
 // ---------animation key frames----------
-@keyframes fadeAnimation {
-  // from {
-  //   opacity: 0;
-  // }
-  // to {
-  //   opacity: 1;
-  // }
+@keyframes animationFadeIn {
   0% {
-    display: none;
-        opacity: 0;
-    // transform: translateX(0%);
-  }
-  75%{
-    display: block;
-        opacity: 0.3;
+    opacity: 0;
   }
   100% {
-    display: block;
-    opacity: 0.5;
-    // transform: translateX(100%);
+    opacity: 1;
+  }
+}
+@keyframes animationTextHide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 // ----------animation key frames--------

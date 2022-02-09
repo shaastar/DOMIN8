@@ -1,12 +1,13 @@
 ion-content {
   .div-img {
     width: 100%;
-    margin-top: 70px;
+    margin-top: 4vh;
     display: flex;
     justify-content: center;
     align-items: center;
     ion-img {
-      width: 360px;
+      width: 65%;
+      max-width: 335px;
     }
   }
   .div-label {

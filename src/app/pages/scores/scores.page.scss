@@ -34,7 +34,8 @@ ion-header {
               align-items: center;
               margin-top: 2px;
               ion-img {
-                width: 200px;
+                width: 20vh;
+                max-width: 200px;
               }
             }
             ion-label {
@@ -102,8 +103,8 @@ ion-content {
         }
 
         .div-btn-points {
-          width: 125px;
-          height: 66px;
+          width: 132px;
+          height: 73px;
           border: solid 5px #000000;
           border-radius: 13px;
           background-color: #dfd7c3;
@@ -131,8 +132,8 @@ ion-content {
     justify-content: center;
     align-items: center;
     .div-btn-points {
-      width: 125px;
-      height: 65px;
+      width: 132px;
+      height: 73px;
       border: solid 5px #000000;
       border-radius: 13px;
       background-color: #eee9dc;
@@ -158,8 +159,8 @@ ion-footer {
       justify-content: center;
       align-items: center;
       .div-btn-points {
-        width: 125px;
-        height: 68px;
+        width: 132px;
+        height: 73px;
         // margin-left: 15px;
         border: solid 5px #000000;
         border-radius: 15px;

@@ -1,12 +1,13 @@
 ion-content {
   .div-img {
     width: 100%;
-    margin-top: 70px;
+    margin-top: 4vh;
     display: flex;
     justify-content: center;
     align-items: center;
     ion-img {
-      width: 360px;
+      width: 65%;
+      max-width: 335px;
     }
   }
   .div-label {
@@ -37,7 +38,11 @@ ion-content {
   .grid-btn {
     margin-top: 50px;
     margin-bottom: 30px;
+    margin-left: 0;
+    padding-left: 0;
     ion-row {
+      margin: 0;
+      padding: 0;
       border-bottom: solid 5px #000000;
       ion-col {
         padding: 0;

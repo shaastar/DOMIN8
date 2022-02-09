@@ -2,12 +2,13 @@ ion-header {
   // ion-toolbar {}
   .div-img {
     width: 100%;
-    margin-top: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 2px;
     ion-img {
-      width: 185px;
+      width: 20vh;
+      max-width: 200px;
     }
   }
 }

@@ -17,7 +17,8 @@ ion-content {
     align-items: center;
     margin-top: 5vh;
     ion-img {
-      width: 200px;
+      width: 20vh;
+      max-width: 200px;
     }
   }
   .loading-img {
