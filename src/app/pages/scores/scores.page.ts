@@ -39,7 +39,7 @@ export class ScoresPage implements OnInit {
   }
 
   backBtn() {
-    this.location.back();
+    this.router.navigate(['/tabs/point-select']);
   }
 
   ionViewWillEnter() {

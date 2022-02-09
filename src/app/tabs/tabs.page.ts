@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { PointsHandlerService } from '../services/points-handler.service';
 
 // import { TranslateService } from '@ngx-translate/core';
 
@@ -22,7 +23,10 @@ export class TabsPage {
 
   playClicked = false;
   exploreClicked = false;
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private pointService: PointsHandlerService
+  ) {}
 
   play() {
     // this.router.navigate(['/section'], { queryParams: { id: number } });
@@ -66,8 +70,14 @@ export class TabsPage {
   }
 
   clickDomino() {
-    if (this.router.url != '/tabs/scores')
+    if (
+      this.router.url == '/tabs/scores' ||
+      this.pointService.gameScore.length != 0
+    ) {
+      this.router.navigate(['/tabs/scores']);
+    } else {
       this.router.navigate(['/tabs/point-select']);
+    }
     console.log(this.router.url);
   }
 }
