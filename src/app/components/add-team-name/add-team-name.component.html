@@ -38,7 +38,7 @@
                 (ionChange)="team1Changed()"
                 [(ngModel)]="tempplayer1"
                 type="text"
-                placeholder="JOHN"
+                placeholder="{{ 'player' | translate }} I"
               ></ion-input>
             </ion-item>
           </ion-col>
@@ -51,7 +51,7 @@
                 (ionChange)="team2Changed()"
                 [(ngModel)]="tempplayer2"
                 type="text"
-                placeholder="MIKE"
+                placeholder="{{ 'player' | translate }} II"
               ></ion-input>
             </ion-item>
           </ion-col>

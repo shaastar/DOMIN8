@@ -194,7 +194,6 @@ export class ScoresPage implements OnInit {
     this.checkPointandTotal();
   }
 
-
   async presentModal(teamname) {
     const modal = await this.modalCtrl.create({
       component: AddTeamNameComponent,
@@ -204,19 +203,19 @@ export class ScoresPage implements OnInit {
       },
     });
     modal.onDidDismiss().then((data) => {
-      if (
-        this.pointService.team1Name1 != '' &&
-        this.pointService.team1Name2 != ''
-      ) {
-        this.team1 = `${this.pointService.team1Name1} ${this.pointService.team1Name2? ' + ' + this.pointService.team1Name2 : ''}`
-      
+      if (this.pointService.team1Name1) {
+        this.team1 = `${this.pointService.team1Name1} ${
+          this.pointService.team1Name2
+            ? ' + ' + this.pointService.team1Name2
+            : ''
+        }`;
       }
-      if (
-        this.pointService.team2Name1 != '' &&
-        this.pointService.team2Name2 != ''
-      ) {
-        this.team2 = `${this.pointService.team2Name1} ${this.pointService.team2Name2? ' + ' + this.pointService.team2Name2 : ''}`
-       
+      if (this.pointService.team2Name1) {
+        this.team2 = `${this.pointService.team2Name1} ${
+          this.pointService.team2Name2
+            ? ' + ' + this.pointService.team2Name2
+            : ''
+        }`;
       }
     });
     return await modal.present();

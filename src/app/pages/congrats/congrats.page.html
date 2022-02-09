@@ -8,9 +8,7 @@
       ></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
-  <!-- <div class="div-img">
-    <ion-img src="../../assets/images/domin8.png"></ion-img>
-  </div> -->
+
   <ion-toolbar>
     <div class="div-totalscore">
       <ion-grid fixed>
@@ -28,18 +26,6 @@
             ><ion-label class="label-primary"> {{score2}} </ion-label></ion-col
           >
         </ion-row>
-        <!-- <ion-row class="row-round">
-          <ion-col size="6" style="border-right: solid 5px #000000">
-            <ion-item lines="none" color="none">
-              <ion-input type="text" [(ngModel)]="team1Name"></ion-input>
-            </ion-item>
-          </ion-col>
-          <ion-col size="6">
-            <ion-item lines="none" color="none">
-              <ion-input type="text" [(ngModel)]="team2Name"></ion-input>
-            </ion-item>
-          </ion-col>
-        </ion-row> -->
       </ion-grid>
     </div>
   </ion-toolbar>
@@ -52,7 +38,7 @@
         <ion-col class="col-p" size="12">
           <ion-label>
             <!-- <ion-img src="../../assets/images/congrats.png"></ion-img> -->
-            <div class="div0">{{'congrats'| translate}}!</div>
+            <div class="div0">{{'congrats'| translate}}</div>
             <div class="div1">{{'to_the' | translate}}</div>
             <!-- for English Language -->
             <div *ngIf="lang!=='sp'" class="div2">
@@ -63,7 +49,7 @@
             <!-- for spanish Language -->
             <div *ngIf="lang=='sp'" class="div2">
               <ion-text color="success">
-                <h1>EQUIPO</h1>
+                <h1>Equipo</h1>
                 <h1>{{winTeamName}}</h1>
               </ion-text>
             </div>

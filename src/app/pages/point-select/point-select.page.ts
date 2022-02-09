@@ -30,7 +30,7 @@ export class PointSelectPage implements OnInit {
     this.customBtn = false;
     let lang = localStorage.getItem('lang');
     if (lang && lang == 'sp') {
-      this.selectedLanguage = 'SPANISH';
+      this.selectedLanguage = 'ESPAÑOL';
     }
     localStorage.setItem('gamescore', null);
     this.pointService.gameScore = [];
@@ -71,7 +71,7 @@ export class PointSelectPage implements OnInit {
             icon: 'language-outline',
             handler: () => {
               console.log('Spanish Selected');
-              this.selectedLanguage = 'SPANISH';
+              this.selectedLanguage = 'ESPAÑOL';
               localStorage.setItem('lang', 'sp');
               this.selectLanguage('sp');
             },
@@ -104,7 +104,7 @@ export class PointSelectPage implements OnInit {
     console.log(this.selectedPointNumber);
     this.pointService.selectedPoint = this.selectedPointNumber;
 
-    this.router.navigate(['point-loading']);
+    this.router.navigate(['tabs/scores']);
   }
 
   customPointOk() {}

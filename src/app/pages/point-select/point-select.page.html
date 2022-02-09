@@ -64,6 +64,7 @@
           <div
             *ngIf="customBtn && selectedPointNumber>=1 && selectedPointNumber<2001"
             class="div-btn-points ion-activatable ripple-parent"
+            style=" color: var(--ion-color-success);"
             (click)="setSelectedPoint()"
           >
             <ion-label>{{'accept'| translate}}</ion-label>

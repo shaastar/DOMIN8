@@ -38,7 +38,7 @@
     </ion-row>
     <ion-row class="row-content" *ngFor="let team of teams; let i = index">
       <ion-col class="col" size="4">
-        <ion-label class="label1">{{i+1}} &nbsp;</ion-label>
+        <ion-label class="label1">{{i+1}} <b>.</b> &nbsp;&nbsp;</ion-label>
         <ion-label text-wrap class="label2"
           >{{team.teamname1}}  {{team.teamname2? ' + ' + team.teamname2 : ''}}</ion-label
         >
