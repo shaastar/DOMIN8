@@ -9,7 +9,7 @@ import { Location } from '@angular/common';
   styleUrls: ['./add-team-name.component.scss'],
 })
 export class AddTeamNameComponent implements OnInit {
-  @Input() teamName: string;
+  @Input() teamSide: string;
   tempplayer1;
   tempplayer2;
   teams = [];
@@ -38,15 +38,18 @@ export class AddTeamNameComponent implements OnInit {
   ngOnInit() {
     this.teams = JSON.parse(localStorage.getItem('teams'));
     this.teamsUnfiltered = this.teams;
-    console.log(this.teams);
+    // console.log(this.teams);
   }
 
   addTeam() {
-    if (this.teamName == 'EQUIPO I' || this.teamName == 'TEAM I') {
+    console.log('nnnnnnn ' + this.teamSide);
+    if (this.teamSide == 'team I') {
       console.log('team1');
       this.pointService.team1Name1 = this.tempplayer1;
       this.pointService.team1Name2 = this.tempplayer2;
-    } else if (this.teamName == 'EQUIPO II' || this.teamName == 'TEAM II') {
+    }
+    console.log('gggggggggg')
+    if (this.teamSide == 'team II') {
       console.log('team2');
       this.pointService.team2Name1 = this.tempplayer1;
       this.pointService.team2Name2 = this.tempplayer2;
@@ -88,7 +91,6 @@ export class AddTeamNameComponent implements OnInit {
       });
     }
   }
-
 
   resetChanges() {
     this.teams = this.teamsUnfiltered;

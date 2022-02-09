@@ -194,12 +194,12 @@ export class ScoresPage implements OnInit {
     this.checkPointandTotal();
   }
 
-  async presentModal(teamname) {
+  async presentModal(teamside) {
     const modal = await this.modalCtrl.create({
       component: AddTeamNameComponent,
       cssClass: 'class-player-model',
       componentProps: {
-        teamName: teamname,
+        teamSide: teamside,
       },
     });
     modal.onDidDismiss().then((data) => {
@@ -217,6 +217,10 @@ export class ScoresPage implements OnInit {
             : ''
         }`;
       }
+      console.log('ffffffffff' + this.pointService.team1Name1);
+      console.log('ffffffffff' + this.pointService.team1Name2);
+      console.log('ffffffffff' + this.pointService.team2Name1);
+      console.log('ffffffffff' + this.pointService.team2Name2);
     });
     return await modal.present();
   }

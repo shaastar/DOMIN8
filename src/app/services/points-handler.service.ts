@@ -33,7 +33,6 @@ export class PointsHandlerService {
     if (this.winTeamName1 != null) {
       this.countTeamsWin();
       console.log('reach handle');
-      // this.gameScore = [];
     }
   }
   countTeamsWin() {
@@ -45,7 +44,6 @@ export class PointsHandlerService {
     if (localStorage.getItem('teams') == null) {
       teams.push(winTeam);
       teams.push(lossTeam);
-      // localStorage.setItem('teams', JSON.stringify(teams));
     } else {
       teams = JSON.parse(localStorage.getItem('teams'));
       var i = 0;
@@ -67,14 +65,6 @@ export class PointsHandlerService {
           }
           break;
         }
-        // else if (team.teamname != lossTeam.teamname) {
-        //   teams.push(lossTeam);
-        //   localStorage.setItem('teams', JSON.stringify(teams));
-
-        // } else if (team.teamname != winTeam.teamname) {
-        //   teams.push(winTeam);
-        //   localStorage.setItem('teams', JSON.stringify(teams));
-        // }
       }
     }
     localStorage.setItem('teams', JSON.stringify(teams));
