@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 // import { TranslateService } from '@ngx-translate/core';
@@ -63,5 +63,11 @@ export class TabsPage {
     setTimeout(() => {
       this.exploreClicked = false;
     }, 4650);
+  }
+
+  clickDomino() {
+    if (this.router.url != '/tabs/scores')
+      this.router.navigate(['/tabs/point-select']);
+    console.log(this.router.url);
   }
 }

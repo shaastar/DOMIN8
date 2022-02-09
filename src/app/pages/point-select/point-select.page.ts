@@ -105,7 +105,7 @@ export class PointSelectPage implements OnInit {
     console.log(this.selectedPointNumber);
     this.pointService.selectedPoint = this.selectedPointNumber;
 
-    this.router.navigate(['point-loading']);
+    this.router.navigate(['tabs/scores']);
   }
 
   customPointOk() {}
