@@ -42,13 +42,11 @@ export class AddTeamNameComponent implements OnInit {
   }
 
   addTeam() {
-    console.log('nnnnnnn ' + this.teamSide);
     if (this.teamSide == 'team I') {
       console.log('team1');
       this.pointService.team1Name1 = this.tempplayer1;
       this.pointService.team1Name2 = this.tempplayer2;
     }
-    console.log('gggggggggg')
     if (this.teamSide == 'team II') {
       console.log('team2');
       this.pointService.team2Name1 = this.tempplayer1;
@@ -61,34 +59,38 @@ export class AddTeamNameComponent implements OnInit {
   }
 
   team1Changed() {
-    this.resetChanges();
-    if (this.tempplayer1) {
-      console.log('Here');
+    if (localStorage.getItem('teams') != null) {
+      this.resetChanges();
+      if (this.tempplayer1) {
+        console.log('Here');
 
-      this.teams = this.teams.filter((team) => {
-        if (team.teamname1) {
-          return (
-            team.teamname1
-              .toLowerCase()
-              .indexOf(this.tempplayer1.toLowerCase()) > -1
-          );
-        }
-      });
+        this.teams = this.teams.filter((team) => {
+          if (team.teamname1) {
+            return (
+              team.teamname1
+                .toLowerCase()
+                .indexOf(this.tempplayer1.toLowerCase()) > -1
+            );
+          }
+        });
+      }
     }
   }
 
   team2Changed() {
-    this.resetChanges();
-    if (this.tempplayer2) {
-      this.teams = this.teams.filter((team) => {
-        if (team.teamname2) {
-          return (
-            team.teamname2
-              .toLowerCase()
-              .indexOf(this.tempplayer2.toLowerCase()) > -1
-          );
-        }
-      });
+    if (localStorage.getItem('teams') != null) {
+      this.resetChanges();
+      if (this.tempplayer2) {
+        this.teams = this.teams.filter((team) => {
+          if (team.teamname2) {
+            return (
+              team.teamname2
+                .toLowerCase()
+                .indexOf(this.tempplayer2.toLowerCase()) > -1
+            );
+          }
+        });
+      }
     }
   }
 

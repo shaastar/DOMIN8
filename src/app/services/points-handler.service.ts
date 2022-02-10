@@ -7,7 +7,7 @@ export class PointsHandlerService {
   selectedPoint: number;
 
   // gameScore = [];
-  // gameScore: Array<any> = [];
+  gameScore: Array<any> = []; //this is game score detail Array
 
   team1Name1: string = '';
   team1Name2: string = '';
@@ -37,8 +37,18 @@ export class PointsHandlerService {
   }
   countTeamsWin() {
     var teams: Array<any> = [];
-    var winTeam = { teamname1: this.winTeamName1, teamname2: this.winTeamName2, wins: 1, loss: 0 };
-    var lossTeam = { teamname1: this.lossTeamName1, teamname2: this.lossTeamName2, wins: 0, loss: 1 };
+    var winTeam = {
+      teamname1: this.winTeamName1,
+      teamname2: this.winTeamName2,
+      wins: 1,
+      loss: 0,
+    };
+    var lossTeam = {
+      teamname1: this.lossTeamName1,
+      teamname2: this.lossTeamName2,
+      wins: 0,
+      loss: 1,
+    };
     var winTeamAdded = false;
     var lossTeamAdded = false;
     if (localStorage.getItem('teams') == null) {
@@ -49,10 +59,16 @@ export class PointsHandlerService {
       var i = 0;
       for (var team of teams) {
         i++;
-        if (team.teamname1 == winTeam.teamname1 && team.teamname2 == winTeam.teamname2) {
+        if (
+          team.teamname1 == winTeam.teamname1 &&
+          team.teamname2 == winTeam.teamname2
+        ) {
           team.wins = team.wins + 1;
           winTeamAdded = true;
-        } else if (team.teamname1 == lossTeam.teamname1 && team.teamname2 == lossTeam.teamname2) {
+        } else if (
+          team.teamname1 == lossTeam.teamname1 &&
+          team.teamname2 == lossTeam.teamname2
+        ) {
           team.loss = team.loss + 1;
           lossTeamAdded = true;
         }

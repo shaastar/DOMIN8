@@ -42,7 +42,7 @@ export class CongratsPage implements OnInit {
     this.score2 = this.pointService.team2Total;
   }
   ionViewDidLeave() {
-    // this.pointService.gameScore = [];
+    this.pointService.gameScore = null;
     this.pointService.winTeamName1 = '';
     this.pointService.winTeamName2 = '';
     this.pointService.lossTeamName1 = '';

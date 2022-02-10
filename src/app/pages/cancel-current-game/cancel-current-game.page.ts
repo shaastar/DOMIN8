@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { Location } from '@angular/common';
+import { PointsHandlerService } from '../../services/points-handler.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -13,6 +14,7 @@ export class CancelCurrentGamePage implements OnInit {
   constructor(
     private Translate: TranslateService,
     private location: Location,
+    private pointService: PointsHandlerService,
     private router: Router
   ) {}
 
@@ -26,7 +28,18 @@ export class CancelCurrentGamePage implements OnInit {
   }
 
   startNewGame() {
-    localStorage.setItem('gamescore', null);
+    // localStorage.setItem('gamescore', null);
+    this.pointService.gameScore = null;
+    this.pointService.winTeamName1 = '';
+    this.pointService.winTeamName2 = '';
+    this.pointService.lossTeamName1 = '';
+    this.pointService.lossTeamName2 = '';
+    this.pointService.team1Name1 = '';
+    this.pointService.team1Name2 = '';
+    this.pointService.team2Name1 = '';
+    this.pointService.team2Name2 = '';
+    this.pointService.team1Total = 0;
+    this.pointService.team2Total = 0;
     this.router.navigate(['/tabs/point-select']);
   }
 }

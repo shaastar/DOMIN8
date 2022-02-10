@@ -50,32 +50,51 @@ export class ScoresPage implements OnInit {
       () => console.log('error')
     );
 
-    this.selectedPointNumber = this.pointService.selectedPoint;
-    if (this.pointService.team1Total > 0 || this.pointService.team2Total > 0) {
-      this.temptotalscore1 = this.pointService.team1Total;
-      this.temptotalscore2 = this.pointService.team2Total;
+    if(this.pointService.gameScore== null){
+      this.gameScore = [];
     }
 
-    if(!this.pointService.team1Name1 || !this.pointService.team1Name2){
+    // if (
+    //   this.temptotalscore1 >= this.selectedPointNumber ||
+    //   this.temptotalscore2 >= this.selectedPointNumber
+    // ) {
+    //   if (this.temproundscore1 != '' || this.temproundscore2 != '') {
+    //     this.checkPointandTotal();
+    //   }
+    // }
+    this.selectedPointNumber = this.pointService.selectedPoint;
+    console.log('wwwww');
+    console.log(this.temptotalscore1);
+    console.log(this.temptotalscore2);
+    console.log(this.selectedPointNumber);
+    
+    if (this.temptotalscore1 > 0 || this.temptotalscore2 > 0) {
+      // this.pointService.team1Total = this.temptotalscore1;
+      // this.pointService.team2Total = this.temptotalscore2;
+      this.checkPointandTotal();
+      console.log('FFFF');
+    }
+
+    if (!this.pointService.team1Name1 || !this.pointService.team1Name2) {
       this.team1selected = false;
     }
-    if(!this.pointService.team2Name1 || !this.pointService.team2Name2){
+    if (!this.pointService.team2Name1 || !this.pointService.team2Name2) {
       this.team2selected = false;
     }
 
     this.lang = localStorage.getItem('lang');
     if (this.lang == 'sp') {
-      if(!this.team1selected ){
+      if (!this.team1selected) {
         this.team1 = 'EQUIPO I';
       }
-      if(!this.team2selected){
+      if (!this.team2selected) {
         this.team2 = 'EQUIPO II';
       }
     } else {
-      if(!this.team1selected ){
+      if (!this.team1selected) {
         this.team1 = 'TEAM I';
       }
-      if(!this.team2selected){
+      if (!this.team2selected) {
         this.team2 = 'TEAM II';
       }
     }
@@ -116,12 +135,12 @@ export class ScoresPage implements OnInit {
 
     // this.gameScore = [];
     console.log('line123');
-    this.temproundscore1 = '';
-    this.temproundscore2 = '';
-    this.temptotalscore1 = 0;
-    this.temptotalscore2 = 0;
-    this.totalScore1 = 0;
-    this.totalScore2 = 0;
+    // this.temproundscore1 = '';
+    // this.temproundscore2 = '';
+    // this.temptotalscore1 = 0;
+    // this.temptotalscore2 = 0;
+    // this.totalScore1 = 0;
+    // this.totalScore2 = 0;
   }
 
   temptotalscore1: number = 0;
@@ -146,7 +165,7 @@ export class ScoresPage implements OnInit {
       this.temptotalscore1 >= this.selectedPointNumber ||
       this.temptotalscore2 >= this.selectedPointNumber
     ) {
-      if (this.temproundscore1 != '' && this.temproundscore2 != '') {
+      if (this.temproundscore1 != '' || this.temproundscore2 != '') {
         this.checkPointandTotal();
       }
     }
@@ -158,6 +177,8 @@ export class ScoresPage implements OnInit {
       if (this.temptotalscore2 > this.temptotalscore1) {
         // ---this is team2(rightside) winning---
         // ---but both are greater than selected points---
+        this.setDefaultTeamName();
+
         this.pointService.winTeamName1 = this.pointService.team2Name1;
         this.pointService.winTeamName2 = this.pointService.team2Name2;
         this.pointService.lossTeamName1 = this.pointService.team1Name1;
@@ -170,6 +191,8 @@ export class ScoresPage implements OnInit {
       else if (this.temptotalscore2 != this.temptotalscore1) {
         // ---this is team1(leftside) winning---
         // ---could be both are greater than selected points---
+        this.setDefaultTeamName();
+
         this.pointService.winTeamName1 = this.pointService.team1Name1;
         this.pointService.winTeamName2 = this.pointService.team1Name2;
         this.pointService.lossTeamName1 = this.pointService.team2Name1;
@@ -177,6 +200,8 @@ export class ScoresPage implements OnInit {
         this.resetValues();
       }
     } else if (this.temptotalscore2 >= this.selectedPointNumber) {
+      this.setDefaultTeamName();
+
       this.pointService.winTeamName1 = this.pointService.team2Name1;
       this.pointService.winTeamName2 = this.pointService.team2Name2;
       this.pointService.lossTeamName1 = this.pointService.team1Name1;
@@ -224,11 +249,11 @@ export class ScoresPage implements OnInit {
       gameScoreObj.totalscore1 = this.temptotalscore1;
       gameScoreObj.totalscore2 = this.temptotalscore2;
 
-      // this.pointService.gameScore.push(gameScoreObj);
+      this.pointService.gameScore.push(gameScoreObj);
       this.temproundscore1 = '';
       this.temproundscore2 = '';
 
-      // this.gameScore = this.pointService.gameScore;
+      this.gameScore = this.pointService.gameScore;
       console.log(this.team1);
       console.log(this.team2);
     }
@@ -267,6 +292,18 @@ export class ScoresPage implements OnInit {
     } else if (this.pointService.team2Name2) {
       this.team2 = `${this.pointService.team2Name2}`;
       this.team2selected = true;
+    }
+  }
+  setDefaultTeamName() {
+    if (this.team1selected == false) {
+      this.pointService.team1Name1 = this.team1;
+      this.pointService.team1Name2 = '';
+      console.log('iiiii ' + this.team1);
+    }
+    if (this.team2selected == false) {
+      this.pointService.team2Name1 = this.team2;
+      this.pointService.team2Name2 = '';
+      console.log('pppppp ' + this.team2);
     }
   }
 }
