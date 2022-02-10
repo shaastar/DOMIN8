@@ -50,7 +50,10 @@ export class ScoresPage implements OnInit {
       () => console.log('error')
     );
 
-    if(this.pointService.gameScore== null){
+    if(this.selectedPointNumber < 1){
+      this.router.navigate(['/tabs/point-select']);
+    }
+    if (this.pointService.gameScore == null) {
       this.gameScore = [];
     }
 
@@ -59,7 +62,7 @@ export class ScoresPage implements OnInit {
     console.log(this.temptotalscore1);
     console.log(this.temptotalscore2);
     console.log(this.selectedPointNumber);
-    
+
     if (this.temptotalscore1 > 0 || this.temptotalscore2 > 0) {
       // this.pointService.team1Total = this.temptotalscore1;
       // this.pointService.team2Total = this.temptotalscore2;
@@ -90,7 +93,6 @@ export class ScoresPage implements OnInit {
         this.team2 = 'TEAM II';
       }
     }
-
   }
   ionViewDidLeave() {
     this.insomnia.allowSleepAgain().then(
@@ -213,6 +215,10 @@ export class ScoresPage implements OnInit {
       gameScoreObj.roundscore2 = this.temproundscore2;
       gameScoreObj.totalscore1 = this.temptotalscore1;
       gameScoreObj.totalscore2 = this.temptotalscore2;
+
+      if (this.pointService.gameScore == null) {
+        this.pointService.gameScore = [];
+      }
 
       this.pointService.gameScore.push(gameScoreObj);
       this.temproundscore1 = '';

@@ -26,10 +26,12 @@ export class CongratsPage implements OnInit {
   }
 
   ionViewWillEnter() {
-    console.log(
-      'WINTEAM',
-      this.pointService.winTeamName1 + ' + ' + this.pointService.winTeamName2
-    );
+    this.resetGameScore();
+
+    // console.log(
+    //   'WINTEAM',
+    //   this.pointService.winTeamName1 + ' + ' + this.pointService.winTeamName2
+    // );
 
     this.lang = localStorage.getItem('lang');
     this.winTeamName = `${this.pointService.winTeamName1} ${
@@ -42,7 +44,11 @@ export class CongratsPage implements OnInit {
     this.score2 = this.pointService.team2Total;
   }
   ionViewDidLeave() {
-    this.pointService.gameScore = null;
+    this.resetValues();
+  }
+
+  resetValues() {
+    // this.pointService.gameScore = null;
     this.pointService.winTeamName1 = '';
     this.pointService.winTeamName2 = '';
     this.pointService.lossTeamName1 = '';
@@ -53,5 +59,9 @@ export class CongratsPage implements OnInit {
     this.pointService.team2Name2 = '';
     this.pointService.team1Total = 0;
     this.pointService.team2Total = 0;
+  }
+
+  resetGameScore() {
+    this.pointService.gameScore = null;
   }
 }
