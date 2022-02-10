@@ -7,7 +7,7 @@ export class PointsHandlerService {
   selectedPoint: number;
 
   // gameScore = [];
-  gameScore: Array<any> = [];
+  // gameScore: Array<any> = [];
 
   team1Name1: string = '';
   team1Name2: string = '';
@@ -23,9 +23,9 @@ export class PointsHandlerService {
   team2Total: number;
 
   constructor() {
-    if (localStorage.getItem('gamescore') == null) {
-      this.gameScore = [];
-    }
+    // if (localStorage.getItem('gamescore') == null) {
+    //   this.gameScore = [];
+    // }
   }
 
   handlecountTeamsWin() {

@@ -1,21 +1,17 @@
-// ion-header {
-//   // ion-toolbar {}
-//   .div-img {
-//     width: 100%;
-//     margin-top: 0;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     ion-img {
-//       width: 185px;
-//     }
-//   }
-// }
+.div-lang {
+  height: 37px;
+  width: 240px;
+  display: flex;
+  span {
+    margin-right: 7px;
+    font-family: Anton;
+  }
+}
 
 ion-content {
   .div-img {
     width: 100%;
-    margin-top: 11vh;
+    margin-top: 3vh;
     display: flex;
     justify-content: center;
     align-items: center;

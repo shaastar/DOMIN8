@@ -9,13 +9,18 @@
       ></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
-  <ion-toolbar>
+  <!-- <ion-toolbar style="--background: violet;"> -->
     <div class="div-totalscore">
       <ion-grid fixed>
         <ion-row class="row-total-score">
           <ion-col size="12">
             <div class="div-btn-points">
-              <ion-label>{{ teamSide }}</ion-label>
+              <ion-label *ngIf="teamSide == 'team I'"
+                >{{ "team" | translate }}I</ion-label
+              >
+              <ion-label *ngIf="teamSide == 'team II'"
+                >{{ "team" | translate }}II</ion-label
+              >
             </div>
           </ion-col>
         </ion-row>
@@ -58,7 +63,7 @@
         </ion-row>
       </ion-grid>
     </div>
-  </ion-toolbar>
+  <!-- </ion-toolbar> -->
 </ion-header>
 
 <ion-content>

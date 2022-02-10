@@ -71,8 +71,8 @@ export class TabsPage {
 
   clickDomino() {
     if (
-      this.router.url == '/tabs/scores' ||
-      this.pointService.gameScore.length != 0
+      this.router.url == '/tabs/scores' 
+      // || this.pointService.gameScore.length != 0
     ) {
       this.router.navigate(['/tabs/scores']);
     } else {

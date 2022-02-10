@@ -14,7 +14,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-grid fixed>
+  <ion-grid>
     <ion-row class="row-label">
       <ion-col size="12">
         <div class="div-teams">
@@ -26,7 +26,7 @@
         </div>
       </ion-col>
     </ion-row>
-    <ion-row class="row-head" style="margin-top: 10px">
+    <ion-row class="row-head">
       <ion-col class="col" size="5">
         <ion-label class="label-w">{{ 'w' | translate }}</ion-label>
       </ion-col>
@@ -59,19 +59,5 @@
         >
       </ion-col>
     </ion-row>
-
-    <!-- <div class="div-p">
-      <ion-row>
-        <ion-col class="col-li" size="12">
-          <div>
-            <ul>
-              <li *ngFor="let team of teams">
-                {{team.teamname}}: W = {{team.wins}} | L = {{team.loss}}
-              </li>
-            </ul>
-          </div>
-        </ion-col>
-      </ion-row>
-    </div> -->
   </ion-grid>
 </ion-content>

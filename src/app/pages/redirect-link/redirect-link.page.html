@@ -1,12 +1,14 @@
 <ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button
-        defaultHref=""
-        (click)="cancelButton()"
-        color="success"
-      ></ion-back-button>
-    </ion-buttons>
+    <div class="div-lang">
+      <ion-buttons slot="start">
+        <ion-back-button
+          defaultHref=""
+          (click)="cancelButton()"
+          color="success"
+        ></ion-back-button>
+      </ion-buttons>
+    </div>
   </ion-toolbar>
 </ion-header>
 
@@ -20,8 +22,6 @@
       >{{'will_redirect_you_to' | translate}}
       <div class="div-ins">
         <ion-text color="secondary">https://</ion-text>
-        <!-- </div>
-      <div class="div-domin"> -->
         <ion-text color="success"> &nbsp;linktr.ee</ion-text>
         <ion-text color="primary">domin5.3</ion-text>
       </div>

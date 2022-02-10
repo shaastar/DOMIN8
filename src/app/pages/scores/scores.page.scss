@@ -11,7 +11,8 @@ ion-header {
       font-size: 19px;
     }
   }
-  ion-toolbar {
+  
+  // ion-toolbar {
     .div-totalscore {
       width: 100%;
       display: flex;
@@ -52,7 +53,6 @@ ion-header {
         }
         .row-round {
           border-bottom: solid 5px #000000;
-          padding: 0;
           ion-col {
             padding: 0;
             margin: 0;
@@ -70,15 +70,13 @@ ion-header {
         }
       }
     }
-  }
 }
 ion-content {
   ion-grid {
     margin-top: 0;
     padding-top: 0;
     .row-round {
-      border-bottom: solid 5px #000000;
-      padding: 0;
+      border-bottom: solid 5px #000000;    
       ion-col {
         padding: 0;
         margin: 0;
@@ -177,4 +175,10 @@ ion-footer {
       }
     }
   }
+}
+
+.padding-left-right-0{
+  padding-left: 0;
+  padding-right: 0;
+
 }

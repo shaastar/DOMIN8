@@ -1,75 +1,76 @@
 ion-header {
-  ion-toolbar {
-    .div-totalscore {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      ion-grid {
-        padding: 0;
-        margin: 0;
-        .row-total-score {
-          ion-col {
-            padding: 0;
-            margin: 0;
+  // ion-toolbar {
+  .div-totalscore {
+    background-color: #e7e7e7;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    ion-grid {
+      padding: 0;
+      margin: 0;
+      .row-total-score {
+        ion-col {
+          padding: 0;
+          margin: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          .div-btn-points {
+            width: 134px;
+            height: 73px;
+            border: solid 5px #000000;
+            border-radius: 13px;
+            background-color: #dfd7c3;
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
-            .div-btn-points {
-              width: 134px;
-              height: 73px;
-              border: solid 5px #000000;
-              border-radius: 13px;
-              background-color: #dfd7c3;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              text-align: center;
-              ion-label {
-                font-family: Anton;
-                font-size: 19px;
-              }
+            ion-label {
+              font-family: Anton;
+              font-size: 19px;
             }
           }
         }
-        .row-round {
-          border-bottom: solid 5px #000000;
+      }
+      .row-round {
+        border-bottom: solid 5px #000000;
+        padding: 0;
+        ion-col {
           padding: 0;
-          ion-col {
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            ion-item {
-              ion-label {
-                text-align: center;
-                font-family: Staatliches;
-                font-size: 19px;
-              }
+          margin: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          ion-item {
+            ion-label {
+              text-align: center;
+              font-family: Staatliches;
+              font-size: 19px;
+            }
 
-              ion-input {
-                text-align: center;
-                font-family: staatliches;
-                font-size: 24px;
-                font-weight: 500;
-              }
-            }
-            .plus-mark {
+            ion-input {
+              text-align: center;
               font-family: staatliches;
-              font-size: 32px;
+              font-size: 24px;
+              font-weight: 500;
             }
-            .item-player-name {
-              margin-top: 20px;
-              margin-bottom: 20px;
-            }
+          }
+          .plus-mark {
+            font-family: staatliches;
+            font-size: 32px;
+          }
+          .item-player-name {
+            margin-top: 20px;
+            margin-bottom: 20px;
           }
         }
       }
     }
   }
 }
+
 ion-content {
   .team-item {
     --background: #e7e7e7;

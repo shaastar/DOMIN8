@@ -19,6 +19,8 @@ export class ScoresPage implements OnInit {
   selectedPointNumber: number = this.pointService.selectedPoint;
   team1: string = '';
   team2: string = '';
+  team1selected = false;
+  team2selected = false;
 
   constructor(
     private location: Location,
@@ -29,13 +31,13 @@ export class ScoresPage implements OnInit {
     private modalCtrl: ModalController,
     private platform: Platform
   ) {
-    this.gameScore = [];
+    // this.gameScore = [];
   }
 
-  gameScore; //this is game score detail Array
+  gameScore: Array<any> = []; //this is game score detail Array
 
   ngOnInit() {
-    this.gameScore = [];
+    // this.gameScore = [];
   }
 
   backBtn() {
@@ -49,38 +51,77 @@ export class ScoresPage implements OnInit {
     );
 
     this.selectedPointNumber = this.pointService.selectedPoint;
+    if (this.pointService.team1Total > 0 || this.pointService.team2Total > 0) {
+      this.temptotalscore1 = this.pointService.team1Total;
+      this.temptotalscore2 = this.pointService.team2Total;
+    }
+
+    if(!this.pointService.team1Name1 || !this.pointService.team1Name2){
+      this.team1selected = false;
+    }
+    if(!this.pointService.team2Name1 || !this.pointService.team2Name2){
+      this.team2selected = false;
+    }
 
     this.lang = localStorage.getItem('lang');
-    if (this.team1 == '' && this.team2 == '') {
-      if (this.lang == 'sp') {
+    if (this.lang == 'sp') {
+      if(!this.team1selected ){
         this.team1 = 'EQUIPO I';
-        this.pointService.team1Name1 = 'EQUIPO I';
-        this.pointService.team1Name2 = null;
+      }
+      if(!this.team2selected){
         this.team2 = 'EQUIPO II';
-        this.pointService.team2Name1 = 'EQUIPO II';
-        this.pointService.team2Name2 = null;
-      } else {
+      }
+    } else {
+      if(!this.team1selected ){
         this.team1 = 'TEAM I';
-        this.pointService.team1Name1 = 'TEAM I';
-        this.pointService.team1Name2 = null;
+      }
+      if(!this.team2selected){
         this.team2 = 'TEAM II';
-        this.pointService.team2Name1 = 'TEAM II';
-        this.pointService.team2Name2 = null;
       }
     }
 
     // handle game score
-    if (localStorage.getItem('gamescore') == null) {
-      this.gameScore = [];
-    }
+    // if (localStorage.getItem('gamescore') == null) {
+    //   this.gameScore = [];
+    // }
   }
   ionViewDidLeave() {
     this.insomnia.allowSleepAgain().then(
       () => console.log('success'),
       () => console.log('error')
     );
+
+    console.log('line104');
+    //reset team1 if need
+    // if (this.team1 == 'TEAM I' || this.team1 == 'EQUIPO I') {
+    //   this.team1 = '';
+    //   localStorage.setItem('gamescore', null); //tempory shoild remove
+    // } else {
+    //   console.log('TEAM i else');
+    // }
+
+    //reset team1 if need
+    // console.log('line114');
+    // if (this.team2 == 'TEAM II' || this.team2 == 'EQUIPO II') {
+    //   this.team2 = '';
+    //   console.log('eee ' + this.team1);
+    //   console.log('eee ' + this.team2);
+    //   localStorage.setItem('gamescore', null); //tempory shoild remove
+    // } else {
+    //   console.log('TEAM II else');
+    // }
+    //handle gamescore Array
     // localStorage.setItem('gamescore', JSON.stringify(this.gameScore));
+    // this.gameScore=[]
+
     // this.gameScore = [];
+    console.log('line123');
+    this.temproundscore1 = '';
+    this.temproundscore2 = '';
+    this.temptotalscore1 = 0;
+    this.temptotalscore2 = 0;
+    this.totalScore1 = 0;
+    this.totalScore2 = 0;
   }
 
   temptotalscore1: number = 0;
@@ -183,11 +224,11 @@ export class ScoresPage implements OnInit {
       gameScoreObj.totalscore1 = this.temptotalscore1;
       gameScoreObj.totalscore2 = this.temptotalscore2;
 
-      this.pointService.gameScore.push(gameScoreObj);
+      // this.pointService.gameScore.push(gameScoreObj);
       this.temproundscore1 = '';
       this.temproundscore2 = '';
 
-      this.gameScore = this.pointService.gameScore;
+      // this.gameScore = this.pointService.gameScore;
       console.log(this.team1);
       console.log(this.team2);
     }
@@ -203,25 +244,29 @@ export class ScoresPage implements OnInit {
       },
     });
     modal.onDidDismiss().then((data) => {
-      if (this.pointService.team1Name1) {
-        this.team1 = `${this.pointService.team1Name1} ${
-          this.pointService.team1Name2
-            ? ' + ' + this.pointService.team1Name2
-            : ''
-        }`;
-      }
-      if (this.pointService.team2Name1) {
-        this.team2 = `${this.pointService.team2Name1} ${
-          this.pointService.team2Name2
-            ? ' + ' + this.pointService.team2Name2
-            : ''
-        }`;
-      }
-      console.log('ffffffffff' + this.pointService.team1Name1);
-      console.log('ffffffffff' + this.pointService.team1Name2);
-      console.log('ffffffffff' + this.pointService.team2Name1);
-      console.log('ffffffffff' + this.pointService.team2Name2);
+      this.handleTeamName();
     });
     return await modal.present();
+  }
+
+  handleTeamName() {
+    if (this.pointService.team1Name1) {
+      this.team1 = `${this.pointService.team1Name1} ${
+        this.pointService.team1Name2 ? ' + ' + this.pointService.team1Name2 : ''
+      }`;
+      this.team1selected = true;
+    } else if (this.pointService.team1Name2) {
+      this.team1 = `${this.pointService.team1Name2}`;
+      this.team1selected = true;
+    }
+    if (this.pointService.team2Name1) {
+      this.team2 = `${this.pointService.team2Name1} ${
+        this.pointService.team2Name2 ? ' + ' + this.pointService.team2Name2 : ''
+      }`;
+      this.team2selected = true;
+    } else if (this.pointService.team2Name2) {
+      this.team2 = `${this.pointService.team2Name2}`;
+      this.team2selected = true;
+    }
   }
 }

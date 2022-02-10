@@ -32,14 +32,14 @@ export class PointSelectPage implements OnInit {
     if (lang && lang == 'sp') {
       this.selectedLanguage = 'ESPAÑOL';
     }
-    localStorage.setItem('gamescore', null);
-    this.pointService.gameScore = [];
-    this.pointService.winTeamName1 = '';
-    this.pointService.winTeamName2 = '';
-    this.pointService.lossTeamName1 = '';
-    this.pointService.lossTeamName2 = '';
-    this.pointService.team1Total = 0;
-    this.pointService.team2Total = 0;
+    // localStorage.setItem('gamescore', null);
+    // this.pointService.gameScore = [];
+    // this.pointService.winTeamName1 = '';
+    // this.pointService.winTeamName2 = '';
+    // this.pointService.lossTeamName1 = '';
+    // this.pointService.lossTeamName2 = '';
+    // this.pointService.team1Total = 0;
+    // this.pointService.team2Total = 0;
   }
 
   backBtn() {
@@ -85,7 +85,7 @@ export class PointSelectPage implements OnInit {
 
   toggleCustomPoint() {
     this.customBtn = !this.customBtn;
-    this.selectedPoint = '0';
+    this.selectedPoint = '';
     this.selectedPointNumber = Number(this.selectedPoint);
     // if(this.customBtn){
     //   console.log("Here");

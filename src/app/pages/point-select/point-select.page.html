@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header class="ion-no-border">
   <ion-toolbar>
     <div class="div-lang">
       <span><h1>{{'language'| translate}}:</h1></span>
@@ -48,8 +48,9 @@
             >{{'custom'| translate}}</ion-label
           >
           <ion-input
-             #inputs
+            #inputs
             *ngIf="customBtn"
+            autofocus="true"
             type="number"
             [(ngModel)]="selectedPoint"
             (ngModelChange)="addCustomPoint(selectedPoint)"
@@ -64,7 +65,7 @@
           <div
             *ngIf="customBtn && selectedPointNumber>=1 && selectedPointNumber<2001"
             class="div-btn-points ion-activatable ripple-parent"
-            style=" color: var(--ion-color-success);"
+            style="color: var(--ion-color-success)"
             (click)="setSelectedPoint()"
           >
             <ion-label>{{'accept'| translate}}</ion-label>

@@ -12,9 +12,9 @@ export class AppComponent {
   constructor(
     private translate: TranslateService,
     private translateConfig: TranslateConfigService,
-    private platform : Platform
+    private platform: Platform
   ) {
-    this.initializeApp(); 
+    this.initializeApp();
   }
 
   initializeApp() {
@@ -24,14 +24,15 @@ export class AppComponent {
           fadeOutDuration: 2000,
         });
       }, 2000);
-    })
-    
+    });
+
     if (localStorage.getItem('lang')) {
       // this.translate.setDefaultLang(localStorage.getItem('lang'));
       // this.translate.use(localStorage.getItem('lang'));
       this.translateConfig.setLanguage(localStorage.getItem('lang'));
     } else {
       this.translateConfig.setLanguage('en');
+      localStorage.setItem('lang', 'en');
       // this.translateConfig.getDefaultLanguage();
 
       // this.translate.setDefaultLang('en');

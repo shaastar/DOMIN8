@@ -26,12 +26,32 @@ export class CongratsPage implements OnInit {
   }
 
   ionViewWillEnter() {
-    console.log("WINTEAM", this.pointService.winTeamName1 + ' + ' + this.pointService.winTeamName2);
+    console.log(
+      'WINTEAM',
+      this.pointService.winTeamName1 + ' + ' + this.pointService.winTeamName2
+    );
 
     this.lang = localStorage.getItem('lang');
-    this.winTeamName = `${this.pointService.winTeamName1} ${this.pointService.winTeamName2? ' + ' + this.pointService.winTeamName2 : ''}`
-    
+    this.winTeamName = `${this.pointService.winTeamName1} ${
+      this.pointService.winTeamName2
+        ? ' + ' + this.pointService.winTeamName2
+        : ''
+    }`;
+
     this.score1 = this.pointService.team1Total;
     this.score2 = this.pointService.team2Total;
+  }
+  ionViewDidLeave() {
+    // this.pointService.gameScore = [];
+    this.pointService.winTeamName1 = '';
+    this.pointService.winTeamName2 = '';
+    this.pointService.lossTeamName1 = '';
+    this.pointService.lossTeamName2 = '';
+    this.pointService.team1Name1 = '';
+    this.pointService.team1Name2 = '';
+    this.pointService.team2Name1 = '';
+    this.pointService.team2Name2 = '';
+    this.pointService.team1Total = 0;
+    this.pointService.team2Total = 0;
   }
 }

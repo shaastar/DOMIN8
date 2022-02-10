@@ -45,6 +45,7 @@ export class SplashPage implements OnInit {
   id33 = 'txt33';
   id34 = 'txt34';
   id35 = 'txt35';
+  id36 = 'txt36';
 
   ngOnInit() {
     setTimeout(() => {
@@ -88,6 +89,7 @@ export class SplashPage implements OnInit {
       this.id33 = 'txt-hide33';
       this.id34 = 'txt-hide34';
       this.id35 = 'txt-hide35';
+      this.id36 = 'txt-hide36';
     }, 6500);
   }
 }
