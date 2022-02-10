@@ -50,7 +50,14 @@ export class ScoresPage implements OnInit {
       () => console.log('error')
     );
 
-    if(this.selectedPointNumber < 1){
+    console.log('PPPPP ' + this.selectedPointNumber);
+    console.log('PPPPP ' + this.pointService.selectedPoint);
+
+    if (
+      this.selectedPointNumber < 1 ||
+      this.selectedPointNumber == undefined ||
+      this.pointService.selectedPoint == undefined
+    ) {
       this.router.navigate(['/tabs/point-select']);
     }
     if (this.pointService.gameScore == null) {

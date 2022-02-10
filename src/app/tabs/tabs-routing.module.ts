@@ -7,13 +7,13 @@ const routes: Routes = [
     path: '',
     component: TabsPage,
     children: [
-      {
-        path: 'language',
-        loadChildren: () =>
-          import('../pages/language/language.module').then(
-            (m) => m.LanguagePageModule
-          ),
-      },
+      // {
+      //   path: 'language',
+      //   loadChildren: () =>
+      //     import('../pages/language/language.module').then(
+      //       (m) => m.LanguagePageModule
+      //     ),
+      // },
       {
         path: 'point-select',
         loadChildren: () =>
@@ -45,13 +45,13 @@ const routes: Routes = [
         loadChildren: () =>
           import('../pages/teams/teams.module').then((m) => m.TeamsPageModule),
       },
-      {
-        path: 'calendar',
-        loadChildren: () =>
-          import('../pages/calendar/calendar.module').then(
-            (m) => m.CalendarPageModule
-          ),
-      },
+      // {
+      //   path: 'calendar',
+      //   loadChildren: () =>
+      //     import('../pages/calendar/calendar.module').then(
+      //       (m) => m.CalendarPageModule
+      //     ),
+      // },
       {
         path: 'link',
         loadChildren: () =>
