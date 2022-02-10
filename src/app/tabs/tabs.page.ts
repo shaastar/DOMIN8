@@ -30,43 +30,47 @@ export class TabsPage {
 
   play() {
     // this.router.navigate(['/section'], { queryParams: { id: number } });
-    this.playClicked = true;
-    setTimeout(() => {
-      this.playClicked = false;
-    }, 5570);
+    if (this.playClicked == false) {
+      this.playClicked = true;
+      setTimeout(() => {
+        this.playClicked = false;
+      }, 5570);
+    }
   }
 
   explore() {
     // this.router.navigate(['/tabs/redirect-instagram']);
-    this.exploreClicked = true;
-    setTimeout(() => {
-      this.className1 = 'txt-start';
-      this.id1 = 'txt1';
-      this.id2 = 'txt2';
-      this.id3 = 'txt3';
-      this.id4 = 'txt4';
-      this.id5 = 'txt5';
-      this.id6 = 'txt6';
-      this.id7 = 'txt7';
-      this.id8 = 'txt8';
-      this.id9 = 'txt9';
-    }, 10);
-    setTimeout(() => {
-      this.className1 = 'txt-hide';
-      this.id1 = 'txt-hide1';
-      this.id2 = 'txt-hide2';
-      this.id3 = 'txt-hide3';
-      this.id4 = 'txt-hide4';
-      this.id5 = 'txt-hide5';
-      this.id6 = 'txt-hide6';
-      this.id7 = 'txt-hide7';
-      this.id8 = 'txt-hide8';
-      this.id9 = 'txt-hide9';
-    }, 2500);
+    if (this.exploreClicked == false) {
+      this.exploreClicked = true;
+      setTimeout(() => {
+        this.className1 = 'txt-start';
+        this.id1 = 'txt1';
+        this.id2 = 'txt2';
+        this.id3 = 'txt3';
+        this.id4 = 'txt4';
+        this.id5 = 'txt5';
+        this.id6 = 'txt6';
+        this.id7 = 'txt7';
+        this.id8 = 'txt8';
+        this.id9 = 'txt9';
+      }, 10);
+      setTimeout(() => {
+        this.className1 = 'txt-hide';
+        this.id1 = 'txt-hide1';
+        this.id2 = 'txt-hide2';
+        this.id3 = 'txt-hide3';
+        this.id4 = 'txt-hide4';
+        this.id5 = 'txt-hide5';
+        this.id6 = 'txt-hide6';
+        this.id7 = 'txt-hide7';
+        this.id8 = 'txt-hide8';
+        this.id9 = 'txt-hide9';
+      }, 2500);
 
-    setTimeout(() => {
-      this.exploreClicked = false;
-    }, 4650);
+      setTimeout(() => {
+        this.exploreClicked = false;
+      }, 4650);
+    }
   }
 
   clickDomino() {

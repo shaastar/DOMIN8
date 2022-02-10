@@ -54,14 +54,6 @@ export class ScoresPage implements OnInit {
       this.gameScore = [];
     }
 
-    // if (
-    //   this.temptotalscore1 >= this.selectedPointNumber ||
-    //   this.temptotalscore2 >= this.selectedPointNumber
-    // ) {
-    //   if (this.temproundscore1 != '' || this.temproundscore2 != '') {
-    //     this.checkPointandTotal();
-    //   }
-    // }
     this.selectedPointNumber = this.pointService.selectedPoint;
     console.log('wwwww');
     console.log(this.temptotalscore1);
@@ -99,10 +91,6 @@ export class ScoresPage implements OnInit {
       }
     }
 
-    // handle game score
-    // if (localStorage.getItem('gamescore') == null) {
-    //   this.gameScore = [];
-    // }
   }
   ionViewDidLeave() {
     this.insomnia.allowSleepAgain().then(
@@ -111,29 +99,6 @@ export class ScoresPage implements OnInit {
     );
 
     console.log('line104');
-    //reset team1 if need
-    // if (this.team1 == 'TEAM I' || this.team1 == 'EQUIPO I') {
-    //   this.team1 = '';
-    //   localStorage.setItem('gamescore', null); //tempory shoild remove
-    // } else {
-    //   console.log('TEAM i else');
-    // }
-
-    //reset team1 if need
-    // console.log('line114');
-    // if (this.team2 == 'TEAM II' || this.team2 == 'EQUIPO II') {
-    //   this.team2 = '';
-    //   console.log('eee ' + this.team1);
-    //   console.log('eee ' + this.team2);
-    //   localStorage.setItem('gamescore', null); //tempory shoild remove
-    // } else {
-    //   console.log('TEAM II else');
-    // }
-    //handle gamescore Array
-    // localStorage.setItem('gamescore', JSON.stringify(this.gameScore));
-    // this.gameScore=[]
-
-    // this.gameScore = [];
     console.log('line123');
     // this.temproundscore1 = '';
     // this.temproundscore2 = '';
@@ -165,7 +130,7 @@ export class ScoresPage implements OnInit {
       this.temptotalscore1 >= this.selectedPointNumber ||
       this.temptotalscore2 >= this.selectedPointNumber
     ) {
-      if (this.temproundscore1 != '' || this.temproundscore2 != '') {
+      if (this.temproundscore1 != '' && this.temproundscore2 != '') {
         this.checkPointandTotal();
       }
     }
