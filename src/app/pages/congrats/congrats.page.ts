@@ -42,6 +42,16 @@ export class CongratsPage implements OnInit {
 
     this.score1 = this.pointService.team1Total;
     this.score2 = this.pointService.team2Total;
+
+    if (
+      this.score1 > 0 ||
+      this.score1 != undefined ||
+      this.score2 > 0 ||
+      this.score2 != undefined
+    ) {
+    } else {
+      this.router.navigate(['/tabs/scores']);
+    }
   }
   ionViewDidLeave() {
     this.resetValues();
@@ -62,6 +72,7 @@ export class CongratsPage implements OnInit {
   }
 
   resetGameScore() {
-    this.pointService.gameScore = null;
+    this.pointService.gameScore = [];
+    this.pointService.isNewGame = true;
   }
 }

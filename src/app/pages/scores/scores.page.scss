@@ -11,75 +11,77 @@ ion-header {
       font-size: 19px;
     }
   }
-  
+
   // ion-toolbar {
-    .div-totalscore {
+  .div-totalscore {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    ion-grid {
       width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      ion-grid {
-        padding: 0;
-        margin: 0;
-        .row-total-score {
-          ion-col {
-            padding: 0;
-            margin: 0;
+      padding: 0;
+      margin: 0;
+      .row-total-score {
+        ion-col {
+          padding: 0;
+          margin: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .div-img {
+            width: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
-            .div-img {
-              width: 100%;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              margin-top: 2px;
-              ion-img {
-                width: 20vh;
-                max-width: 200px;
-              }
-            }
-            ion-label {
-              font-family: staatliches;
-              font-size: 28px;
-            }
-            .label-secondary {
-              color: var(--ion-color-secondary);
-            }
-            .label-primary {
-              color: var(--ion-color-primary);
+            margin-top: 2px;
+            ion-img {
+              width: 20vh;
+              max-width: 200px;
             }
           }
+          ion-label {
+            font-family: staatliches;
+            font-size: 28px;
+          }
+          .label-secondary {
+            color: var(--ion-color-secondary);
+          }
+          .label-primary {
+            color: var(--ion-color-primary);
+          }
         }
-        .row-round {
-          border-bottom: solid 5px #000000;
-          ion-col {
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            ion-item {
-              ion-label {
-                text-align: center;
-                font-family: staatliches;
-                font-size: 24px;
-              }
+      }
+      .row-round {
+        border-bottom: solid 5px #000000;
+        ion-col {
+          padding: 0;
+          margin: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          ion-item {
+            ion-label {
+              text-align: center;
+              font-family: staatliches;
+              font-size: 24px;
             }
           }
         }
       }
     }
+  }
 }
 ion-content {
   ion-grid {
     margin-top: 0;
     padding-top: 0;
     .row-round {
-      border-bottom: solid 5px #000000;    
+      border-bottom: solid 5px #000000;
       ion-col {
         padding: 0;
         margin: 0;
+        flex: 0 0 40vh;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -177,8 +179,7 @@ ion-footer {
   }
 }
 
-.padding-left-right-0{
+.padding-left-right-0 {
   padding-left: 0;
   padding-right: 0;
-
 }

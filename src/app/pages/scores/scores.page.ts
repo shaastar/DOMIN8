@@ -60,8 +60,17 @@ export class ScoresPage implements OnInit {
     ) {
       this.router.navigate(['/tabs/point-select']);
     }
-    if (this.pointService.gameScore == null) {
+    if (this.pointService.isNewGame == true) {
       this.gameScore = [];
+      this.selectedPointNumber = 0;
+      this.selectedPointNumber = this.pointService.selectedPoint;
+      this.temproundscore1 = '';
+      this.temproundscore2 = '';
+      this.temptotalscore1 = 0;
+      this.temptotalscore2 = 0;
+      // this.totalScore1 = 0;
+      // this.totalScore2 = 0;
+      this.pointService.isNewGame = false;
     }
 
     this.selectedPointNumber = this.pointService.selectedPoint;
@@ -71,10 +80,17 @@ export class ScoresPage implements OnInit {
     console.log(this.selectedPointNumber);
 
     if (this.temptotalscore1 > 0 || this.temptotalscore2 > 0) {
-      // this.pointService.team1Total = this.temptotalscore1;
-      // this.pointService.team2Total = this.temptotalscore2;
-      this.checkPointandTotal();
-      console.log('FFFF');
+      if (this.temproundscore1 != null && this.temptotalscore2 != null) {
+        if (
+          this.temproundscore1.length != 0 &&
+          this.temproundscore2.length != 0
+        ) {
+          // this.pointService.team1Total = this.temptotalscore1;
+          // this.pointService.team2Total = this.temptotalscore2;
+          this.checkPointandTotal();
+          console.log('FFFF');
+        }
+      }
     }
 
     if (!this.pointService.team1Name1 || !this.pointService.team1Name2) {
@@ -107,8 +123,6 @@ export class ScoresPage implements OnInit {
       () => console.log('error')
     );
 
-    console.log('line104');
-    console.log('line123');
     // this.temproundscore1 = '';
     // this.temproundscore2 = '';
     // this.temptotalscore1 = 0;
@@ -135,12 +149,21 @@ export class ScoresPage implements OnInit {
     }
   }
   focusout() {
+    if (this.temproundscore1 != null && this.temptotalscore2 != null) {
+      console.log(this.temproundscore1.length);
+      console.log(this.temproundscore2.length);
+    }
     if (
       this.temptotalscore1 >= this.selectedPointNumber ||
       this.temptotalscore2 >= this.selectedPointNumber
     ) {
-      if (this.temproundscore1 != '' && this.temproundscore2 != '') {
-        this.checkPointandTotal();
+      if (this.temproundscore1 != null && this.temptotalscore2 != null) {
+        if (
+          this.temproundscore1.length != 0 &&
+          this.temproundscore2.length != 0
+        ) {
+          this.checkPointandTotal();
+        }
       }
     }
   }
@@ -201,6 +224,8 @@ export class ScoresPage implements OnInit {
     this.temptotalscore2 = 0;
     this.totalScore1 = 0;
     this.totalScore2 = 0;
+    // this.pointService.team1Total = 0;
+    // this.pointService.team2Total = 0;
   }
 
   addNewRound() {

@@ -29,7 +29,8 @@ export class CancelCurrentGamePage implements OnInit {
 
   startNewGame() {
     // localStorage.setItem('gamescore', null);
-    this.pointService.gameScore = null;
+    this.pointService.gameScore = [];
+    this.pointService.isNewGame = true;
     this.pointService.winTeamName1 = '';
     this.pointService.winTeamName2 = '';
     this.pointService.lossTeamName1 = '';
@@ -40,6 +41,8 @@ export class CancelCurrentGamePage implements OnInit {
     this.pointService.team2Name2 = '';
     this.pointService.team1Total = 0;
     this.pointService.team2Total = 0;
+    this.pointService.selectedPoint = 0;
     this.router.navigate(['/tabs/point-select']);
+    console.log('jhhbcgd');
   }
 }
