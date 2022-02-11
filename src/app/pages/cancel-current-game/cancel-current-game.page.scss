@@ -5,6 +5,7 @@
   span {
     margin-right: 7px;
     font-family: Montserrat;
+    font-weight: 900;
   }
 }
 ion-content {
@@ -32,6 +33,7 @@ ion-content {
 
     .label-text {
       font-family: Montserrat;
+      font-weight: 900;
       font-size: 20px;
       color: #000000;
     }
@@ -51,7 +53,8 @@ ion-content {
           padding: 5px;
           padding-bottom: 8px;
           padding-top: 7px;
-          font-family: staatliches;
+          font-family: Montserrat;
+            font-weight: 900;
           font-size: 24px;
         }
       }
@@ -81,6 +84,7 @@ ion-footer {
         ion-label {
           color: var(--ion-color-success);
           font-family: Montserrat;
+          font-weight: 900;
           font-size: 19px;
         }
       }

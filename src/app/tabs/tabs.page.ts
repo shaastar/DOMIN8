@@ -74,7 +74,7 @@ export class TabsPage {
   }
 
   clickDomino() {
-     if (this.pointService.isNewGame == false) {
+    if (this.pointService.isNewGame == false) {
       this.router.navigate(['/tabs/scores']);
     } else {
       this.router.navigate(['/tabs/point-select']);

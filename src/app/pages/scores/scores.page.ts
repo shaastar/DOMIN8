@@ -9,6 +9,8 @@ import { AddTeamNameComponent } from '../../components/add-team-name/add-team-na
 // import { Insomnia } from '@awesome-cordova-plugins/insomnia/ngx';
 import { Insomnia } from '@ionic-native/insomnia/ngx';
 
+const delay = (ms) => new Promise((res) => setTimeout(res, ms));
+
 @Component({
   selector: 'app-scores',
   templateUrl: './scores.page.html',
@@ -136,8 +138,9 @@ export class ScoresPage implements OnInit {
       this.temptotalscore2 = this.totalScore2 + roundScore;
     }
   }
-  focusout(e) {
+  async focusout(e) {
     e.preventDefault();
+    await delay(300);
     if (this.temproundscore1 != null && this.temptotalscore2 != null) {
       console.log(this.temproundscore1.length);
       console.log(this.temproundscore2.length);

@@ -8,6 +8,7 @@ ion-header {
     margin-top: 10px;
     .label-selected-points {
       font-family: Montserrat;
+      font-weight: 900;
       font-size: 19px;
     }
   }
@@ -98,6 +99,7 @@ ion-content {
           margin: 10px;
           ion-label {
             font-family: Montserrat;
+            font-weight: 900;
             font-size: 19px;
           }
         }
@@ -113,6 +115,7 @@ ion-content {
           align-items: center;
           ion-label {
             font-family: Montserrat;
+            font-weight: 900;
             font-size: 19px;
           }
         }
@@ -146,6 +149,7 @@ ion-content {
         align-items: center;
         text-align: center;
         font-family: Montserrat;
+        font-weight: 900;
         font-size: 18px;
       }
     }
@@ -172,6 +176,7 @@ ion-footer {
         ion-label {
           color: var(--ion-color-success);
           font-family: Montserrat;
+          font-weight: 900;
           font-size: 19px;
         }
       }
