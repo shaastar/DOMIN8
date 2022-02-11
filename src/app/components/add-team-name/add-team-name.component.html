@@ -79,6 +79,7 @@
       <ion-icon *ngIf="team.teamname2" name="add"></ion-icon>
       {{ team.teamname2 ? team.teamname2 : "" }}
     </ion-label>
+    <ion-icon (click)="deleteTeam($event,team)" slot="end" name="trash" color="danger"></ion-icon>
   </ion-item>
 </ion-content>
 

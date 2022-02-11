@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { PointsHandlerService } from '../../services/points-handler.service';
-import { ModalController } from '@ionic/angular';
+import { AlertController, ModalController } from '@ionic/angular';
 import { Location } from '@angular/common';
 
 @Component({
@@ -18,7 +18,8 @@ export class AddTeamNameComponent implements OnInit {
   constructor(
     private location: Location,
     private pointService: PointsHandlerService,
-    private modalController: ModalController
+    private modalController: ModalController,
+    private alertController : AlertController
   ) {}
 
   backBtn() {
@@ -96,5 +97,35 @@ export class AddTeamNameComponent implements OnInit {
 
   resetChanges() {
     this.teams = this.teamsUnfiltered;
+  }
+
+
+  async deleteTeam(event,delTeam){
+    event.stopPropagation();
+    let lang = localStorage.getItem('lang');
+    const alert = await this.alertController.create({
+      header: lang == 'sp'? 'AVISO':'WARNING',
+      message: lang=='sp'? 'El equipo seleccionado será eliminado. Estás seguro de que deseas continuar?': 'Selected Team will be eliminated. Are you sure you want to continue?',
+      buttons: [
+        {
+          text: lang=='sp'? 'CANCELAR' : 'CANCEL',
+          role: "cancel",
+          cssClass: 'cancel-btn',
+          handler: (blah) => {},
+        },
+        {
+          text: lang=='sp'? 'CONTINUAR' : 'CONTINUE',
+          cssClass: 'continue-btn',
+          handler: () => {
+            this.teams = this.teams.filter(team=>{
+              return !(team.teamname1 == delTeam.teamname1 && team.teamname2 == delTeam.teamname2)
+            })
+            localStorage.setItem("teams", JSON.stringify(this.teams))
+          },
+        },
+      ],
+      cssClass : 'alert-all'
+    });
+    await alert.present();
   }
 }

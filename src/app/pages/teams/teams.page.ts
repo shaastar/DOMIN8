@@ -17,7 +17,13 @@ export class TeamsPage implements OnInit {
     this.location.back();
   }
 
-  ionViewWillEnter(){
-   this.teams = JSON.parse(localStorage.getItem('teams'));
+  ionViewWillEnter() {
+    this.teams = JSON.parse(localStorage.getItem('teams'));
+    this.teams.forEach((team) => {
+      team.winPercentage = (team.wins / (team.wins + team.loss)).toFixed(2);
+    });
+    this.teams.sort(function(team1, team2) {
+      return parseFloat(team2.winPercentage) - parseFloat(team1.winPercentage) || team2.wins - team1.wins;
+  });
   }
 }
