@@ -74,14 +74,11 @@ export class TabsPage {
   }
 
   clickDomino() {
-    if (
-      // this.router.url == '/tabs/scores' ||
-      this.pointService.isNewGame == false
-    ) {
+     if (this.pointService.isNewGame == false) {
       this.router.navigate(['/tabs/scores']);
     } else {
       this.router.navigate(['/tabs/point-select']);
     }
-    console.log(this.router.url);
+    // console.log(this.router.url);
   }
 }

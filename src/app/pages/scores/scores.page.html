@@ -92,7 +92,7 @@
           <ion-input
             [(ngModel)]="temproundscore1"
             (ngModelChange)="tempScoreChange(temproundscore1, 'team1')"
-            (ionBlur)="focusout()"
+            (ionBlur)="focusout($event)"
             type="number"
             placeholder="0"
           ></ion-input>
@@ -109,7 +109,7 @@
           <ion-input
             [(ngModel)]="temproundscore2"
             (ngModelChange)="tempScoreChange(temproundscore2, 'team2')"
-            (ionBlur)="focusout()"
+            (ionBlur)="focusout($event)"
             type="number"
             placeholder="0"
           ></ion-input>

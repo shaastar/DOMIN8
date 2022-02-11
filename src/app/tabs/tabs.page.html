@@ -5,10 +5,10 @@
       <div *ngIf="!playClicked" class="div-btn-play" (click)="play()">
         <ion-label>{{'PLAY'|translate}}</ion-label>
       </div>
-      <div *ngIf="!playClicked" class="div-img-play" (click)="play()">
+      <!-- <div *ngIf="!playClicked" class="div-img-play" (click)="play()">
         <ion-img src="../assets/images/domin gif.jpg"></ion-img>
-      </div>
-      <div *ngIf="playClicked" class="div-gifimg-play" (click)="play()">
+      </div> -->
+      <div *ngIf="playClicked" class="div-gifimg-play">
         <ion-img src="../../assets/images/DOMINO GIF1.gif"></ion-img>
       </div>
       <!-- <ion-img src="../assets/images/domin53.png"></ion-img> -->
@@ -17,13 +17,13 @@
       <div *ngIf="!exploreClicked" class="div-label1" (click)="explore()">
         <ion-label>{{'EXPLORE'|translate}}</ion-label>
       </div>
-      <div *ngIf="!exploreClicked" class="div-label2" (click)="explore()">
+      <!-- <div *ngIf="!exploreClicked" class="div-label2" (click)="explore()">
         <ion-label>@domin5.3</ion-label>
-      </div>
+      </div> -->
       <div
         *ngIf="exploreClicked"
         class="div-explore-clicked"
-        (click)="explore()"
+        
       >
         <ion-label
           ><ion-text color="secondary">
@@ -46,10 +46,10 @@
   <ion-row>
     <ion-col size="4">
       <!-- <ion-tab-button tab="point-select"> -->
-      <ion-tab-button (click)="clickDomino()">
+      <ion-button fill="clear" (click)="clickDomino()">
         <!-- <div tab="" class="home-btn"></div> -->
         <ion-img class="home-btn" src="../assets/images/domin53.png"></ion-img>
-      </ion-tab-button>
+      </ion-button>
     </ion-col>
     <ion-col size="4">
       <ion-tab-button tab="main-menu">

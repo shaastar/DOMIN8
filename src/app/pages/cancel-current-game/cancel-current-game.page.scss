@@ -4,7 +4,7 @@
   display: flex;
   span {
     margin-right: 7px;
-    font-family: Anton;
+    font-family: Montserrat;
   }
 }
 ion-content {
@@ -31,7 +31,7 @@ ion-content {
     text-align: center;
 
     .label-text {
-      font-family: Anton;
+      font-family: Montserrat;
       font-size: 20px;
       color: #000000;
     }
@@ -80,7 +80,7 @@ ion-footer {
         align-items: center;
         ion-label {
           color: var(--ion-color-success);
-          font-family: Anton;
+          font-family: Montserrat;
           font-size: 19px;
         }
       }

@@ -53,13 +53,6 @@ export class ScoresPage implements OnInit {
     console.log('PPPPP ' + this.selectedPointNumber);
     console.log('PPPPP ' + this.pointService.selectedPoint);
 
-    if (
-      this.selectedPointNumber < 1 ||
-      this.selectedPointNumber == undefined ||
-      this.pointService.selectedPoint == undefined
-    ) {
-      this.router.navigate(['/tabs/point-select']);
-    }
     if (this.pointService.isNewGame == true) {
       this.gameScore = [];
       this.selectedPointNumber = 0;
@@ -68,7 +61,7 @@ export class ScoresPage implements OnInit {
       this.temproundscore2 = '';
       this.temptotalscore1 = 0;
       this.temptotalscore2 = 0;
-      // this.totalScore1 = 0;
+      this.totalScore1 = 0;
       // this.totalScore2 = 0;
       this.pointService.isNewGame = false;
     }
@@ -80,16 +73,11 @@ export class ScoresPage implements OnInit {
     console.log(this.selectedPointNumber);
 
     if (this.temptotalscore1 > 0 || this.temptotalscore2 > 0) {
-      if (this.temproundscore1 != null && this.temptotalscore2 != null) {
-        if (
-          this.temproundscore1.length != 0 &&
-          this.temproundscore2.length != 0
-        ) {
-          // this.pointService.team1Total = this.temptotalscore1;
-          // this.pointService.team2Total = this.temptotalscore2;
-          this.checkPointandTotal();
-          console.log('FFFF');
-        }
+      if (this.temproundscore1 && this.temproundscore2) {
+        // this.pointService.team1Total = this.temptotalscore1;
+        // this.pointService.team2Total = this.temptotalscore2;
+        this.checkPointandTotal();
+        console.log('FFFF');
       }
     }
 
@@ -148,7 +136,8 @@ export class ScoresPage implements OnInit {
       this.temptotalscore2 = this.totalScore2 + roundScore;
     }
   }
-  focusout() {
+  focusout(e) {
+    e.preventDefault();
     if (this.temproundscore1 != null && this.temptotalscore2 != null) {
       console.log(this.temproundscore1.length);
       console.log(this.temproundscore2.length);
