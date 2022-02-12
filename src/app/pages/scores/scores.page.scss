@@ -7,7 +7,7 @@ ion-header {
     align-items: center;
     margin-top: 10px;
     .label-selected-points {
-      font-family: Montserrat;
+     
       font-weight: 900;
       font-size: 19px;
     }
@@ -88,7 +88,6 @@ ion-content {
           // margin: 10px;
           ion-input {
             text-align: center;
-            font-family: staatliches;
             font-size: 24px;
             font-weight: 700;
           }
@@ -96,7 +95,7 @@ ion-content {
         div {
           margin: 10px;
           ion-label {
-            font-family: Montserrat;
+           
             font-weight: 900;
             font-size: 19px;
           }
@@ -112,14 +111,13 @@ ion-content {
           justify-content: center;
           align-items: center;
           ion-label {
-            font-family: Montserrat;
+           
             font-weight: 900;
             font-size: 19px;
           }
         }
         // .add-scores {
         //   //   color: var(--ion-color-primary);
-        //   font-family: staatliches;
         //   font-size: 24px;
         //   font-weight: 700;
         // }
@@ -146,7 +144,7 @@ ion-content {
         justify-content: center;
         align-items: center;
         text-align: center;
-        font-family: Montserrat;
+       
         font-weight: 900;
         font-size: 18px;
       }
@@ -173,7 +171,7 @@ ion-footer {
         text-align: center;
         ion-label {
           color: var(--ion-color-success);
-          font-family: Montserrat;
+         
           font-weight: 900;
           font-size: 19px;
         }
