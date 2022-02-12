@@ -105,10 +105,10 @@ export class AddTeamNameComponent implements OnInit {
     let lang = localStorage.getItem('lang');
     const alert = await this.alertController.create({
       header: lang == 'sp'? 'AVISO':'WARNING',
-      message: lang=='sp'? 'El equipo seleccionado será eliminado. ¿Estás seguro de que deseas continuar?': 'The team selected will be eliminated. Are you sure you want to continue?',
+      message: lang=='sp'? 'El equipo seleccionado será eliminado. ¿Estás seguro que deseas continuar?': 'The team selected will be eliminated. Are you sure you want to continue?',
       buttons: [
       
-        {
+        { 
           text: lang=='sp'? 'CONTINUAR' : 'CONTINUE',
           cssClass: 'continue-btn',
           handler: () => {

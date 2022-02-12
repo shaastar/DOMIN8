@@ -33,7 +33,6 @@ ion-content {
           justify-content: center;
           align-items: center;
           ion-label {
-           
             font-weight: 900;
             font-size: 19px;
           }
@@ -111,7 +110,7 @@ ion-content {
     //   margin-top: 0;
     //   padding-left: 10px;
     //   padding-right: 10px;
-    //  
+    //
     //   font-weight: 900;
     //   font-size: 15px;
     //   .col-li {
@@ -129,5 +128,30 @@ ion-content {
     //     }
     //   }
     // }
+  }
+}
+.content-row {
+  .left-col {
+    display: grid;
+    grid-template-columns: 20px 1fr 8vw;
+  }
+  .right-col {
+    display: grid;
+    grid-template-columns: 8vw 1fr;
+  }
+}
+.header-row {
+  border-bottom: solid 5px #000000;
+  ion-col {
+    padding: 16px 5px;
+  }
+  .right-col {
+    display: grid;
+    grid-template-columns: 8vw 1fr;
+  }
+  .left-col {
+    display: grid;
+    grid-template-columns: 1fr 8vw;
+    border-right: solid 5px #000000;
   }
 }
