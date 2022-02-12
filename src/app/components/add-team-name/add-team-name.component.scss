@@ -51,10 +51,15 @@ ion-header {
             font-weight: 900;
               font-size: 19px;
             }
+            --padding-end :4px;
+            --inner-padding-end :0;
+            --inner-padding-start :0;
+            --padding-start : 4px;
 
             ion-input {
               text-align: center;
-             
+              --padding-end :0;
+              --padding-start :0;
             font-weight: 900;
               font-size: 22px;
               font-weight: 500;

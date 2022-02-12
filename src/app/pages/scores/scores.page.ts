@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { PointsHandlerService } from '../../services/points-handler.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
@@ -8,6 +8,7 @@ import { AddTeamNameComponent } from '../../components/add-team-name/add-team-na
 
 // import { Insomnia } from '@awesome-cordova-plugins/insomnia/ngx';
 import { Insomnia } from '@ionic-native/insomnia/ngx';
+import { Keyboard } from '@capacitor/keyboard';
 
 const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 
@@ -23,6 +24,7 @@ export class ScoresPage implements OnInit {
   team2: string = '';
   team1selected = false;
   team2selected = false;
+  isKeyboardShowing: boolean = false;
 
   constructor(
     private location: Location,
@@ -31,7 +33,8 @@ export class ScoresPage implements OnInit {
     private insomnia: Insomnia,
     //  private popover: PopoverController,
     private modalCtrl: ModalController,
-    private platform: Platform
+    private platform: Platform,
+    private changeDetectorRef : ChangeDetectorRef
   ) {
     // this.gameScore = [];
   }
@@ -40,6 +43,25 @@ export class ScoresPage implements OnInit {
 
   ngOnInit() {
     // this.gameScore = [];
+    this.platform.ready().then(() => {
+      Keyboard.addListener('keyboardWillShow', (info) => {
+        this.isKeyboardShowing = true;
+        console.log("Key board showing will show", this.isKeyboardShowing);
+        this.changeDetectorRef.detectChanges();
+
+      });
+      Keyboard.addListener('keyboardDidShow', (info) => {
+        this.isKeyboardShowing = true;
+        console.log("Key board showing did show", this.isKeyboardShowing);
+        this.changeDetectorRef.detectChanges();
+      });
+      Keyboard.addListener('keyboardWillHide', () => {
+        this.isKeyboardShowing = false;
+        console.log("Key board hiding will hide", this.isKeyboardShowing);
+        this.changeDetectorRef.detectChanges();
+      });
+ 
+    });
   }
 
   backBtn() {

@@ -1,8 +1,10 @@
-import { Component, ViewChild } from '@angular/core';
+import { Platform } from '@ionic/angular';
+import { ChangeDetectorRef, Component, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { PointsHandlerService } from '../services/points-handler.service';
 
 // import { TranslateService } from '@ngx-translate/core';
+import { Keyboard, KeyboardResize } from '@capacitor/keyboard';
 
 @Component({
   selector: 'app-tabs',
@@ -10,6 +12,7 @@ import { PointsHandlerService } from '../services/points-handler.service';
   styleUrls: ['tabs.page.scss'],
 })
 export class TabsPage {
+  isKeyboardShowing: boolean = false;
   className1: string;
   id1: string;
   id2: string;
@@ -25,8 +28,30 @@ export class TabsPage {
   exploreClicked = false;
   constructor(
     private router: Router,
-    private pointService: PointsHandlerService
-  ) {}
+    private pointService: PointsHandlerService,
+    private platform: Platform,
+    private changeDetectorRef : ChangeDetectorRef
+  ) {
+    this.platform.ready().then(() => {
+      Keyboard.addListener('keyboardWillShow', (info) => {
+        this.isKeyboardShowing = true;
+        console.log("Key board showing will show", this.isKeyboardShowing);
+        this.changeDetectorRef.detectChanges();
+
+      });
+      Keyboard.addListener('keyboardDidShow', (info) => {
+        this.isKeyboardShowing = true;
+        console.log("Key board showing did show", this.isKeyboardShowing);
+        this.changeDetectorRef.detectChanges();
+      });
+      Keyboard.addListener('keyboardWillHide', () => {
+        this.isKeyboardShowing = false;
+        console.log("Key board hiding will hide", this.isKeyboardShowing);
+        this.changeDetectorRef.detectChanges();
+      });
+ 
+    });
+  }
 
   play() {
     // this.router.navigate(['/section'], { queryParams: { id: number } });

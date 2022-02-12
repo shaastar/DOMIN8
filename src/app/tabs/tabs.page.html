@@ -1,6 +1,6 @@
 <!-- tabs -->
-<ion-tabs>
-  <ion-row>
+<ion-tabs >
+  <ion-row *ngIf="!isKeyboardShowing">
     <ion-col class="col-play-btn" size="6">
       <div *ngIf="!playClicked" class="div-btn-play" (click)="play()">
         <ion-label>{{'PLAY'|translate}}</ion-label>
@@ -43,13 +43,13 @@
       </div>
     </ion-col>
   </ion-row>
-  <ion-row>
+  <ion-row *ngIf="!isKeyboardShowing">
     <ion-col size="4">
       <!-- <ion-tab-button tab="point-select"> -->
-      <ion-button fill="clear" (click)="clickDomino()">
+      <ion-tab-button fill="clear" (click)="clickDomino()">
         <!-- <div tab="" class="home-btn"></div> -->
         <ion-img class="home-btn" src="../assets/images/domin53.png"></ion-img>
-      </ion-button>
+      </ion-tab-button>
     </ion-col>
     <ion-col size="4">
       <ion-tab-button tab="main-menu">

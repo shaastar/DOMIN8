@@ -2,7 +2,7 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button
-      mode="md"
+        text=""
         defaultHref=""
         class="btn-back"
         color="success"
@@ -86,14 +86,13 @@
 <ion-footer class="ion-no-border">
   <ion-row>
     <ion-col size="12">
-      <ion-tab-button tab="cancel-current-game">
+     
         <div class="div-btn-points" (click)="addTeam()">
           <ion-label class="ion-activatable">
             <ion-ripple-effect></ion-ripple-effect>
             {{ "accept" | translate }}</ion-label
           >
         </div>
-      </ion-tab-button>
     </ion-col>
   </ion-row>
 </ion-footer>
