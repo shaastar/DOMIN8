@@ -22,8 +22,9 @@ export class ScoresPage implements OnInit {
   selectedPointNumber: number = this.pointService.selectedPoint;
   team1: string = '';
   team2: string = '';
-  team1selected = false;
-  team2selected = false;
+  team1selected: boolean = false;
+  team2selected: boolean = false;
+  isNewround: boolean;
   isKeyboardShowing: boolean = false;
 
   constructor(
@@ -79,8 +80,16 @@ export class ScoresPage implements OnInit {
       () => console.log('error')
     );
 
+    this.selectedPointNumber = this.pointService.selectedPoint;
     console.log('PPPPP ' + this.selectedPointNumber);
     console.log('PPPPP ' + this.pointService.selectedPoint);
+
+    if (
+      this.selectedPointNumber > this.temptotalscore1 &&
+      this.selectedPointNumber > this.temptotalscore2
+    ) {
+      this.isNewround = true;
+    }
 
     if (this.pointService.isNewGame == true) {
       this.gameScore = [];
@@ -93,6 +102,7 @@ export class ScoresPage implements OnInit {
       this.totalScore1 = 0;
       // this.totalScore2 = 0;
       this.pointService.isNewGame = false;
+      this.isNewround = true;
     }
 
     this.selectedPointNumber = this.pointService.selectedPoint;
@@ -105,7 +115,7 @@ export class ScoresPage implements OnInit {
       if (this.temproundscore1 && this.temproundscore2) {
         // this.pointService.team1Total = this.temptotalscore1;
         // this.pointService.team2Total = this.temptotalscore2;
-        this.checkPointandTotal();
+        // this.checkPointandTotal();
         console.log('FFFF');
       }
     }
@@ -191,7 +201,7 @@ export class ScoresPage implements OnInit {
           this.temproundscore1.length != 0 &&
           this.temproundscore2.length != 0
         ) {
-          this.checkPointandTotal();
+          this.addNewRound();
         }
       }
     }
@@ -211,7 +221,8 @@ export class ScoresPage implements OnInit {
         this.pointService.lossTeamName2 = this.pointService.team1Name2;
 
         // console.log('win1');
-        this.resetValues();
+        this.assignTotalToService();
+        // this.resetValues();
       }
       // }
       else if (this.temptotalscore2 != this.temptotalscore1) {
@@ -223,7 +234,9 @@ export class ScoresPage implements OnInit {
         this.pointService.winTeamName2 = this.pointService.team1Name2;
         this.pointService.lossTeamName1 = this.pointService.team2Name1;
         this.pointService.lossTeamName2 = this.pointService.team2Name2;
-        this.resetValues();
+        // console.log('win2');
+        this.assignTotalToService();
+        // this.resetValues();
       }
     } else if (this.temptotalscore2 >= this.selectedPointNumber) {
       this.setDefaultTeamName();
@@ -234,18 +247,20 @@ export class ScoresPage implements OnInit {
       this.pointService.lossTeamName2 = this.pointService.team1Name2;
 
       // console.log('win3');
-      this.resetValues();
+      this.assignTotalToService();
+      // this.resetValues();
     }
   }
 
-  resetValues() {
-    //----this not resetting but assigning---
+  assignTotalToService() {
+    this.isNewround = false;
     this.pointService.team1Total = this.temptotalscore1;
     this.pointService.team2Total = this.temptotalscore2;
-
-    // ---value resetting---
     this.pointService.handlecountTeamsWin();
     this.router.navigate(['/tabs/congrats']);
+  }
+  resetValues() {
+    // ---value resetting---
     this.gameScore = [];
     this.temproundscore1 = '';
     this.temproundscore2 = '';

@@ -22,7 +22,7 @@ export class CongratsPage implements OnInit {
 
   backBtn() {
     // this.location.back();
-    this.router.navigate(['/tabs/point-select']);
+    this.router.navigate(['/tabs/scores']);
   }
 
   ionViewWillEnter() {
@@ -43,7 +43,7 @@ export class CongratsPage implements OnInit {
     }
   }
   ionViewDidLeave() {
-    this.resetPointServiceValues();
+    // this.resetPointServiceValues();
     this.winTeamName = '';
     this.score1 = 0;
     this.score2 = 0;
@@ -65,8 +65,8 @@ export class CongratsPage implements OnInit {
   }
 
   resetGameScore() {
-    this.pointService.gameScore = null;
-    this.pointService.gameScore = [];
-    this.pointService.isNewGame = true;
+    // this.pointService.gameScore = null;
+    // this.pointService.gameScore = [];
+    this.pointService.isNewGame = false;
   }
 }
