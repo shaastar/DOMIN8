@@ -114,7 +114,7 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-  <div class="div-addround">
+  <div class="div-addround" *ngIf="isNewround">
     <ion-tab-button>
       <div class="div-btn-points ion-activatable" (click)="addNewRound()">
         <ion-ripple-effect></ion-ripple-effect>
