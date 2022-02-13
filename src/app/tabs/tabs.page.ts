@@ -1,5 +1,5 @@
 import { Platform } from '@ionic/angular';
-import { ChangeDetectorRef, Component, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, NgZone, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { PointsHandlerService } from '../services/points-handler.service';
 
@@ -30,26 +30,48 @@ export class TabsPage {
     private router: Router,
     private pointService: PointsHandlerService,
     private platform: Platform,
-    private changeDetectorRef : ChangeDetectorRef
+    private changeDetectorRef: ChangeDetectorRef,
+    private zone : NgZone
   ) {
     this.platform.ready().then(() => {
       Keyboard.addListener('keyboardWillShow', (info) => {
-        this.isKeyboardShowing = true;
-        console.log("Key board showing will show", this.isKeyboardShowing);
-        this.changeDetectorRef.detectChanges();
+        this.zone.run(() => {
+          this.isKeyboardShowing = true;
+          console.log("Key board showing will show", this.isKeyboardShowing);
+          this.changeDetectorRef.detectChanges();
+        });
 
       });
       Keyboard.addListener('keyboardDidShow', (info) => {
-        this.isKeyboardShowing = true;
-        console.log("Key board showing did show", this.isKeyboardShowing);
-        this.changeDetectorRef.detectChanges();
+        this.zone.run(() => {
+          this.isKeyboardShowing = true;
+          console.log("Key board showing will show", this.isKeyboardShowing);
+          this.changeDetectorRef.detectChanges();
+       
+        });
+      
       });
       Keyboard.addListener('keyboardWillHide', () => {
-        this.isKeyboardShowing = false;
-        console.log("Key board hiding will hide", this.isKeyboardShowing);
-        this.changeDetectorRef.detectChanges();
+        this.zone.run(() => {
+          this.isKeyboardShowing = false;
+          console.log("Key board hiding will hide", this.isKeyboardShowing);
+          this.changeDetectorRef.detectChanges();
+       
+        });
+
       });
- 
+      // window.addEventListener('keyboardWillShow', (e) => {});
+      // window.addEventListener('keyboardWillHide', () => {});
+      // window.addEventListener('keyboardDidShow', (e) => {
+      //   this.isKeyboardShowing = true;
+      //   console.log('Key board showing will show', this.isKeyboardShowing);
+      //   // this.changeDetectorRef.detectChanges();
+      // });
+      // window.addEventListener('keyboardDidHide', () => {
+      //     this.isKeyboardShowing = false;
+      //   console.log("Key board hiding will hide", this.isKeyboardShowing);
+      //   // this.changeDetectorRef.detectChanges();
+      // });
     });
   }
 

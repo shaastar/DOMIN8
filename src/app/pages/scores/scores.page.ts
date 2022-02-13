@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, NgZone, OnInit } from '@angular/core';
 import { PointsHandlerService } from '../../services/points-handler.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
@@ -34,7 +34,8 @@ export class ScoresPage implements OnInit {
     //  private popover: PopoverController,
     private modalCtrl: ModalController,
     private platform: Platform,
-    private changeDetectorRef : ChangeDetectorRef
+    private changeDetectorRef : ChangeDetectorRef,
+    private zone : NgZone
   ) {
     // this.gameScore = [];
   }
@@ -45,20 +46,34 @@ export class ScoresPage implements OnInit {
     // this.gameScore = [];
     this.platform.ready().then(() => {
       Keyboard.addListener('keyboardWillShow', (info) => {
-        this.isKeyboardShowing = true;
-        console.log("Key board showing will show", this.isKeyboardShowing);
-        this.changeDetectorRef.detectChanges();
+        this.zone.run(() => {
+          this.isKeyboardShowing = true;
+          console.log("Key board showing will show", this.isKeyboardShowing);
+          this.changeDetectorRef.detectChanges();
+       
+        });
+
+
+
+
 
       });
       Keyboard.addListener('keyboardDidShow', (info) => {
-        this.isKeyboardShowing = true;
-        console.log("Key board showing did show", this.isKeyboardShowing);
-        this.changeDetectorRef.detectChanges();
+        this.zone.run(() => {
+          this.isKeyboardShowing = true;
+          console.log("Key board showing will show", this.isKeyboardShowing);
+          this.changeDetectorRef.detectChanges();
+       
+        });
       });
       Keyboard.addListener('keyboardWillHide', () => {
-        this.isKeyboardShowing = false;
-        console.log("Key board hiding will hide", this.isKeyboardShowing);
-        this.changeDetectorRef.detectChanges();
+        this.zone.run(() => {
+          this.isKeyboardShowing = false;
+          console.log("Key board hiding will hide", this.isKeyboardShowing);
+          this.changeDetectorRef.detectChanges();
+       
+        });
+
       });
  
     });

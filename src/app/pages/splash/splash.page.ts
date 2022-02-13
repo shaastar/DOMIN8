@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-splash',
@@ -7,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./splash.page.scss'],
 })
 export class SplashPage implements OnInit {
-  constructor(private router: Router) {}
+  constructor(private navCtr : NavController) {}
 
   className1 = 'txt-start';
   id1 = 'txt1';
@@ -49,7 +50,7 @@ export class SplashPage implements OnInit {
 
   ngOnInit() {
     setTimeout(() => {
-      this.router.navigate(['tabs/point-select']);
+      this.navCtr.navigateRoot('tabs/point-select');
     }, 10000);
 
     setTimeout(() => {
