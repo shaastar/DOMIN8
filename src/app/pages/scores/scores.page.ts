@@ -34,8 +34,8 @@ export class ScoresPage implements OnInit {
     //  private popover: PopoverController,
     private modalCtrl: ModalController,
     private platform: Platform,
-    private changeDetectorRef : ChangeDetectorRef,
-    private zone : NgZone
+    private changeDetectorRef: ChangeDetectorRef,
+    private zone: NgZone
   ) {
     // this.gameScore = [];
   }
@@ -48,34 +48,24 @@ export class ScoresPage implements OnInit {
       Keyboard.addListener('keyboardWillShow', (info) => {
         this.zone.run(() => {
           this.isKeyboardShowing = true;
-          console.log("Key board showing will show", this.isKeyboardShowing);
+          console.log('Key board showing will show', this.isKeyboardShowing);
           this.changeDetectorRef.detectChanges();
-       
         });
-
-
-
-
-
       });
       Keyboard.addListener('keyboardDidShow', (info) => {
         this.zone.run(() => {
           this.isKeyboardShowing = true;
-          console.log("Key board showing will show", this.isKeyboardShowing);
+          console.log('Key board showing will show', this.isKeyboardShowing);
           this.changeDetectorRef.detectChanges();
-       
         });
       });
       Keyboard.addListener('keyboardWillHide', () => {
         this.zone.run(() => {
           this.isKeyboardShowing = false;
-          console.log("Key board hiding will hide", this.isKeyboardShowing);
+          console.log('Key board hiding will hide', this.isKeyboardShowing);
           this.changeDetectorRef.detectChanges();
-       
         });
-
       });
- 
     });
   }
 
@@ -168,11 +158,21 @@ export class ScoresPage implements OnInit {
 
   tempScoreChange(roundScore, team) {
     if (team == 'team1') {
-      this.temproundscore1 = roundScore;
-      this.temptotalscore1 = this.totalScore1 + roundScore;
+      if (!roundScore) {
+        this.temproundscore1 = '0';
+        this.temptotalscore1 = this.totalScore1 + roundScore;
+      } else {
+        this.temproundscore1 = roundScore;
+        this.temptotalscore1 = this.totalScore1 + roundScore;
+      }
     } else if (team == 'team2') {
-      this.temproundscore2 = roundScore;
-      this.temptotalscore2 = this.totalScore2 + roundScore;
+      if (!roundScore) {
+        this.temproundscore2 = '0';
+        this.temptotalscore2 = this.totalScore2 + roundScore;
+      } else {
+        this.temproundscore2 = roundScore;
+        this.temptotalscore2 = this.totalScore2 + roundScore;
+      }
     }
   }
   async focusout(e) {
@@ -258,7 +258,7 @@ export class ScoresPage implements OnInit {
   }
 
   addNewRound() {
-    if (this.temproundscore1 >= '0' || this.temproundscore2 >= '0') {
+    if (this.temproundscore1 > '0' || this.temproundscore2 > '0') {
       if (this.temproundscore1 == '') {
         this.temproundscore1 = '0';
       } else if (this.temproundscore2 == '') {
