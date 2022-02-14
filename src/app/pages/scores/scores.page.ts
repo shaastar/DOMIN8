@@ -101,7 +101,7 @@ export class ScoresPage implements OnInit {
       this.temptotalscore1 = 0;
       this.temptotalscore2 = 0;
       this.totalScore1 = 0;
-      // this.totalScore2 = 0;
+      this.totalScore2 = 0;
       this.pointService.isNewGame = false;
       this.isNewround = true;
     }
@@ -109,7 +109,7 @@ export class ScoresPage implements OnInit {
     this.selectedPointNumber = this.pointService.selectedPoint;
     console.log('wwwww');
     console.log(this.temptotalscore1);
-    console.log(this.temptotalscore2);
+    console.log("Score 2",JSON.stringify(this.temptotalscore2));
     console.log(this.selectedPointNumber);
 
     if (this.temptotalscore1 > 0 || this.temptotalscore2 > 0) {
