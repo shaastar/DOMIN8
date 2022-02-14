@@ -37,7 +37,8 @@ export class PointsHandlerService {
     }
   }
   countTeamsWin() {
-    var teams: Array<any> = [];
+    try {
+      var teams: Array<any> = [];
     var winTeam = {
       teamname1: this.winTeamName1,
       teamname2: this.winTeamName2,
@@ -85,5 +86,7 @@ export class PointsHandlerService {
       }
     }
     localStorage.setItem('teams', JSON.stringify(teams));
+    } catch (error) {
+    }
   }
 }

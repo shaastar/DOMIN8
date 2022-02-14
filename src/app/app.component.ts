@@ -21,9 +21,9 @@ export class AppComponent {
     this.platform.ready().then(() => {
       setTimeout(() => {
         SplashScreen.hide({
-          fadeOutDuration: 2000,
+          fadeOutDuration: 1000,
         });
-      }, 2000);
+      }, 1000);
     });
 
     if (localStorage.getItem('lang')) {

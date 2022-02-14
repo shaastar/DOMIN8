@@ -360,7 +360,7 @@ export class ScoresPage implements OnInit {
     let lang = localStorage.getItem('lang');
     const alert = await this.alertController.create({
       header: lang == 'sp'? 'NUEVO JUEGO':'NEW GAME',
-      message: lang=='sp'? 'Se anulará el juego actual y comenzará uno nuevo. ¿Deseas continuar?': 'Void current game and start a new one. Do you wish to continue?',
+      message: lang=='sp'? 'Comenzarás un nuevo juego. ¿Deseas proceder?': 'You will begin a new game. Do you wish to proceed?',
       buttons: [
       
         { 
