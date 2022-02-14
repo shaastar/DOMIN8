@@ -3,7 +3,7 @@ import { PointsHandlerService } from '../../services/points-handler.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { PopoverController, ModalController, Platform } from '@ionic/angular';
+import { PopoverController, ModalController, Platform, AlertController } from '@ionic/angular';
 import { AddTeamNameComponent } from '../../components/add-team-name/add-team-name.component';
 
 // import { Insomnia } from '@awesome-cordova-plugins/insomnia/ngx';
@@ -36,7 +36,8 @@ export class ScoresPage implements OnInit {
     private modalCtrl: ModalController,
     private platform: Platform,
     private changeDetectorRef: ChangeDetectorRef,
-    private zone: NgZone
+    private zone: NgZone,
+    private alertController : AlertController
   ) {
     // this.gameScore = [];
   }
@@ -352,5 +353,46 @@ export class ScoresPage implements OnInit {
       this.pointService.team2Name2 = '';
       console.log('pppppp ' + this.team2);
     }
+  }
+
+
+  async cancelCurrentGame(){
+    let lang = localStorage.getItem('lang');
+    const alert = await this.alertController.create({
+      header: lang == 'sp'? 'NUEVO JUEGO':'NEW GAME',
+      message: lang=='sp'? 'Se anulará el juego actual y comenzará uno nuevo. ¿Deseas continuar?': 'Void current game and start a new one. Do you wish to continue?',
+      buttons: [
+      
+        { 
+          text: lang=='sp'? 'CONTINUAR' : 'CONTINUE',
+          cssClass: 'continue-btn',
+          handler: () => {
+            this.pointService.gameScore = null;
+            this.pointService.gameScore = [];
+            this.pointService.isNewGame = true;
+            this.pointService.winTeamName1 = '';
+            this.pointService.winTeamName2 = '';
+            this.pointService.lossTeamName1 = '';
+            this.pointService.lossTeamName2 = '';
+            this.pointService.team1Name1 = '';
+            this.pointService.team1Name2 = '';
+            this.pointService.team2Name1 = '';
+            this.pointService.team2Name2 = '';
+            this.pointService.team1Total = 0;
+            this.pointService.team2Total = 0;
+            this.pointService.selectedPoint = 0;
+            this.router.navigate(['/tabs/point-select']);
+          },
+        },
+        {
+          text: lang=='sp'? 'CANCELAR' : 'CANCEL',
+          role: "cancel",
+          cssClass: 'cancel-btn',
+          handler: (blah) => {},
+        },
+      ],
+      cssClass : 'alert-all'
+    });
+    await alert.present();
   }
 }

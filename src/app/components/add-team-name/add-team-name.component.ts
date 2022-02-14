@@ -104,7 +104,7 @@ export class AddTeamNameComponent implements OnInit {
     event.stopPropagation();
     let lang = localStorage.getItem('lang');
     const alert = await this.alertController.create({
-      header: lang == 'sp'? 'AVISO':'WARNING',
+      header: lang == 'sp'? 'ELIMINAR EQUIPO':'DELETE TEAM',
       message: lang=='sp'? 'El equipo seleccionado será eliminado. ¿Estás seguro que deseas continuar?': 'The team selected will be eliminated. Are you sure you want to continue?',
       buttons: [
       

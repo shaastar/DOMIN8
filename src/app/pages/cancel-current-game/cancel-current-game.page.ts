@@ -44,7 +44,6 @@ export class CancelCurrentGamePage implements OnInit {
     this.pointService.team2Total = 0;
     this.pointService.selectedPoint = 0;
     this.router.navigate(['/tabs/point-select']);
-    console.log('jhhbcgd');
     
   }
 }

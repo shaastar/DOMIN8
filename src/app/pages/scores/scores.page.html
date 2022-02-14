@@ -1,7 +1,7 @@
 <ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button
+    <ion-buttons *ngIf="isNewround" slot="start">
+      <ion-back-button 
         text=""
         defaultHref=""
         class="btn-back"
@@ -127,7 +127,7 @@
 <ion-footer *ngIf="!isKeyboardShowing" class="ion-no-border">
   <ion-row>
     <ion-col size="12">
-      <ion-tab-button tab="cancel-current-game">
+      <ion-tab-button (click)="cancelCurrentGame()">
         <div class="div-btn-points">
           <ion-label class="ion-activatable ripple-parent">
             <ion-ripple-effect></ion-ripple-effect>
