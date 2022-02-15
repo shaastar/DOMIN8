@@ -1,10 +1,10 @@
 ion-header {
   .div-btn-points {
     width: 100%;
-    padding-right: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
+
     margin-top: 10px;
     .label-selected-points {
      
@@ -111,6 +111,7 @@ ion-content {
           display: flex;
           justify-content: center;
           align-items: center;
+        
           ion-label {
            
             font-weight: 900;
@@ -140,6 +141,7 @@ ion-content {
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
       ion-label {
         display: flex;
         justify-content: center;
@@ -170,6 +172,7 @@ ion-footer {
         justify-content: center;
         align-items: center;
         text-align: center;
+        flex-direction: column;
         ion-label {
           color: var(--ion-color-success);
          

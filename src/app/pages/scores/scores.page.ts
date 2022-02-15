@@ -9,6 +9,7 @@ import { AddTeamNameComponent } from '../../components/add-team-name/add-team-na
 // import { Insomnia } from '@awesome-cordova-plugins/insomnia/ngx';
 import { Insomnia } from '@ionic-native/insomnia/ngx';
 import { Keyboard } from '@capacitor/keyboard';
+import { Capacitor } from '@capacitor/core';
 
 const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 
@@ -26,7 +27,7 @@ export class ScoresPage implements OnInit {
   team2selected: boolean = false;
   isNewround: boolean;
   isKeyboardShowing: boolean = false;
-
+  currentPlatform: any;
   constructor(
     private location: Location,
     private pointService: PointsHandlerService,
@@ -44,8 +45,9 @@ export class ScoresPage implements OnInit {
 
   gameScore: Array<any> = []; //this is game score detail Array
 
-  ngOnInit() {
+  async ngOnInit() {
     // this.gameScore = [];
+    this.currentPlatform = await Capacitor.getPlatform();
     this.platform.ready().then(() => {
       Keyboard.addListener('keyboardWillShow', (info) => {
         this.zone.run(() => {
@@ -171,18 +173,18 @@ export class ScoresPage implements OnInit {
     if (team == 'team1') {
       if (!roundScore) {
         this.temproundscore1 = '0';
-        this.temptotalscore1 = this.totalScore1 + roundScore;
+        this.temptotalscore1 = this.totalScore1 ;
       } else {
         this.temproundscore1 = roundScore;
-        this.temptotalscore1 = this.totalScore1 + roundScore;
+        this.temptotalscore1 = this.totalScore1 + parseInt(roundScore);
       }
     } else if (team == 'team2') {
       if (!roundScore) {
         this.temproundscore2 = '0';
-        this.temptotalscore2 = this.totalScore2 + roundScore;
+        this.temptotalscore2 = this.totalScore2 ;
       } else {
         this.temproundscore2 = roundScore;
-        this.temptotalscore2 = this.totalScore2 + roundScore;
+        this.temptotalscore2 = this.totalScore2 + parseInt(roundScore);
       }
     }
   }

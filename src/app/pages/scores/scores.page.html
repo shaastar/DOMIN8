@@ -9,7 +9,7 @@
         (click)="backBtn()"
       ></ion-back-button>
     </ion-buttons>
-    <div class="div-btn-points">
+    <div [style.padding]="currentPlatform == 'ios'? '0 23px 0 0':'0 48px 0 0 '" class="div-btn-points">
       <ion-label class="label-selected-points"
         >{{selectedPointNumber}} {{'points'| translate}}</ion-label
       >
@@ -87,9 +87,10 @@
             [(ngModel)]="temproundscore1"
             (ngModelChange)="tempScoreChange(temproundscore1, 'team1')"
             (ionBlur)="focusout($event)"
-            type="number"
+            type="tel"
             placeholder="0"
             inputmode="numeric"
+            maxlength="3"
           ></ion-input>
         </ion-item>
         <!-- <ion-label style="margin-left: 35px" class="add-scores">25</ion-label> -->
@@ -105,7 +106,8 @@
             [(ngModel)]="temproundscore2"
             (ngModelChange)="tempScoreChange(temproundscore2, 'team2')"
             (ionBlur)="focusout($event)"
-            type="number"
+            type="tel"
+            maxlength="3"
             placeholder="0"
             inputmode="numeric"
           ></ion-input>
@@ -118,7 +120,9 @@
     <ion-tab-button>
       <div class="div-btn-points ion-activatable" (click)="addNewRound()">
         <ion-ripple-effect></ion-ripple-effect>
-        <ion-label> {{'add_Round'|translate}}</ion-label>
+        <ion-label> +{{'add'|translate}}</ion-label>
+        <ion-label> {{'round'|translate}}</ion-label>
+
       </div>
     </ion-tab-button>
   </div>
@@ -128,11 +132,17 @@
   <ion-row>
     <ion-col size="12">
       <ion-tab-button (click)="cancelCurrentGame()">
-        <div class="div-btn-points">
+        <!-- <div class="div-btn-points">
           <ion-label class="ion-activatable ripple-parent">
             <ion-ripple-effect></ion-ripple-effect>
             {{'New_game'|translate}}</ion-label
           >
+        </div> -->
+        <div class="div-btn-points ion-activatable" >
+          <ion-ripple-effect></ion-ripple-effect>
+          <ion-label> {{'new'|translate}}</ion-label>
+          <ion-label> {{'game'|translate}}</ion-label>
+  
         </div>
       </ion-tab-button>
     </ion-col>
