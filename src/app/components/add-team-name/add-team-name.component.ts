@@ -19,7 +19,7 @@ export class AddTeamNameComponent implements OnInit {
     private location: Location,
     private pointService: PointsHandlerService,
     private modalController: ModalController,
-    private alertController : AlertController
+    private alertController: AlertController
   ) {}
 
   backBtn() {
@@ -44,19 +44,45 @@ export class AddTeamNameComponent implements OnInit {
 
   addTeam() {
     if (this.teamSide == 'team I') {
-      console.log('team1');
-      this.pointService.team1Name1 = this.tempplayer1;
-      this.pointService.team1Name2 = this.tempplayer2;
+      if (
+        this.pointService.team2Name1 != this.tempplayer1 &&
+        this.pointService.team2Name1 != this.tempplayer2 
+      ) {
+        console.log('team1');
+        if (this.tempplayer1 && this.tempplayer2) {
+          this.pointService.team1Name1 = this.tempplayer1;
+          this.pointService.team1Name2 = this.tempplayer2;
+        } else if (this.tempplayer1) {
+          this.pointService.team1Name1 = this.tempplayer1;
+          this.pointService.team1Name2 = null;
+        } else {
+          this.pointService.team1Name1 = this.tempplayer2;
+          this.pointService.team1Name2 = null;
+        }
+      }
     }
     if (this.teamSide == 'team II') {
-      console.log('team2');
-      this.pointService.team2Name1 = this.tempplayer1;
-      this.pointService.team2Name2 = this.tempplayer2;
+      if (
+        this.pointService.team1Name1 != this.tempplayer1 &&
+        this.pointService.team1Name1 != this.tempplayer2 
+      ) {
+        console.log('team2');
+        if (this.tempplayer1 && this.tempplayer2) {
+          this.pointService.team2Name1 = this.tempplayer1;
+          this.pointService.team2Name2 = this.tempplayer2;
+        } else if (this.tempplayer1) {
+          this.pointService.team2Name1 = this.tempplayer1;
+          this.pointService.team2Name2 = null;
+        } else {
+          this.pointService.team2Name1 = this.tempplayer2;
+          this.pointService.team2Name2 = null;
+        }
+      }
     }
 
-    this.modalController.dismiss({
-      dismissed: true,
-    });
+    this.tempplayer1 = '';
+    this.tempplayer2 = '';
+    this.dismiss();
   }
 
   team1Changed() {
@@ -99,33 +125,37 @@ export class AddTeamNameComponent implements OnInit {
     this.teams = this.teamsUnfiltered;
   }
 
-
-  async deleteTeam(event,delTeam){
+  async deleteTeam(event, delTeam) {
     event.stopPropagation();
     let lang = localStorage.getItem('lang');
     const alert = await this.alertController.create({
-      header: lang == 'sp'? 'ELIMINAR EQUIPO':'DELETE TEAM',
-      message: lang=='sp'? 'El equipo seleccionado será eliminado. ¿Estás seguro que deseas continuar?': 'The team selected will be eliminated. Are you sure you want to continue?',
+      header: lang == 'sp' ? 'ELIMINAR EQUIPO' : 'DELETE TEAM',
+      message:
+        lang == 'sp'
+          ? 'El equipo seleccionado será eliminado. ¿Estás seguro que deseas continuar?'
+          : 'The team selected will be eliminated. Are you sure you want to continue?',
       buttons: [
-      
-        { 
-          text: lang=='sp'? 'CONTINUAR' : 'CONTINUE',
+        {
+          text: lang == 'sp' ? 'CONTINUAR' : 'CONTINUE',
           cssClass: 'continue-btn',
           handler: () => {
-            this.teams = this.teams.filter(team=>{
-              return !(team.teamname1 == delTeam.teamname1 && team.teamname2 == delTeam.teamname2)
-            })
-            localStorage.setItem("teams", JSON.stringify(this.teams))
+            this.teams = this.teams.filter((team) => {
+              return !(
+                team.teamname1 == delTeam.teamname1 &&
+                team.teamname2 == delTeam.teamname2
+              );
+            });
+            localStorage.setItem('teams', JSON.stringify(this.teams));
           },
         },
         {
-          text: lang=='sp'? 'CANCELAR' : 'CANCEL',
-          role: "cancel",
+          text: lang == 'sp' ? 'CANCELAR' : 'CANCEL',
+          role: 'cancel',
           cssClass: 'cancel-btn',
           handler: (blah) => {},
         },
       ],
-      cssClass : 'alert-all'
+      cssClass: 'alert-all',
     });
     await alert.present();
   }

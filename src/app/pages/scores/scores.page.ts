@@ -101,7 +101,7 @@ export class ScoresPage implements OnInit {
       this.temptotalscore1 = 0;
       this.temptotalscore2 = 0;
       this.totalScore1 = 0;
-      // this.totalScore2 = 0;
+      this.totalScore2 = 0;
       this.pointService.isNewGame = false;
       this.isNewround = true;
     }
