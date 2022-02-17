@@ -86,7 +86,7 @@ export class PointSelectPage implements OnInit {
   toggleCustomPoint() {
     this.customBtn = !this.customBtn;
     this.selectedPoint = '';
-    this.selectedPointNumber = Number(this.selectedPoint);
+    this.selectedPointNumber = parseInt(this.selectedPoint);
     // if(this.customBtn){
     //   console.log("Here");
     //   this.customInput.setFocus();
@@ -94,11 +94,11 @@ export class PointSelectPage implements OnInit {
   }
   addSelectedPoint(point: string) {
     this.selectedPoint = point;
-    this.selectedPointNumber = Number(this.selectedPoint);
+    this.selectedPointNumber = parseInt(this.selectedPoint);
     this.setSelectedPoint();
   }
   addCustomPoint(inputPoint: string) {
-    this.selectedPointNumber = Number(this.selectedPoint);
+    this.selectedPointNumber = parseInt(this.selectedPoint);
   }
 
   setSelectedPoint() {

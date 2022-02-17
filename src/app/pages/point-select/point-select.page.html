@@ -51,7 +51,8 @@
             #inputs
             *ngIf="customBtn"
             autofocus="true"
-            type="number"
+            type="tel"
+            maxlength="3"
             [(ngModel)]="selectedPoint"
             (ngModelChange)="addCustomPoint(selectedPoint)"
             placeholder="0"

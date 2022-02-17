@@ -9,6 +9,7 @@ import { AddTeamNameComponent } from '../../components/add-team-name/add-team-na
 // import { Insomnia } from '@awesome-cordova-plugins/insomnia/ngx';
 import { Insomnia } from '@ionic-native/insomnia/ngx';
 import { Keyboard } from '@capacitor/keyboard';
+import { Capacitor } from '@capacitor/core';
 
 const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 
@@ -26,7 +27,7 @@ export class ScoresPage implements OnInit {
   team2selected: boolean = false;
   isNewround: boolean;
   isKeyboardShowing: boolean = false;
-
+  currentPlatform: any;
   constructor(
     private location: Location,
     private pointService: PointsHandlerService,
@@ -44,8 +45,9 @@ export class ScoresPage implements OnInit {
 
   gameScore: Array<any> = []; //this is game score detail Array
 
-  ngOnInit() {
+  async ngOnInit() {
     // this.gameScore = [];
+    this.currentPlatform = await Capacitor.getPlatform();
     this.platform.ready().then(() => {
       Keyboard.addListener('keyboardWillShow', (info) => {
         this.zone.run(() => {
@@ -109,7 +111,7 @@ export class ScoresPage implements OnInit {
     this.selectedPointNumber = this.pointService.selectedPoint;
     console.log('wwwww');
     console.log(this.temptotalscore1);
-    console.log(this.temptotalscore2);
+    console.log("Score 2",JSON.stringify(this.temptotalscore2));
     console.log(this.selectedPointNumber);
 
     if (this.temptotalscore1 > 0 || this.temptotalscore2 > 0) {
@@ -171,18 +173,18 @@ export class ScoresPage implements OnInit {
     if (team == 'team1') {
       if (!roundScore) {
         this.temproundscore1 = '0';
-        this.temptotalscore1 = this.totalScore1 + roundScore;
+        this.temptotalscore1 = this.totalScore1 ;
       } else {
         this.temproundscore1 = roundScore;
-        this.temptotalscore1 = this.totalScore1 + roundScore;
+        this.temptotalscore1 = this.totalScore1 + parseInt(roundScore);
       }
     } else if (team == 'team2') {
       if (!roundScore) {
         this.temproundscore2 = '0';
-        this.temptotalscore2 = this.totalScore2 + roundScore;
+        this.temptotalscore2 = this.totalScore2 ;
       } else {
         this.temproundscore2 = roundScore;
-        this.temptotalscore2 = this.totalScore2 + roundScore;
+        this.temptotalscore2 = this.totalScore2 + parseInt(roundScore);
       }
     }
   }
@@ -360,7 +362,7 @@ export class ScoresPage implements OnInit {
     let lang = localStorage.getItem('lang');
     const alert = await this.alertController.create({
       header: lang == 'sp'? 'NUEVO JUEGO':'NEW GAME',
-      message: lang=='sp'? 'Se anulará el juego actual y comenzará uno nuevo. ¿Deseas continuar?': 'Void current game and start a new one. Do you wish to continue?',
+      message: lang=='sp'? 'Comenzarás un nuevo juego. ¿Deseas proceder?': 'You will begin a new game. Do you wish to proceed?',
       buttons: [
       
         { 

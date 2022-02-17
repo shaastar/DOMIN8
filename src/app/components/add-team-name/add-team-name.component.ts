@@ -46,7 +46,7 @@ export class AddTeamNameComponent implements OnInit {
     if (this.teamSide == 'team I') {
       if (
         this.pointService.team2Name1 != this.tempplayer1 &&
-        this.pointService.team2Name1 != this.tempplayer2 
+        this.pointService.team2Name1 != this.tempplayer2
       ) {
         console.log('team1');
         if (this.tempplayer1 && this.tempplayer2) {
@@ -64,7 +64,7 @@ export class AddTeamNameComponent implements OnInit {
     if (this.teamSide == 'team II') {
       if (
         this.pointService.team1Name1 != this.tempplayer1 &&
-        this.pointService.team1Name1 != this.tempplayer2 
+        this.pointService.team1Name1 != this.tempplayer2
       ) {
         console.log('team2');
         if (this.tempplayer1 && this.tempplayer2) {
@@ -120,7 +120,6 @@ export class AddTeamNameComponent implements OnInit {
       }
     }
   }
-
   resetChanges() {
     this.teams = this.teamsUnfiltered;
   }
@@ -132,8 +131,8 @@ export class AddTeamNameComponent implements OnInit {
       header: lang == 'sp' ? 'ELIMINAR EQUIPO' : 'DELETE TEAM',
       message:
         lang == 'sp'
-          ? 'El equipo seleccionado será eliminado. ¿Estás seguro que deseas continuar?'
-          : 'The team selected will be eliminated. Are you sure you want to continue?',
+          ? 'El equipo seleccionado será eliminado. ¿Deseas proceder?'
+          : 'The team selected will be eliminated. Do you wish to proceed?',
       buttons: [
         {
           text: lang == 'sp' ? 'CONTINUAR' : 'CONTINUE',
