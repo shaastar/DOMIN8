@@ -51,7 +51,7 @@ export class SplashPage implements OnInit {
   ngOnInit() {
     setTimeout(() => {
       this.navCtr.navigateRoot('tabs/point-select');
-    }, 10000);
+    }, 5100);
 
     setTimeout(() => {
       this.className1 = 'txt-hide';
@@ -91,7 +91,7 @@ export class SplashPage implements OnInit {
       this.id34 = 'txt-hide34';
       this.id35 = 'txt-hide35';
       this.id36 = 'txt-hide36';
-    }, 6500);
+    }, 3500);
   }
 }
  

@@ -43,7 +43,7 @@
       </div>
     </ion-col>
   </ion-row>
-  <ion-row *ngIf="!isKeyboardShowing">
+  <ion-row style="padding-bottom: 4px;"  [style.padding-bottom]="currentPlatform == 'ios'? '8px':'0 '" *ngIf="!isKeyboardShowing">
     <ion-col size="4">
       <!-- <ion-tab-button tab="point-select"> -->
       <ion-tab-button fill="clear" (click)="clickDomino()">

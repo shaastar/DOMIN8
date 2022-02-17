@@ -5,6 +5,7 @@ import { PointsHandlerService } from '../services/points-handler.service';
 
 // import { TranslateService } from '@ngx-translate/core';
 import { Keyboard, KeyboardResize } from '@capacitor/keyboard';
+import { Capacitor } from '@capacitor/core';
 
 @Component({
   selector: 'app-tabs',
@@ -23,6 +24,7 @@ export class TabsPage {
   id7: string;
   id8: string;
   id9: string;
+  currentPlatform: any;
 
   playClicked = false;
   exploreClicked = false;
@@ -33,6 +35,7 @@ export class TabsPage {
     private changeDetectorRef: ChangeDetectorRef,
     private zone : NgZone
   ) {
+    this.currentPlatform =  Capacitor.getPlatform();
     this.platform.ready().then(() => {
       Keyboard.addListener('keyboardWillShow', (info) => {
         this.zone.run(() => {

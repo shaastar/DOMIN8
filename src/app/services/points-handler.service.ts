@@ -87,6 +87,7 @@ export class PointsHandlerService {
           if (!lossTeamAdded) {
             teams.push(lossTeam);
           }
+          break;
         }
       }
     }
