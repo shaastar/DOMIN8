@@ -39,7 +39,7 @@ export class CongratsPage implements OnInit {
     this.score2 = this.pointService.team2Total;
 
     if (!this.winTeamName) {
-      this.router.navigate(['/tabs/point-select']);
+      this.router.navigate(['/tabs/point-select']); 
     }
   }
   ionViewDidLeave() {
