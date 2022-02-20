@@ -43,7 +43,7 @@ export class ScoresPage implements OnInit {
     // this.gameScore = [];
   }
 
-  gameScore: Array<any> = []; //this is game score detail Array
+  gameScore: Array<any> = [{}]; //this is game score detail Array
 
   async ngOnInit() {
     // this.gameScore = [];
@@ -95,7 +95,7 @@ export class ScoresPage implements OnInit {
     }
 
     if (this.pointService.isNewGame == true) {
-      this.gameScore = [];
+      this.gameScore = [{}];
       this.selectedPointNumber = 0;
       this.selectedPointNumber = this.pointService.selectedPoint;
       this.temproundscore1 = '';
@@ -169,45 +169,61 @@ export class ScoresPage implements OnInit {
   temproundscore1: string = '';
   temproundscore2: string = '';
 
-  tempScoreChange(roundScore, team) {
-    if (team == 'team1') {
-      if (!roundScore) {
-        this.temproundscore1 = '0';
-        this.temptotalscore1 = this.totalScore1 ;
-      } else {
-        this.temproundscore1 = roundScore;
-        this.temptotalscore1 = this.totalScore1 + parseInt(roundScore);
+  tempScoreChange() {
+    // if (team == 'team1') {
+    //   if (!roundScore) {
+    //     this.temproundscore1 = '0';
+    //     this.temptotalscore1 = this.totalScore1 ;
+    //   } else {
+    //     this.temproundscore1 = roundScore;
+    //     this.temptotalscore1 = this.totalScore1 + parseInt(roundScore);
+    //   }
+    // } else if (team == 'team2') {
+    //   if (!roundScore) {
+    //     this.temproundscore2 = '0';
+    //     this.temptotalscore2 = this.totalScore2 ;
+    //   } else {
+    //     this.temproundscore2 = roundScore;
+    //     this.temptotalscore2 = this.totalScore2 + parseInt(roundScore);
+    //   }
+    // }
+    let team1Score = 0;
+    let team2Score = 0;
+    this.gameScore.forEach(score=>{
+      if(score.roundscore1){
+        team1Score += parseInt(score.roundscore1)
       }
-    } else if (team == 'team2') {
-      if (!roundScore) {
-        this.temproundscore2 = '0';
-        this.temptotalscore2 = this.totalScore2 ;
-      } else {
-        this.temproundscore2 = roundScore;
-        this.temptotalscore2 = this.totalScore2 + parseInt(roundScore);
+      if(score.roundscore2){
+        team2Score += parseInt(score.roundscore2)
       }
-    }
+    })
+    console.log(team1Score, team2Score);
+    
+    this.temptotalscore1 = team1Score;
+    this.temptotalscore2 = team2Score;
   }
-  async focusout(e) {
+  async focusout(e, i) {
     e.preventDefault();
     await delay(300);
-    if (this.temproundscore1 != null && this.temptotalscore2 != null) {
-      console.log(this.temproundscore1.length);
-      console.log(this.temproundscore2.length);
-    }
-    if (
-      this.temptotalscore1 >= this.selectedPointNumber ||
-      this.temptotalscore2 >= this.selectedPointNumber
-    ) {
-      if (this.temproundscore1 != null && this.temptotalscore2 != null) {
-        if (
-          this.temproundscore1.length != 0 &&
-          this.temproundscore2.length != 0
-        ) {
-          this.addNewRound();
-        }
-      }
-    }
+    if(this.gameScore.length - i == 1) return
+    this.checkPointandTotal();
+    // if (this.temproundscore1 != null && this.temptotalscore2 != null) {
+    //   console.log(this.temproundscore1.length);
+    //   console.log(this.temproundscore2.length);
+    // }
+    // if (
+    //   this.temptotalscore1 >= this.selectedPointNumber ||
+    //   this.temptotalscore2 >= this.selectedPointNumber
+    // ) {
+    //   if (this.temproundscore1 != null && this.temptotalscore2 != null) {
+    //     if (
+    //       this.temproundscore1.length != 0 &&
+    //       this.temproundscore2.length != 0
+    //     ) {
+    //       this.addNewRound();
+    //     }
+    //   }
+    // }
   }
 
   checkPointandTotal() {
@@ -260,7 +276,14 @@ export class ScoresPage implements OnInit {
     this.pointService.team1Total = this.temptotalscore1;
     this.pointService.team2Total = this.temptotalscore2;
     this.pointService.handlecountTeamsWin();
+    Keyboard.hide().then(res=>{
+      console.log("Hiding keyboard ah");
+      
+    });
     this.router.navigate(['/tabs/congrats']);
+    if (  !this.gameScore[this.gameScore.length - 1].roundscore1  && !this.gameScore[this.gameScore.length - 1].roundscore2) {
+    this.gameScore.pop();
+    }
   }
   resetValues() {
     // ---value resetting---
@@ -276,36 +299,38 @@ export class ScoresPage implements OnInit {
   }
 
   addNewRound() {
-    if (this.temproundscore1 > '0' || this.temproundscore2 > '0') {
-      if (this.temproundscore1 == '') {
-        this.temproundscore1 = '0';
-      } else if (this.temproundscore2 == '') {
-        this.temproundscore2 = '0';
-      }
-      this.totalScore1 = this.temptotalscore1;
-      this.totalScore2 = this.temptotalscore2;
-      var gameScoreObj = {
-        totalscore1: 0,
-        totalscore2: 0,
-        roundscore1: '',
-        roundscore2: '',
-      };
-      gameScoreObj.roundscore1 = this.temproundscore1;
-      gameScoreObj.roundscore2 = this.temproundscore2;
-      gameScoreObj.totalscore1 = this.temptotalscore1;
-      gameScoreObj.totalscore2 = this.temptotalscore2;
+    console.log(this.gameScore);
+    if (  this.gameScore[this.gameScore.length - 1].roundscore1 > '0' || this.gameScore[this.gameScore.length - 1].roundscore2 > '0') {
+      this.gameScore.push({});
+      // if (this.temproundscore1 == '') {
+      //   this.temproundscore1 = '0';
+      // } else if (this.temproundscore2 == '') {
+      //   this.temproundscore2 = '0';
+      // }
+      // this.totalScore1 = this.temptotalscore1;
+      // this.totalScore2 = this.temptotalscore2;
+      // var gameScoreObj = {
+      //   totalscore1: 0,
+      //   totalscore2: 0,
+      //   roundscore1: '',
+      //   roundscore2: '',
+      // };
+      // gameScoreObj.roundscore1 = this.temproundscore1;
+      // gameScoreObj.roundscore2 = this.temproundscore2;
+      // gameScoreObj.totalscore1 = this.temptotalscore1;
+      // gameScoreObj.totalscore2 = this.temptotalscore2;
 
-      if (this.pointService.gameScore == null) {
-        this.pointService.gameScore = [];
-      }
+      // if (this.pointService.gameScore == null) {
+      //   this.pointService.gameScore = [];
+      // }
 
-      this.pointService.gameScore.push(gameScoreObj);
-      this.temproundscore1 = '';
-      this.temproundscore2 = '';
+      // this.pointService.gameScore.push(gameScoreObj);
+      // this.temproundscore1 = '';
+      // this.temproundscore2 = '';
 
-      this.gameScore = this.pointService.gameScore;
-      console.log(this.team1);
-      console.log(this.team2);
+      // this.gameScore = this.pointService.gameScore;
+      // console.log(this.team1);
+      // console.log(this.team2);
     }
     this.checkPointandTotal();
   }

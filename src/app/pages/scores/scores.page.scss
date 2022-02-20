@@ -127,6 +127,10 @@ ion-content {
     }
   }
 
+ 
+}
+
+ion-footer {
   .div-addround {
     width: 100%;
     display: flex;
@@ -153,9 +157,6 @@ ion-content {
       }
     }
   }
-}
-
-ion-footer {
   ion-row {
     ion-col {
       display: flex;

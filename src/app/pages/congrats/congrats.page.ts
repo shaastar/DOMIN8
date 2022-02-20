@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { PointsHandlerService } from '../../services/points-handler.service';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
+import { Keyboard } from '@capacitor/keyboard';
+
+const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 @Component({
   selector: 'app-congrats',
   templateUrl: './congrats.page.html',
@@ -25,7 +28,7 @@ export class CongratsPage implements OnInit {
     this.router.navigate(['/tabs/scores']);
   }
 
-  ionViewWillEnter() {
+  async ionViewWillEnter() {
     this.resetGameScore();
 
     this.lang = localStorage.getItem('lang');
@@ -41,6 +44,14 @@ export class CongratsPage implements OnInit {
     if (!this.winTeamName) {
       this.router.navigate(['/tabs/point-select']); 
     }
+    await delay(500);
+    Keyboard.hide().then(res=>{
+      console.log("KEYBOARD IS HIDING MAN");
+    })
+    await delay(500);
+    Keyboard.hide().then(res=>{
+      console.log("KEYBOARD IS HIDING MAN");
+    })
   }
   ionViewDidLeave() {
     // this.resetPointServiceValues();

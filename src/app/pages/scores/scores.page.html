@@ -1,7 +1,7 @@
 <ion-header class="ion-no-border">
   <ion-toolbar>
     <ion-buttons *ngIf="isNewround" slot="start">
-      <ion-back-button 
+      <ion-back-button
         text=""
         defaultHref=""
         class="btn-back"
@@ -9,7 +9,10 @@
         (click)="backBtn()"
       ></ion-back-button>
     </ion-buttons>
-    <div [style.padding]="currentPlatform == 'ios'? '0 23px 0 0':'0 48px 0 0 '" class="div-btn-points">
+    <div
+      [style.padding]="currentPlatform == 'ios'? '0 23px 0 0':'0 48px 0 0 '"
+      class="div-btn-points"
+    >
       <ion-label class="label-selected-points"
         >{{selectedPointNumber}} {{'points'| translate}}</ion-label
       >
@@ -57,10 +60,14 @@
       <ion-col size="3">
         <ion-item lines="none" color="none" class="add-scores">
           <ion-input
-            disabled
-            type="number"
+          [disabled]="!isNewround"
+            type="tel"
             inputmode="numeric"
-            [value]="score.roundscore1"
+            [(ngModel)]="score.roundscore1"
+            (ionChange)="tempScoreChange()"
+            placeholder="0"
+            maxlength="3"
+            (ionBlur)="focusout($event, i)"
           ></ion-input>
         </ion-item>
       </ion-col>
@@ -72,15 +79,20 @@
       <ion-col size="3">
         <ion-item lines="none" color="none" class="add-scores">
           <ion-input
-            disabled
-            type="number"
-            [value]="score.roundscore2"
+          [disabled]="!isNewround"
+          inputmode="numeric"
+          [(ngModel)]="score.roundscore2"
+            type="tel"
+            (ionChange)="tempScoreChange()"
+            placeholder="0"
+            maxlength="3"
+            (ionBlur)="focusout($event, i)"
           ></ion-input>
         </ion-item>
         <!-- <ion-label class="add-scores">-</ion-label> -->
       </ion-col>
     </ion-row>
-    <ion-row *ngIf="isNewround" class="row-round">
+    <!-- <ion-row *ngIf="isNewround" class="row-round">
       <ion-col size="3">
         <ion-item lines="none" color="none" class="add-scores">
           <ion-input
@@ -93,7 +105,6 @@
             maxlength="3"
           ></ion-input>
         </ion-item>
-        <!-- <ion-label style="margin-left: 35px" class="add-scores">25</ion-label> -->
       </ion-col>
       <ion-col size="6">
         <div class="div-btn-points">
@@ -112,37 +123,29 @@
             inputmode="numeric"
           ></ion-input>
         </ion-item>
-        <!-- <ion-label class="add-scores">40</ion-label> -->
       </ion-col>
-    </ion-row>
+    </ion-row> -->
   </ion-grid>
+
+</ion-content>
+
+<ion-footer  class="ion-no-border">
   <div class="div-addround" *ngIf="isNewround">
     <ion-tab-button>
       <div class="div-btn-points ion-activatable" (click)="addNewRound()">
         <ion-ripple-effect></ion-ripple-effect>
         <ion-label> +{{'add'|translate}}</ion-label>
         <ion-label> {{'round'|translate}}</ion-label>
-
       </div>
     </ion-tab-button>
   </div>
-</ion-content>
-
-<ion-footer *ngIf="!isKeyboardShowing" class="ion-no-border">
-  <ion-row>
+  <ion-row *ngIf="!isKeyboardShowing">
     <ion-col size="12">
       <ion-tab-button (click)="cancelCurrentGame()">
-        <!-- <div class="div-btn-points">
-          <ion-label class="ion-activatable ripple-parent">
-            <ion-ripple-effect></ion-ripple-effect>
-            {{'New_game'|translate}}</ion-label
-          >
-        </div> -->
-        <div class="div-btn-points ion-activatable" >
+        <div class="div-btn-points ion-activatable">
           <ion-ripple-effect></ion-ripple-effect>
           <ion-label> {{'new'|translate}}</ion-label>
           <ion-label> {{'game'|translate}}</ion-label>
-  
         </div>
       </ion-tab-button>
     </ion-col>
