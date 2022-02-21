@@ -77,3 +77,33 @@
     </ion-row>
   </ion-grid>
 </ion-content>
+
+<ion-footer class="ion-no-border">
+  <!-- <div class="div-addround" *ngIf="isNewround"> -->
+  <div class="div-toggle">
+    <!-- <ion-tab-button>
+      <div class="div-btn-points ion-activatable" (click)="addNewRound()">
+        <ion-ripple-effect></ion-ripple-effect>
+        <ion-label> +{{'add'|translate}}</ion-label>
+        <ion-label> {{'round'|translate}}</ion-label>
+      </div>
+    </ion-tab-button> -->
+  </div>
+  <!-- <ion-row *ngIf="!isKeyboardShowing"> -->
+  <!-- <ion-row>
+    <ion-col size="12">
+      <ion-tab-button (click)="cancelCurrentGame()">
+      <ion-tab-button>
+        <div class="div-btn-points ion-activatable">
+          <ion-ripple-effect></ion-ripple-effect>
+          <ion-label> {{'new'|translate}}</ion-label>
+          <ion-label> {{'game'|translate}}</ion-label>
+        </div>
+      </ion-tab-button>
+    </ion-col>
+  </ion-row> -->
+  <ion-item lines="none" color="none">
+    <ion-label class="label-toggle">{{'dark_mode'| translate}}</ion-label>
+    <ion-toggle mode="md" (ionChange)="toggleTheme($event)" slot="end"></ion-toggle>
+  </ion-item>
+</ion-footer>

@@ -52,41 +52,57 @@ ion-content {
           ion-label {
             font-weight: 900;
             font-size: 19px;
+            color: #302f2f;
           }
           ion-input {
             text-align: center;
             font-weight: 900;
             font-size: 19px;
+            color: #302f2f;
           }
         }
       }
     }
   }
-  .div-custominput {
+  // .div-custominput {
+  //   width: 100%;
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: center;
+  //   color: #302f2f;
+  //   ion-item {
+  //     width: 50%;
+
+  //     ion-input {
+  //       text-align: center;
+  //       font-size: 20px;
+  //       color: #302f2f;
+  //     }
+  //   }
+  // .div-ok {
+  //   width: 150px;
+  //   height: 80px;
+  //   border: solid 4px #000000;
+  //   border-radius: 15px;
+  //   background-color: #eee9dc;
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: center;
+  //   ion-label {
+  //     font-weight: 900;
+  //     font-size: 19px;
+  //   }
+  // }
+  // }
+}
+
+ion-footer {
+  .label-toggle {
     width: 100%;
     display: flex;
-    justify-content: center;
+    // justify-content: center;
     align-items: center;
-    ion-item {
-      width: 50%;
-      ion-input {
-        text-align: center;
-        font-size: 20px;
-      }
-    }
-    .div-ok {
-      width: 150px;
-      height: 80px;
-      border: solid 4px #000000;
-      border-radius: 15px;
-      background-color: #eee9dc;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      ion-label {
-        font-weight: 900;
-        font-size: 19px;
-      }
-    }
+    font-weight: 700;
+    font-size: 19px;
   }
 }

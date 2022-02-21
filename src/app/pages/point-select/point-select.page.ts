@@ -109,4 +109,13 @@ export class PointSelectPage implements OnInit {
   }
 
   customPointOk() {}
+
+  toggleTheme(event) {
+    // console.log(event);
+    if (event.detail.checked) {
+      document.body.setAttribute('color-mode', 'dark');
+    } else {
+      document.body.setAttribute('color-mode', 'light');
+    }
+  }
 }
