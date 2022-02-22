@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { TranslateConfigService } from './services/translate-config.service';
 import { TranslateService } from '@ngx-translate/core';
 import { SplashScreen } from '@capacitor/splash-screen';
+import { ModeHandlerService } from './services/mode-handler.service';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -12,9 +13,15 @@ export class AppComponent {
   constructor(
     private translate: TranslateService,
     private translateConfig: TranslateConfigService,
-    private platform: Platform
+    private platform: Platform,
+    private modeService: ModeHandlerService,
   ) {
     this.initializeApp();
+    if(localStorage.getItem('mode')){
+      this.modeService.toggleMode(JSON.parse(localStorage.getItem('mode')));
+    }
+    else{
+    }
   }
 
   initializeApp() {

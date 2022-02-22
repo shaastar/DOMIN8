@@ -5,6 +5,7 @@ import { Location } from '@angular/common';
 import { ActionSheetController, IonInput } from '@ionic/angular';
 
 import { TranslateConfigService } from '../../services/translate-config.service';
+import { ModeHandlerService } from '../../services/mode-handler.service';
 
 @Component({
   selector: 'app-point-select',
@@ -16,16 +17,27 @@ export class PointSelectPage implements OnInit {
   customBtn: boolean = false;
   selectedPoint: string;
   selectedPointNumber: number;
+  toggleChecked: boolean;
   @ViewChild('customInput') customInput: IonInput;
   constructor(
     private pointService: PointsHandlerService,
+    private modeService: ModeHandlerService,
     private router: Router,
     private location: Location,
     private actionSheet: ActionSheetController,
     private translateConfigService: TranslateConfigService
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.modeService.observeModeChange().subscribe((toggleBtn) => {
+      this.toggleChecked = toggleBtn;
+      if (this.toggleChecked) {
+        document.body.setAttribute('color-mode', 'dark');
+      } else {
+        document.body.setAttribute('color-mode', 'light');
+      }
+    });
+  }
   ionViewWillEnter() {
     this.customBtn = false;
     let lang = localStorage.getItem('lang');
@@ -108,14 +120,18 @@ export class PointSelectPage implements OnInit {
     this.router.navigate(['tabs/scores']);
   }
 
-  customPointOk() {}
-
   toggleTheme(event) {
     // console.log(event);
     if (event.detail.checked) {
-      document.body.setAttribute('color-mode', 'dark');
+      // document.body.setAttribute('color-mode', 'dark');
+      this.modeService.toggleMode(true);
+      localStorage.setItem('mode', 'true')
+      // this.pointService.darkModeEnabled = true;
     } else {
-      document.body.setAttribute('color-mode', 'light');
+      // document.body.setAttribute('color-mode', 'light');
+      this.modeService.toggleMode(false);
+      localStorage.setItem('mode', 'false')
+      // this.pointService.darkModeEnabled = false;
     }
   }
 }

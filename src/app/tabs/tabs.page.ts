@@ -2,6 +2,7 @@ import { Platform } from '@ionic/angular';
 import { ChangeDetectorRef, Component, NgZone, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { PointsHandlerService } from '../services/points-handler.service';
+import { ModeHandlerService } from '../services/mode-handler.service';
 
 // import { TranslateService } from '@ngx-translate/core';
 import { Keyboard, KeyboardResize } from '@capacitor/keyboard';
@@ -13,6 +14,8 @@ import { Capacitor } from '@capacitor/core';
   styleUrls: ['tabs.page.scss'],
 })
 export class TabsPage {
+  toggleChecked: boolean;
+
   isKeyboardShowing: boolean = false;
   className1: string;
   id1: string;
@@ -33,35 +36,31 @@ export class TabsPage {
     private pointService: PointsHandlerService,
     private platform: Platform,
     private changeDetectorRef: ChangeDetectorRef,
-    private zone : NgZone
+    private zone: NgZone,
+    private modeService: ModeHandlerService,
   ) {
-    this.currentPlatform =  Capacitor.getPlatform();
+    this.currentPlatform = Capacitor.getPlatform();
     this.platform.ready().then(() => {
       Keyboard.addListener('keyboardWillShow', (info) => {
         this.zone.run(() => {
           this.isKeyboardShowing = true;
-          console.log("Key board showing will show", this.isKeyboardShowing);
+          console.log('Key board showing will show', this.isKeyboardShowing);
           this.changeDetectorRef.detectChanges();
         });
-
       });
       Keyboard.addListener('keyboardDidShow', (info) => {
         this.zone.run(() => {
           this.isKeyboardShowing = true;
-          console.log("Key board showing will show", this.isKeyboardShowing);
+          console.log('Key board showing will show', this.isKeyboardShowing);
           this.changeDetectorRef.detectChanges();
-       
         });
-      
       });
       Keyboard.addListener('keyboardWillHide', () => {
         this.zone.run(() => {
           this.isKeyboardShowing = false;
-          console.log("Key board hiding will hide", this.isKeyboardShowing);
+          console.log('Key board hiding will hide', this.isKeyboardShowing);
           this.changeDetectorRef.detectChanges();
-       
         });
-
       });
       // window.addEventListener('keyboardWillShow', (e) => {});
       // window.addEventListener('keyboardWillHide', () => {});
@@ -78,6 +77,16 @@ export class TabsPage {
     });
   }
 
+  ngOnInit() {
+    this.modeService.observeModeChange().subscribe((toggleBtn) => {
+      this.toggleChecked = toggleBtn;
+      if (this.toggleChecked) {
+        document.body.setAttribute('color-mode', 'dark');
+      } else {
+        document.body.setAttribute('color-mode', 'light');
+      }
+    });
+  }
   play() {
     // this.router.navigate(['/section'], { queryParams: { id: number } });
     if (this.playClicked == false) {

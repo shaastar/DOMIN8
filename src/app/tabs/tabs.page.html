@@ -1,5 +1,5 @@
 <!-- tabs -->
-<ion-tabs >
+<ion-tabs>
   <ion-row *ngIf="!isKeyboardShowing">
     <ion-col class="col-play-btn" size="6">
       <div *ngIf="!playClicked" class="div-btn-play" (click)="play()">
@@ -9,7 +9,9 @@
         <ion-img src="../assets/images/domin gif.jpg"></ion-img>
       </div> -->
       <div *ngIf="playClicked" class="div-gifimg-play">
-        <ion-img src="../../assets/images/DOMINO GIF1.gif"></ion-img>
+        <ion-img
+          [src]="toggleChecked?'../../assets/images/DOMINO GIF1-2.gif':'../../assets/images/DOMINO GIF1.gif'"
+        ></ion-img>
       </div>
       <!-- <ion-img src="../assets/images/domin53.png"></ion-img> -->
     </ion-col>
@@ -20,11 +22,7 @@
       <!-- <div *ngIf="!exploreClicked" class="div-label2" (click)="explore()">
         <ion-label>@domin5.3</ion-label>
       </div> -->
-      <div
-        *ngIf="exploreClicked"
-        class="div-explore-clicked"
-        
-      >
+      <div *ngIf="exploreClicked" class="div-explore-clicked">
         <ion-label
           ><ion-text color="secondary">
             <span [class]="className1" [id]="id1">@</span>
@@ -43,22 +41,40 @@
       </div>
     </ion-col>
   </ion-row>
-  <ion-row style="padding-bottom: 4px;"  [style.padding-bottom]="currentPlatform == 'ios'? '8px':'0 '" *ngIf="!isKeyboardShowing">
+  <ion-row
+    style="padding-bottom: 4px"
+    [style.padding-bottom]="currentPlatform == 'ios'? '8px':'0 '"
+    *ngIf="!isKeyboardShowing"
+  >
     <ion-col size="4">
       <!-- <ion-tab-button tab="point-select"> -->
       <ion-tab-button fill="clear" (click)="clickDomino()">
         <!-- <div tab="" class="home-btn"></div> -->
-        <ion-img class="home-btn" src="../assets/images/domin53.png"></ion-img>
+        <ion-img
+          class="home-btn"
+          [src]="toggleChecked?'../assets/images/domin53-2.png':'../assets/images/domin53.png'"
+        ></ion-img>
+        <!-- <ion-img *ngIf="!darkModeEnabled" class="home-btn" src="../assets/images/domin53.png"></ion-img> -->
       </ion-tab-button>
     </ion-col>
     <ion-col size="4">
       <ion-tab-button tab="main-menu">
-        <ion-img style="margin-left: -5px;" src="../assets/images/domin_menu.png"></ion-img>
+        <!-- <ion-icon style="margin-left: -5px;" class="ins" name="apps-outline"></ion-icon> -->
+        <ion-img
+          style="margin-left: -5px"
+          [src]="toggleChecked?'../assets/images/domin_menu-2.png':'../assets/images/domin_menu.png'"
+        ></ion-img>
+        <!-- <ion-img *ngIf="!darkModeEnabled" style="margin-left: -5px;" src="../assets/images/domin_menu.png"></ion-img> -->
       </ion-tab-button>
     </ion-col>
     <ion-col size="4">
       <ion-tab-button tab="redirect-instagram">
-        <ion-icon style="margin-left: 5px;" class="ins" name="logo-instagram"></ion-icon>
+        <!-- <ion-icon style="margin-left: 5px;" class="ins" name="logo-instagram"></ion-icon> -->
+        <ion-img
+          style="margin-left: 5px"
+          [src]="toggleChecked?'../assets/images/instagram-2.png':'../assets/images/instagram.png'"
+        ></ion-img>
+        <!-- <ion-img *ngIf="!darkModeEnabled" style="margin-left: 5px;" src="../assets/images/instagram.png"></ion-img> -->
       </ion-tab-button>
     </ion-col>
   </ion-row>
