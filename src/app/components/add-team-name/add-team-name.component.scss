@@ -1,7 +1,7 @@
 ion-header {
   // ion-toolbar {
   .div-totalscore {
-    background-color: #e7e7e7;
+    // background-color: #e7e7e7;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -20,7 +20,7 @@ ion-header {
           .div-btn-points {
             width: 134px;
             height: 73px;
-            border: solid 5px #000000;
+            border: solid 5px #272424;
             border-radius: 13px;
             background-color: #dfd7c3;
             display: flex;
@@ -28,15 +28,14 @@ ion-header {
             align-items: center;
             text-align: center;
             ion-label {
-             
-            font-weight: 900;
+              font-weight: 900;
               font-size: 19px;
             }
           }
         }
       }
       .row-round {
-        border-bottom: solid 5px #000000;
+        border-bottom: solid 5px #272424;
         padding: 0;
         ion-col {
           padding: 0;
@@ -47,26 +46,25 @@ ion-header {
           ion-item {
             ion-label {
               text-align: center;
-             
-            font-weight: 900;
+
+              font-weight: 900;
               font-size: 19px;
             }
-            --padding-end :4px;
-            --inner-padding-end :0;
-            --inner-padding-start :0;
-            --padding-start : 4px;
+            --padding-end: 4px;
+            --inner-padding-end: 0;
+            --inner-padding-start: 0;
+            --padding-start: 4px;
 
             ion-input {
               text-align: center;
-              --padding-end :0;
-              --padding-start :0;
-            font-weight: 900;
+              --padding-end: 0;
+              --padding-start: 0;
+              font-weight: 900;
               font-size: 22px;
               font-weight: 500;
             }
           }
           .plus-mark {
-           
             font-weight: 900;
             font-size: 32px;
           }
@@ -82,15 +80,15 @@ ion-header {
 
 ion-content {
   .team-item {
-    --background: #e7e7e7;
-    border-bottom: solid 2px #000000;
+    --background: transparent !important;
+    border-bottom: solid 2px #272424;
   }
 }
 
 ion-footer {
-  --background: #e7e7e7;
+  // --background: #e7e7e7;
   ion-row {
-    background-color: #e7e7e7;
+    // background-color: #e7e7e7;
     ion-col {
       display: flex;
       justify-content: center;
@@ -99,7 +97,7 @@ ion-footer {
         width: 132px;
         height: 73px;
         margin-bottom: 5px;
-        border: solid 5px #000000;
+        border: solid 5px #272424;
         border-radius: 15px;
         background-color: #eee9dc;
         display: flex;
@@ -108,8 +106,8 @@ ion-footer {
         text-align: center;
         ion-label {
           color: var(--ion-color-success);
-         
-            font-weight: 900;
+
+          font-weight: 900;
           font-size: 19px;
         }
       }
