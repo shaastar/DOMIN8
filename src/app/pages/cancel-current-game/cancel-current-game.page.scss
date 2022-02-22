@@ -35,7 +35,7 @@ ion-content {
      
       font-weight: 900;
       font-size: 20px;
-      color: #000000;
+      // color: #000000;
     }
   }
   .grid-btn {
@@ -44,7 +44,7 @@ ion-content {
     margin-top: 71px;
     margin-bottom: 5px;
     ion-row {
-      border-bottom: solid 5px #000000;
+      border-bottom: solid 5px var(--ion-border-color);
       ion-col {
         display: flex;
         justify-content: center;
@@ -59,7 +59,7 @@ ion-content {
         }
       }
       .col-continue {
-        border-right: solid 5px #000000;
+        border-right: solid 5px var(--ion-border-color);
         height: 57px;
       }
     }
@@ -75,7 +75,7 @@ ion-footer {
       .div-btn-points {
         width: 145px;
         height: 78px;
-        border: solid 5px #000000;
+        // border: solid 5px #000000;
         border-radius: 15px;
         background-color: #eee9dc;
         display: flex;

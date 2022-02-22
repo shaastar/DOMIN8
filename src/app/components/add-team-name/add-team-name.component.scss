@@ -35,7 +35,7 @@ ion-header {
         }
       }
       .row-round {
-        border-bottom: solid 5px #272424;
+        border-bottom: solid 5px var(--ion-border-color);
         padding: 0;
         ion-col {
           padding: 0;
@@ -81,7 +81,7 @@ ion-header {
 ion-content {
   .team-item {
     --background: transparent !important;
-    border-bottom: solid 2px #272424;
+    border-bottom: solid 2px var(--ion-border-color);
   }
 }
 

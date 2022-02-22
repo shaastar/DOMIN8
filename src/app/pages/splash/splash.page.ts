@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NavController } from '@ionic/angular';
+import { ModeHandlerService } from '../../services/mode-handler.service';
 
 @Component({
   selector: 'app-splash',
@@ -8,7 +9,10 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['./splash.page.scss'],
 })
 export class SplashPage implements OnInit {
-  constructor(private navCtr : NavController) {}
+  darkModeEnabled:boolean;
+  constructor(private navCtr : NavController,
+    private modeService: ModeHandlerService,) {}
+    
 
   className1 = 'txt-start';
   id1 = 'txt1';
@@ -49,6 +53,15 @@ export class SplashPage implements OnInit {
   id36 = 'txt36';
 
   ngOnInit() {
+
+    if(localStorage.getItem('mode')){
+      // this.modeService.toggleMode(JSON.parse(localStorage.getItem('mode')));
+      this.darkModeEnabled = JSON.parse(localStorage.getItem('mode'));
+    }
+    else{
+      this.darkModeEnabled = false;
+    }
+
     setTimeout(() => {
       this.navCtr.navigateRoot('tabs/point-select');
     }, 5100);

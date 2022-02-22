@@ -65,7 +65,7 @@ export class PointSelectPage implements OnInit {
     this.actionSheet
       .create({
         // header: 'Albums',
-        cssClass: 'my-custom-class',
+        cssClass: 'popup-class',
         mode: 'md',
         buttons: [
           {

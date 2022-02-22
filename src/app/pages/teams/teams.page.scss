@@ -43,7 +43,7 @@ ion-content {
       }
     }
     .row-head {
-      border-bottom: solid 5px #272424;
+      border-bottom: solid 5px var(--ion-border-color);
       padding: 0;
       margin: 0;
       ion-col {
@@ -141,7 +141,7 @@ ion-content {
   }
 }
 .header-row {
-  border-bottom: solid 5px #272424;
+  border-bottom: solid 5px var(--ion-border-color);
   ion-col {
     padding: 16px 5px;
   }
@@ -152,6 +152,6 @@ ion-content {
   .left-col {
     display: grid;
     grid-template-columns: 1fr 8vw;
-    border-right: solid 5px #272424;
+    border-right: solid 5px var(--ion-border-color);
   }
 }
