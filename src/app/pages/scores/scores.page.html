@@ -151,53 +151,26 @@
     </ion-col>
   </ion-row> -->
   <ion-row>
-    <ion-col class="col-play-btn" size="6">
+    <ion-col class="col-play-btn" size="6" (click)="addNewRound()">
       <!-- <div *ngIf="!playClicked" class="div-btn-play" (click)="play()"> -->
       <!-- <div class="div-btn-play">
         <ion-label>{{'PLAY'|translate}}</ion-label>
       </div> -->
-      <ion-tab-button>
-        <div class="div-btn-play ion-activatable" (click)="addNewRound()">
+      <ion-button fill="none" >
+        <div class="div-btn-play ion-activatable" >
           <ion-ripple-effect></ion-ripple-effect>
           <ion-label> +{{'add'|translate}}&nbsp;{{'round'|translate}}</ion-label>
         </div>
-      </ion-tab-button>
-      <!-- <div *ngIf="!playClicked" class="div-img-play" (click)="play()">
-        <ion-img src="../assets/images/domin gif.jpg"></ion-img>
-      </div> -->
-      <!-- <ion-img src="../assets/images/domin53.png"></ion-img> -->
+      </ion-button>
     </ion-col>
-    <ion-col class="col-explore-btn" size="6">
-      <!-- <div *ngIf="!exploreClicked" class="div-label1" (click)="explore()"> -->
-      <!-- <div class="div-label1"> -->
-        <!-- <ion-label>{{'EXPLORE'|translate}}</ion-label> -->
-        <ion-tab-button (click)="cancelCurrentGame()">
+    <ion-col class="col-explore-btn" size="6" (click)="cancelCurrentGame()">
+        <ion-button fill="none" >
           <div class="div-label1 ion-activatable">
             <ion-ripple-effect></ion-ripple-effect>
             <ion-label> {{'new'|translate}}&nbsp;{{'game'|translate}}</ion-label>
           </div>
-        </ion-tab-button>
-      <!-- </div> -->
-      <!-- <div *ngIf="!exploreClicked" class="div-label2" (click)="explore()">
-        <ion-label>@domin5.3</ion-label>
-      </div> -->
-      <!-- <div *ngIf="exploreClicked" class="div-explore-clicked">
-        <ion-label
-          ><ion-text color="secondary">
-            <span [class]="className1" [id]="id1">@</span>
-            <span [class]="className1" [id]="id2">d</span>
-            <span [class]="className1" [id]="id3">o</span> </ion-text
-          ><ion-text color="success">
-            <span [class]="className1" [id]="id4">m</span>
-            <span [class]="className1" [id]="id5">i</span>
-            <span [class]="className1" [id]="id6">n</span> </ion-text
-          ><ion-text color="primary">
-            <span [class]="className1" [id]="id7">5</span>
-            <span [class]="className1" [id]="id8">.</span>
-            <span [class]="className1" [id]="id9">3</span>
-          </ion-text>
-        </ion-label>
-      </div> -->
+        </ion-button>
+
     </ion-col>
   </ion-row>
 </ion-footer>
