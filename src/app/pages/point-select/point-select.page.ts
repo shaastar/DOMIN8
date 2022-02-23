@@ -71,6 +71,7 @@ export class PointSelectPage implements OnInit {
           {
             text: 'ENGLISH',
             icon: 'language-outline',
+            cssClass:'popup-item',
             handler: () => {
               console.log('English Selected');
               this.selectedLanguage = 'ENGLISH';
@@ -81,6 +82,7 @@ export class PointSelectPage implements OnInit {
           {
             text: 'ESPAÑOL',
             icon: 'language-outline',
+            cssClass:'popup-item',
             handler: () => {
               console.log('Spanish Selected');
               this.selectedLanguage = 'ESPAÑOL';
