@@ -60,7 +60,9 @@
     class="div-gif-footer"
     style="position: absolute; bottom: 0px; width: 100%"
   >
-    <ion-img src="../../assets/images/DOMINO GIF1.gif"></ion-img>
+    <ion-img
+      [src]="darkModeEnabled?'../../assets/images/DOMINO GIF1-2.gif':'../../assets/images/DOMINO GIF1.gif'"
+    ></ion-img>
   </div>
 </ion-content>
 <!-- <ion-footer class="ion-no-border">
