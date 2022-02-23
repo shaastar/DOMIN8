@@ -1,6 +1,6 @@
 <!-- tabs -->
 <ion-tabs>
-  <ion-row *ngIf="!isKeyboardShowing">
+  <ion-row *ngIf="!isKeyboardShowing && router.url != '/tabs/scores'" >
     <ion-col class="col-play-btn" size="6">
       <div *ngIf="!playClicked" class="div-btn-play" (click)="play()">
         <ion-label>{{'PLAY'|translate}}</ion-label>
@@ -44,6 +44,7 @@
   <ion-row
     style="padding-bottom: 4px"
     [style.padding-bottom]="currentPlatform == 'ios'? '8px':'0 '"
+    [style.border-top]="router.url == '/tabs/scores'? '5px solid #272424' : 'none'"
     *ngIf="!isKeyboardShowing"
   >
     <ion-col size="4">

@@ -32,7 +32,7 @@ export class TabsPage {
   playClicked = false;
   exploreClicked = false;
   constructor(
-    private router: Router,
+    public router: Router,
     private pointService: PointsHandlerService,
     private platform: Platform,
     private changeDetectorRef: ChangeDetectorRef,
