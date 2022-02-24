@@ -11,6 +11,7 @@ export class PointsHandlerService {
   // gameScore = [];
   gameScore: Array<any> = []; //this is game score detail Array
   isNewGame = true; //this get true when current game finish or cancelled
+  isGameEnd = false
 
   team1Name1: string = '';
   team1Name2: string = '';

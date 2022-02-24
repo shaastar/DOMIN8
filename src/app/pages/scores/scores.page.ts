@@ -3,7 +3,12 @@ import { PointsHandlerService } from '../../services/points-handler.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { PopoverController, ModalController, Platform, AlertController } from '@ionic/angular';
+import {
+  PopoverController,
+  ModalController,
+  Platform,
+  AlertController,
+} from '@ionic/angular';
 import { AddTeamNameComponent } from '../../components/add-team-name/add-team-name.component';
 
 // import { Insomnia } from '@awesome-cordova-plugins/insomnia/ngx';
@@ -38,7 +43,7 @@ export class ScoresPage implements OnInit {
     private platform: Platform,
     private changeDetectorRef: ChangeDetectorRef,
     private zone: NgZone,
-    private alertController : AlertController
+    private alertController: AlertController
   ) {
     // this.gameScore = [];
   }
@@ -93,6 +98,9 @@ export class ScoresPage implements OnInit {
     ) {
       this.isNewround = true;
     }
+    else if(!this.pointService.isGameEnd){
+      this.checkPointandTotal();
+    }
 
     if (this.pointService.isNewGame == true) {
       this.gameScore = [{}];
@@ -111,7 +119,7 @@ export class ScoresPage implements OnInit {
     this.selectedPointNumber = this.pointService.selectedPoint;
     console.log('wwwww');
     console.log(this.temptotalscore1);
-    console.log("Score 2",JSON.stringify(this.temptotalscore2));
+    console.log('Score 2', JSON.stringify(this.temptotalscore2));
     console.log(this.selectedPointNumber);
 
     if (this.temptotalscore1 > 0 || this.temptotalscore2 > 0) {
@@ -189,23 +197,23 @@ export class ScoresPage implements OnInit {
     // }
     let team1Score = 0;
     let team2Score = 0;
-    this.gameScore.forEach(score=>{
-      if(score.roundscore1){
-        team1Score += parseInt(score.roundscore1)
+    this.gameScore.forEach((score) => {
+      if (score.roundscore1) {
+        team1Score += parseInt(score.roundscore1);
       }
-      if(score.roundscore2){
-        team2Score += parseInt(score.roundscore2)
+      if (score.roundscore2) {
+        team2Score += parseInt(score.roundscore2);
       }
-    })
+    });
     console.log(team1Score, team2Score);
-    
+
     this.temptotalscore1 = team1Score;
     this.temptotalscore2 = team2Score;
   }
   async focusout(e, i) {
     e.preventDefault();
     await delay(300);
-    if(this.gameScore.length - i == 1) return
+    if (this.gameScore.length - i == 1) return;
     this.checkPointandTotal();
     // if (this.temproundscore1 != null && this.temptotalscore2 != null) {
     //   console.log(this.temproundscore1.length);
@@ -275,14 +283,19 @@ export class ScoresPage implements OnInit {
     this.isNewround = false;
     this.pointService.team1Total = this.temptotalscore1;
     this.pointService.team2Total = this.temptotalscore2;
-    this.pointService.handlecountTeamsWin();
-    Keyboard.hide().then(res=>{
-      console.log("Hiding keyboard ah");
-      
+    if (!this.pointService.isGameEnd) {
+      this.pointService.handlecountTeamsWin();
+      this.pointService.isGameEnd = true;
+    }
+    Keyboard.hide().then((res) => {
+      console.log('Hiding keyboard ah');
     });
     this.router.navigate(['/tabs/congrats']);
-    if (  !this.gameScore[this.gameScore.length - 1].roundscore1  && !this.gameScore[this.gameScore.length - 1].roundscore2) {
-    this.gameScore.pop();
+    if (
+      !this.gameScore[this.gameScore.length - 1].roundscore1 &&
+      !this.gameScore[this.gameScore.length - 1].roundscore2
+    ) {
+      this.gameScore.pop();
     }
   }
   resetValues() {
@@ -300,7 +313,10 @@ export class ScoresPage implements OnInit {
 
   addNewRound() {
     console.log(this.gameScore);
-    if (  this.gameScore[this.gameScore.length - 1].roundscore1 > '0' || this.gameScore[this.gameScore.length - 1].roundscore2 > '0') {
+    if (
+      this.gameScore[this.gameScore.length - 1].roundscore1 > '0' ||
+      this.gameScore[this.gameScore.length - 1].roundscore2 > '0'
+    ) {
       this.gameScore.push({});
       // if (this.temproundscore1 == '') {
       //   this.temproundscore1 = '0';
@@ -382,21 +398,23 @@ export class ScoresPage implements OnInit {
     }
   }
 
-
-  async cancelCurrentGame(){
+  async cancelCurrentGame() {
     let lang = localStorage.getItem('lang');
     const alert = await this.alertController.create({
-      header: lang == 'sp'? 'NUEVO JUEGO':'NEW GAME',
-      message: lang=='sp'? 'Comenzarás un nuevo juego. ¿Deseas proceder?': 'You will begin a new game. Do you wish to proceed?',
+      header: lang == 'sp' ? 'NUEVO JUEGO' : 'NEW GAME',
+      message:
+        lang == 'sp'
+          ? 'Comenzarás un nuevo juego. ¿Deseas proceder?'
+          : 'You will begin a new game. Do you wish to proceed?',
       buttons: [
-      
-        { 
-          text: lang=='sp'? 'CONTINUAR' : 'CONTINUE',
+        {
+          text: lang == 'sp' ? 'CONTINUAR' : 'CONTINUE',
           cssClass: 'continue-btn',
           handler: () => {
             this.pointService.gameScore = null;
             this.pointService.gameScore = [];
             this.pointService.isNewGame = true;
+            this.pointService.isGameEnd = false;
             this.pointService.winTeamName1 = '';
             this.pointService.winTeamName2 = '';
             this.pointService.lossTeamName1 = '';
@@ -412,13 +430,13 @@ export class ScoresPage implements OnInit {
           },
         },
         {
-          text: lang=='sp'? 'CANCELAR' : 'CANCEL',
-          role: "cancel",
+          text: lang == 'sp' ? 'CANCELAR' : 'CANCEL',
+          role: 'cancel',
           cssClass: 'cancel-btn',
           handler: (blah) => {},
         },
       ],
-      cssClass : 'alert-all'
+      cssClass: 'alert-all',
     });
     await alert.present();
   }
