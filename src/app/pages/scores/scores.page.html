@@ -152,25 +152,20 @@
   </ion-row> -->
   <ion-row>
     <ion-col class="col-play-btn" size="6" (click)="addNewRound()">
-      <!-- <div *ngIf="!playClicked" class="div-btn-play" (click)="play()"> -->
-      <!-- <div class="div-btn-play">
-        <ion-label>{{'PLAY'|translate}}</ion-label>
-      </div> -->
-      <ion-button fill="none" >
+      <!-- <ion-button fill="none" > -->
         <div class="div-btn-play ion-activatable" >
           <ion-ripple-effect></ion-ripple-effect>
           <ion-label> +{{'add'|translate}}&nbsp;{{'round'|translate}}</ion-label>
         </div>
-      </ion-button>
+      <!-- </ion-button> -->
     </ion-col>
     <ion-col class="col-explore-btn" size="6" (click)="cancelCurrentGame()">
-        <ion-button fill="none" >
+        <!-- <ion-button fill="none" > -->
           <div class="div-label1 ion-activatable">
             <ion-ripple-effect></ion-ripple-effect>
             <ion-label> {{'new'|translate}}&nbsp;{{'game'|translate}}</ion-label>
           </div>
-        </ion-button>
-
+        <!-- </ion-button> -->
     </ion-col>
   </ion-row>
 </ion-footer>
