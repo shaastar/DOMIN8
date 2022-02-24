@@ -89,16 +89,15 @@ export class ScoresPage implements OnInit {
     );
 
     this.selectedPointNumber = this.pointService.selectedPoint;
-    console.log('PPPPP ' + this.selectedPointNumber);
-    console.log('PPPPP ' + this.pointService.selectedPoint);
+    console.log('wwwwww1 ' + this.selectedPointNumber);
+    console.log('wwww2 ' + this.pointService.selectedPoint);
 
     if (
       this.selectedPointNumber > this.temptotalscore1 &&
       this.selectedPointNumber > this.temptotalscore2
     ) {
       this.isNewround = true;
-    }
-    else if(!this.pointService.isGameEnd){
+    } else if (!this.pointService.isGameEnd) {
       this.checkPointandTotal();
     }
 
@@ -426,6 +425,9 @@ export class ScoresPage implements OnInit {
             this.pointService.team1Total = 0;
             this.pointService.team2Total = 0;
             this.pointService.selectedPoint = 0;
+            this.selectedPointNumber = 0;
+            this.temptotalscore1 = 0;
+            this.temptotalscore2 = 0;
             this.router.navigate(['/tabs/point-select']);
           },
         },
