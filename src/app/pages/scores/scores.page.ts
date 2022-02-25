@@ -247,7 +247,7 @@ export class ScoresPage implements OnInit {
 
   addNewRound() {
     console.log(this.gameScore);
-    if (!this.isNewround) return;
+  
     if (
       this.gameScore[this.gameScore.length - 1].roundscore1 > '0' ||
       this.gameScore[this.gameScore.length - 1].roundscore2 > '0'
