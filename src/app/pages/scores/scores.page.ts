@@ -11,7 +11,6 @@ import {
 } from '@ionic/angular';
 import { AddTeamNameComponent } from '../../components/add-team-name/add-team-name.component';
 
-// import { Insomnia } from '@awesome-cordova-plugins/insomnia/ngx';
 import { Insomnia } from '@ionic-native/insomnia/ngx';
 import { Keyboard } from '@capacitor/keyboard';
 import { Capacitor } from '@capacitor/core';
@@ -51,7 +50,6 @@ export class ScoresPage implements OnInit {
   gameScore: Array<any> = [{}]; //this is game score detail Array
 
   async ngOnInit() {
-    // this.gameScore = [];
     this.currentPlatform = await Capacitor.getPlatform();
     this.platform.ready().then(() => {
       Keyboard.addListener('keyboardWillShow', (info) => {
@@ -89,8 +87,6 @@ export class ScoresPage implements OnInit {
     );
 
     this.selectedPointNumber = this.pointService.selectedPoint;
-    console.log('wwwwww1 ' + this.selectedPointNumber);
-    console.log('wwww2 ' + this.pointService.selectedPoint);
 
     if (
       this.selectedPointNumber > this.temptotalscore1 &&
@@ -116,19 +112,6 @@ export class ScoresPage implements OnInit {
     }
 
     this.selectedPointNumber = this.pointService.selectedPoint;
-    console.log('wwwww');
-    console.log(this.temptotalscore1);
-    console.log('Score 2', JSON.stringify(this.temptotalscore2));
-    console.log(this.selectedPointNumber);
-
-    if (this.temptotalscore1 > 0 || this.temptotalscore2 > 0) {
-      if (this.temproundscore1 && this.temproundscore2) {
-        // this.pointService.team1Total = this.temptotalscore1;
-        // this.pointService.team2Total = this.temptotalscore2;
-        // this.checkPointandTotal();
-        console.log('FFFF');
-      }
-    }
 
     if (!this.pointService.team1Name1 || !this.pointService.team1Name2) {
       this.team1selected = false;
@@ -159,13 +142,6 @@ export class ScoresPage implements OnInit {
       () => console.log('success'),
       () => console.log('error')
     );
-
-    // this.temproundscore1 = '';
-    // this.temproundscore2 = '';
-    // this.temptotalscore1 = 0;
-    // this.temptotalscore2 = 0;
-    // this.totalScore1 = 0;
-    // this.totalScore2 = 0;
   }
 
   temptotalscore1: number = 0;
@@ -177,23 +153,6 @@ export class ScoresPage implements OnInit {
   temproundscore2: string = '';
 
   tempScoreChange() {
-    // if (team == 'team1') {
-    //   if (!roundScore) {
-    //     this.temproundscore1 = '0';
-    //     this.temptotalscore1 = this.totalScore1 ;
-    //   } else {
-    //     this.temproundscore1 = roundScore;
-    //     this.temptotalscore1 = this.totalScore1 + parseInt(roundScore);
-    //   }
-    // } else if (team == 'team2') {
-    //   if (!roundScore) {
-    //     this.temproundscore2 = '0';
-    //     this.temptotalscore2 = this.totalScore2 ;
-    //   } else {
-    //     this.temproundscore2 = roundScore;
-    //     this.temptotalscore2 = this.totalScore2 + parseInt(roundScore);
-    //   }
-    // }
     let team1Score = 0;
     let team2Score = 0;
     this.gameScore.forEach((score) => {
@@ -214,23 +173,6 @@ export class ScoresPage implements OnInit {
     await delay(300);
     if (this.gameScore.length - i == 1) return;
     this.checkPointandTotal();
-    // if (this.temproundscore1 != null && this.temptotalscore2 != null) {
-    //   console.log(this.temproundscore1.length);
-    //   console.log(this.temproundscore2.length);
-    // }
-    // if (
-    //   this.temptotalscore1 >= this.selectedPointNumber ||
-    //   this.temptotalscore2 >= this.selectedPointNumber
-    // ) {
-    //   if (this.temproundscore1 != null && this.temptotalscore2 != null) {
-    //     if (
-    //       this.temproundscore1.length != 0 &&
-    //       this.temproundscore2.length != 0
-    //     ) {
-    //       this.addNewRound();
-    //     }
-    //   }
-    // }
   }
 
   checkPointandTotal() {
@@ -246,9 +188,7 @@ export class ScoresPage implements OnInit {
         this.pointService.lossTeamName1 = this.pointService.team1Name1;
         this.pointService.lossTeamName2 = this.pointService.team1Name2;
 
-        // console.log('win1');
         this.assignTotalToService();
-        // this.resetValues();
       }
       // }
       else if (this.temptotalscore2 != this.temptotalscore1) {
@@ -260,9 +200,8 @@ export class ScoresPage implements OnInit {
         this.pointService.winTeamName2 = this.pointService.team1Name2;
         this.pointService.lossTeamName1 = this.pointService.team2Name1;
         this.pointService.lossTeamName2 = this.pointService.team2Name2;
-        // console.log('win2');
+
         this.assignTotalToService();
-        // this.resetValues();
       }
     } else if (this.temptotalscore2 >= this.selectedPointNumber) {
       this.setDefaultTeamName();
@@ -272,9 +211,7 @@ export class ScoresPage implements OnInit {
       this.pointService.lossTeamName1 = this.pointService.team1Name1;
       this.pointService.lossTeamName2 = this.pointService.team1Name2;
 
-      // console.log('win3');
       this.assignTotalToService();
-      // this.resetValues();
     }
   }
 
@@ -306,47 +243,16 @@ export class ScoresPage implements OnInit {
     this.temptotalscore2 = 0;
     this.totalScore1 = 0;
     this.totalScore2 = 0;
-    // this.pointService.team1Total = 0;
-    // this.pointService.team2Total = 0;
   }
 
   addNewRound() {
     console.log(this.gameScore);
-    if(!this.isNewround) return
+    if (!this.isNewround) return;
     if (
       this.gameScore[this.gameScore.length - 1].roundscore1 > '0' ||
       this.gameScore[this.gameScore.length - 1].roundscore2 > '0'
     ) {
       this.gameScore.push({});
-      // if (this.temproundscore1 == '') {
-      //   this.temproundscore1 = '0';
-      // } else if (this.temproundscore2 == '') {
-      //   this.temproundscore2 = '0';
-      // }
-      // this.totalScore1 = this.temptotalscore1;
-      // this.totalScore2 = this.temptotalscore2;
-      // var gameScoreObj = {
-      //   totalscore1: 0,
-      //   totalscore2: 0,
-      //   roundscore1: '',
-      //   roundscore2: '',
-      // };
-      // gameScoreObj.roundscore1 = this.temproundscore1;
-      // gameScoreObj.roundscore2 = this.temproundscore2;
-      // gameScoreObj.totalscore1 = this.temptotalscore1;
-      // gameScoreObj.totalscore2 = this.temptotalscore2;
-
-      // if (this.pointService.gameScore == null) {
-      //   this.pointService.gameScore = [];
-      // }
-
-      // this.pointService.gameScore.push(gameScoreObj);
-      // this.temproundscore1 = '';
-      // this.temproundscore2 = '';
-
-      // this.gameScore = this.pointService.gameScore;
-      // console.log(this.team1);
-      // console.log(this.team2);
     }
     this.checkPointandTotal();
   }

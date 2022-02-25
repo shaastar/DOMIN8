@@ -42,26 +42,24 @@ export class CongratsPage implements OnInit {
     this.score2 = this.pointService.team2Total;
 
     if (!this.winTeamName) {
-      this.router.navigate(['/tabs/point-select']); 
+      this.router.navigate(['/tabs/point-select']);
     }
     await delay(500);
-    Keyboard.hide().then(res=>{
-      console.log("KEYBOARD IS HIDING MAN");
-    })
+    Keyboard.hide().then((res) => {
+      console.log('KEYBOARD IS HIDING MAN');
+    });
     await delay(500);
-    Keyboard.hide().then(res=>{
-      console.log("KEYBOARD IS HIDING MAN");
-    })
+    Keyboard.hide().then((res) => {
+      console.log('KEYBOARD IS HIDING MAN');
+    });
   }
   ionViewDidLeave() {
-    // this.resetPointServiceValues();
     this.winTeamName = '';
     this.score1 = 0;
     this.score2 = 0;
   }
 
   resetPointServiceValues() {
-    // this.pointService.gameScore = null;
     this.pointService.winTeamName1 = '';
     this.pointService.winTeamName2 = '';
     this.pointService.lossTeamName1 = '';
@@ -76,8 +74,6 @@ export class CongratsPage implements OnInit {
   }
 
   resetGameScore() {
-    // this.pointService.gameScore = null;
-    // this.pointService.gameScore = [];
     this.pointService.isNewGame = false;
   }
 }

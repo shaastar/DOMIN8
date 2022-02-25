@@ -9,10 +9,11 @@ import { ModeHandlerService } from '../../services/mode-handler.service';
   styleUrls: ['./splash.page.scss'],
 })
 export class SplashPage implements OnInit {
-  darkModeEnabled:boolean;
-  constructor(private navCtr : NavController,
-    private modeService: ModeHandlerService,) {}
-    
+  darkModeEnabled: boolean;
+  constructor(
+    private navCtr: NavController,
+    private modeService: ModeHandlerService
+  ) {}
 
   className1 = 'txt-start';
   id1 = 'txt1';
@@ -53,12 +54,9 @@ export class SplashPage implements OnInit {
   id36 = 'txt36';
 
   ngOnInit() {
-
-    if(localStorage.getItem('mode')){
-      // this.modeService.toggleMode(JSON.parse(localStorage.getItem('mode')));
+    if (localStorage.getItem('mode')) {
       this.darkModeEnabled = JSON.parse(localStorage.getItem('mode'));
-    }
-    else{
+    } else {
       this.darkModeEnabled = false;
     }
 
@@ -107,4 +105,3 @@ export class SplashPage implements OnInit {
     }, 3500);
   }
 }
- 

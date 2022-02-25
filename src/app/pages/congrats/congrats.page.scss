@@ -48,23 +48,6 @@ ion-header {
             }
           }
         }
-        .row-round {
-          border-bottom: solid 5px #000000;
-          padding: 0;
-          ion-col {
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            ion-item {
-              ion-input {
-                text-align: center;
-                font-size: 24px;
-              }
-            }
-          }
-        }
       }
     }
   }

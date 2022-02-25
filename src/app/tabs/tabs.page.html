@@ -5,23 +5,16 @@
       <div *ngIf="!playClicked" class="div-btn-play" (click)="play()">
         <ion-label>{{'PLAY'|translate}}</ion-label>
       </div>
-      <!-- <div *ngIf="!playClicked" class="div-img-play" (click)="play()">
-        <ion-img src="../assets/images/domin gif.jpg"></ion-img>
-      </div> -->
       <div *ngIf="playClicked" class="div-gifimg-play">
         <ion-img
           [src]="toggleChecked?'../../assets/images/DOMINO GIF1-2.gif':'../../assets/images/DOMINO GIF1.gif'"
         ></ion-img>
       </div>
-      <!-- <ion-img src="../assets/images/domin53.png"></ion-img> -->
     </ion-col>
     <ion-col class="col-explore-btn" size="6">
       <div *ngIf="!exploreClicked" class="div-label1" (click)="explore()">
         <ion-label>{{'EXPLORE'|translate}}</ion-label>
       </div>
-      <!-- <div *ngIf="!exploreClicked" class="div-label2" (click)="explore()">
-        <ion-label>@domin5.3</ion-label>
-      </div> -->
       <div *ngIf="exploreClicked" class="div-explore-clicked">
         <ion-label
           ><ion-text color="secondary">
@@ -48,34 +41,27 @@
     *ngIf="!isKeyboardShowing"
   >
     <ion-col size="4">
-      <!-- <ion-tab-button tab="point-select"> -->
       <ion-tab-button fill="clear" (click)="clickDomino()">
-        <!-- <div tab="" class="home-btn"></div> -->
         <ion-img
           class="home-btn"
           [src]="toggleChecked?'../assets/images/domin53-2.png':'../assets/images/domin53.png'"
         ></ion-img>
-        <!-- <ion-img *ngIf="!darkModeEnabled" class="home-btn" src="../assets/images/domin53.png"></ion-img> -->
       </ion-tab-button>
     </ion-col>
     <ion-col size="4">
       <ion-tab-button tab="main-menu">
-        <!-- <ion-icon style="margin-left: -5px;" class="ins" name="apps-outline"></ion-icon> -->
         <ion-img
           style="margin-left: -5px"
           [src]="toggleChecked?'../assets/images/domin_menu-2.png':'../assets/images/domin_menu.png'"
         ></ion-img>
-        <!-- <ion-img *ngIf="!darkModeEnabled" style="margin-left: -5px;" src="../assets/images/domin_menu.png"></ion-img> -->
       </ion-tab-button>
     </ion-col>
     <ion-col size="4">
       <ion-tab-button tab="redirect-instagram">
-        <!-- <ion-icon style="margin-left: 5px;" class="ins" name="logo-instagram"></ion-icon> -->
         <ion-img
           style="margin-left: 5px"
           [src]="toggleChecked?'../assets/images/instagram-2.png':'../assets/images/instagram.png'"
         ></ion-img>
-        <!-- <ion-img *ngIf="!darkModeEnabled" style="margin-left: 5px;" src="../assets/images/instagram.png"></ion-img> -->
       </ion-tab-button>
     </ion-col>
   </ion-row>

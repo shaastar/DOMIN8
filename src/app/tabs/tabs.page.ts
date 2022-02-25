@@ -4,7 +4,6 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { PointsHandlerService } from '../services/points-handler.service';
 import { ModeHandlerService } from '../services/mode-handler.service';
 
-// import { TranslateService } from '@ngx-translate/core';
 import { Keyboard, KeyboardResize } from '@capacitor/keyboard';
 import { Capacitor } from '@capacitor/core';
 
@@ -88,7 +87,6 @@ export class TabsPage {
     });
   }
   play() {
-    // this.router.navigate(['/section'], { queryParams: { id: number } });
     if (this.playClicked == false) {
       this.playClicked = true;
       setTimeout(() => {
@@ -98,7 +96,6 @@ export class TabsPage {
   }
 
   explore() {
-    // this.router.navigate(['/tabs/redirect-instagram']);
     if (this.exploreClicked == false) {
       this.exploreClicked = true;
       setTimeout(() => {
@@ -138,6 +135,5 @@ export class TabsPage {
     } else {
       this.router.navigate(['/tabs/point-select']);
     }
-    // console.log(this.router.url);
   }
 }

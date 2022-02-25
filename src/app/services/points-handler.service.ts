@@ -27,16 +27,11 @@ export class PointsHandlerService {
   team2Total: number;
 
   constructor() {
-    // if (localStorage.getItem('gamescore') == null) {
-    //   this.gameScore = [];
-    // }
   }
 
   handlecountTeamsWin() {
-    console.log(this.winTeamName1 + '  jjkkjj jj');
     if (this.winTeamName1 != null) {
       this.countTeamsWin();
-      console.log('reach handle');
     }
   }
   countTeamsWin() {
@@ -57,17 +52,14 @@ export class PointsHandlerService {
     var winTeamAdded = false;
     var lossTeamAdded = false;
     if (localStorage.getItem('teams') == null || JSON.parse(localStorage.getItem('teams')).length == 0) {
-      console.log("if 1");
       
       teams.push(winTeam);
       teams.push(lossTeam);
     } else {
       
       teams = JSON.parse(localStorage.getItem('teams'));
-      console.log("Elkse 1", teams);
       var i = 0;
       for (var team of teams) {
-        console.log("for", team);
         
         i++;
         if (
@@ -95,7 +87,6 @@ export class PointsHandlerService {
       }
     }
     localStorage.setItem('teams', JSON.stringify(teams));
-    console.log("Team saved", teams);
     
     } catch (error) {
       console.log("Catch error",error);

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { Platform } from '@ionic/angular';
-// import { AppAvailability } from '@ionic-native/app-availability/ngx';
 import { AppAvailability } from '@awesome-cordova-plugins/app-availability/ngx';
 
 

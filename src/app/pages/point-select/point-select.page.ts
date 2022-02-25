@@ -1,4 +1,10 @@
-import { ChangeDetectorRef, Component, NgZone, OnInit, ViewChild } from '@angular/core';
+import {
+  ChangeDetectorRef,
+  Component,
+  NgZone,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { PointsHandlerService } from '../../services/points-handler.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
@@ -32,7 +38,7 @@ export class PointSelectPage implements OnInit {
     private translateConfigService: TranslateConfigService,
     private platform: Platform,
     private changeDetectorRef: ChangeDetectorRef,
-    private zone: NgZone,
+    private zone: NgZone
   ) {}
 
   ngOnInit() {
@@ -66,7 +72,7 @@ export class PointSelectPage implements OnInit {
           this.changeDetectorRef.detectChanges();
         });
       });
-    })
+    });
   }
   ionViewWillEnter() {
     this.customBtn = false;
@@ -74,18 +80,9 @@ export class PointSelectPage implements OnInit {
     if (lang && lang == 'sp') {
       this.selectedLanguage = 'ESPAÑOL';
     }
-    // localStorage.setItem('gamescore', null);
-    // this.pointService.gameScore = [];
-    // this.pointService.winTeamName1 = '';
-    // this.pointService.winTeamName2 = '';
-    // this.pointService.lossTeamName1 = '';
-    // this.pointService.lossTeamName2 = '';
-    // this.pointService.team1Total = 0;
-    // this.pointService.team2Total = 0;
   }
 
   backBtn() {
-    // this.location.back();
     this.router.navigate(['/tabs/language']);
   }
   selectLanguage(language: string) {
@@ -94,16 +91,14 @@ export class PointSelectPage implements OnInit {
   openSelectLanguage() {
     this.actionSheet
       .create({
-        // header: 'Albums',
         cssClass: 'popup-class',
         mode: 'md',
         buttons: [
           {
             text: 'ENGLISH',
             icon: 'language-outline',
-            cssClass:'popup-item',
+            cssClass: 'popup-item',
             handler: () => {
-              console.log('English Selected');
               this.selectedLanguage = 'ENGLISH';
               localStorage.setItem('lang', 'en');
               this.selectLanguage('en');
@@ -112,9 +107,8 @@ export class PointSelectPage implements OnInit {
           {
             text: 'ESPAÑOL',
             icon: 'language-outline',
-            cssClass:'popup-item',
+            cssClass: 'popup-item',
             handler: () => {
-              console.log('Spanish Selected');
               this.selectedLanguage = 'ESPAÑOL';
               localStorage.setItem('lang', 'sp');
               this.selectLanguage('sp');
@@ -131,10 +125,6 @@ export class PointSelectPage implements OnInit {
     this.customBtn = !this.customBtn;
     this.selectedPoint = '';
     this.selectedPointNumber = parseInt(this.selectedPoint);
-    // if(this.customBtn){
-    //   console.log("Here");
-    //   this.customInput.setFocus();
-    // }
   }
   addSelectedPoint(point: string) {
     this.selectedPoint = point;
@@ -146,24 +136,18 @@ export class PointSelectPage implements OnInit {
   }
 
   setSelectedPoint() {
-    console.log(this.selectedPointNumber);
     this.pointService.selectedPoint = this.selectedPointNumber;
 
     this.router.navigate(['tabs/scores']);
   }
 
   toggleTheme(event) {
-    // console.log(event);
     if (event.detail.checked) {
-      // document.body.setAttribute('color-mode', 'dark');
       this.modeService.toggleMode(true);
-      localStorage.setItem('mode', 'true')
-      // this.pointService.darkModeEnabled = true;
+      localStorage.setItem('mode', 'true');
     } else {
-      // document.body.setAttribute('color-mode', 'light');
       this.modeService.toggleMode(false);
-      localStorage.setItem('mode', 'false')
-      // this.pointService.darkModeEnabled = false;
+      localStorage.setItem('mode', 'false');
     }
   }
 }
