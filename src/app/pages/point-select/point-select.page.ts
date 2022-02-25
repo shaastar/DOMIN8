@@ -1,11 +1,14 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, NgZone, OnInit, ViewChild } from '@angular/core';
 import { PointsHandlerService } from '../../services/points-handler.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import { ActionSheetController, IonInput } from '@ionic/angular';
+import { ActionSheetController, IonInput, Platform } from '@ionic/angular';
 
 import { TranslateConfigService } from '../../services/translate-config.service';
 import { ModeHandlerService } from '../../services/mode-handler.service';
+
+import { Keyboard, KeyboardResize } from '@capacitor/keyboard';
+import { Capacitor } from '@capacitor/core';
 
 @Component({
   selector: 'app-point-select',
@@ -19,13 +22,17 @@ export class PointSelectPage implements OnInit {
   selectedPointNumber: number;
   toggleChecked: boolean;
   @ViewChild('customInput') customInput: IonInput;
+  isKeyboardShowing: boolean = false;
   constructor(
     private pointService: PointsHandlerService,
     private modeService: ModeHandlerService,
     private router: Router,
     private location: Location,
     private actionSheet: ActionSheetController,
-    private translateConfigService: TranslateConfigService
+    private translateConfigService: TranslateConfigService,
+    private platform: Platform,
+    private changeDetectorRef: ChangeDetectorRef,
+    private zone: NgZone,
   ) {}
 
   ngOnInit() {
@@ -37,6 +44,29 @@ export class PointSelectPage implements OnInit {
         document.body.setAttribute('color-mode', 'light');
       }
     });
+    this.platform.ready().then(() => {
+      Keyboard.addListener('keyboardWillShow', (info) => {
+        this.zone.run(() => {
+          this.isKeyboardShowing = true;
+          console.log('Key board showing will show', this.isKeyboardShowing);
+          this.changeDetectorRef.detectChanges();
+        });
+      });
+      Keyboard.addListener('keyboardDidShow', (info) => {
+        this.zone.run(() => {
+          this.isKeyboardShowing = true;
+          console.log('Key board showing will show', this.isKeyboardShowing);
+          this.changeDetectorRef.detectChanges();
+        });
+      });
+      Keyboard.addListener('keyboardWillHide', () => {
+        this.zone.run(() => {
+          this.isKeyboardShowing = false;
+          console.log('Key board hiding will hide', this.isKeyboardShowing);
+          this.changeDetectorRef.detectChanges();
+        });
+      });
+    })
   }
   ionViewWillEnter() {
     this.customBtn = false;
