@@ -1,6 +1,6 @@
 <!-- tabs -->
 <ion-tabs>
-  <ion-row *ngIf="!isKeyboardShowing && router.url != '/tabs/scores'" >
+  <ion-row *ngIf="!isKeyboardShowing && router.url != '/tabs/scores'">
     <ion-col class="col-play-btn" size="6">
       <div *ngIf="!playClicked" class="div-btn-play" (click)="play()">
         <ion-label>{{'PLAY'|translate}}</ion-label>
@@ -35,7 +35,7 @@
     </ion-col>
   </ion-row>
   <ion-row
-    style="padding-bottom: 4px; padding-top: 3px;"
+    style="padding-bottom: 4px; padding-top: 3px; margin-bottom: 1px;"
     [style.padding-bottom]="currentPlatform == 'ios'? '8px':'0 '"
     [style.border-top]="router.url == '/tabs/scores'? '5px solid var(--ion-border-color)' : 'none'"
     *ngIf="!isKeyboardShowing"
@@ -51,17 +51,27 @@
     <ion-col size="4">
       <ion-tab-button tab="main-menu">
         <ion-img
-          style="margin-left: -5px"
+          style="margin-left: -5px; width: 41px;"
           [src]="toggleChecked?'../assets/images/domin_menu-2.png':'../assets/images/domin_menu.png'"
         ></ion-img>
+        <!-- <ion-icon
+          class="tab-btn"
+          style="margin-left: -5px"
+          name="apps-outline"
+        ></ion-icon> -->
       </ion-tab-button>
     </ion-col>
     <ion-col size="4">
       <ion-tab-button tab="redirect-instagram">
         <ion-img
-          style="margin-left: 5px"
+          style="margin-left: 5px; width: 41px;"
           [src]="toggleChecked?'../assets/images/instagram-2.png':'../assets/images/instagram.png'"
         ></ion-img>
+        <!-- <ion-icon
+          class="tab-btn"
+          style="margin-left: 5px"
+          name="logo-instagram"
+        ></ion-icon> -->
       </ion-tab-button>
     </ion-col>
   </ion-row>
