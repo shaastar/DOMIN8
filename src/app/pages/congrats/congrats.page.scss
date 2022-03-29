@@ -103,3 +103,43 @@ ion-content {
     }
   }
 }
+ion-footer {
+  padding: 0;
+  margin: 0;
+  ion-row {
+    .col-play-btn {
+      border-top: 5px solid var(--ion-border-color);
+      border-right: 5px solid var(--ion-border-color);
+      display: flex;
+      justify-content: center;
+      .div-btn-play {
+        width: 100% !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        ion-label {
+          font-weight: 900;
+          font-size: 19px;
+          color: var(--ion-border-color);
+        }
+      }
+    }
+    .col-explore-btn {
+      border-top: 5px solid var(--ion-border-color);
+      display: flex;
+      justify-content: center;
+      height: 60px;
+      .div-label1 {
+        width: 100% !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        ion-label {
+        font-weight: 900;
+        font-size: 19px;
+        color: var(--ion-color-success);
+        }
+      }
+    }
+  }
+}

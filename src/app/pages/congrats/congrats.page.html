@@ -36,32 +36,32 @@
     <div class="div-p">
       <ion-row>
         <ion-col class="col-p" size="12">
-          <ion-label>
-            <div class="div0">{{'congrats'| translate}}</div>
-            <div class="div1">{{'to_the' | translate}}</div>
+          <ion-label class="c2">
+            <div class="div0 word">{{'congrats'| translate}}</div>
+            <div class="div1 word">{{'to_the' | translate}}</div>
             <!-- for English Language -->
             <div *ngIf="lang!=='sp'" class="div2">
               <ion-text color="success">
-                <h1>{{winTeamName}} Team</h1>
+                <h1 class="word">{{winTeamName}} Team</h1>
               </ion-text>
             </div>
             <!-- for spanish Language -->
             <div *ngIf="lang=='sp'" class="div2">
               <ion-text color="success">
-                <h1>Equipo {{winTeamName}}</h1>
+                <h1 class="word">Equipo {{winTeamName}}</h1>
               </ion-text>
             </div>
-            <div class="div3">
+            <div class="div3 word">
               {{'for'| translate}}
-              <ion-text color="secondary">{{'domin8ing'|translate}} </ion-text>
+              <ion-text  color="secondary">{{'domin8ing'|translate}} </ion-text>
             </div>
-            <div class="div4">
-              <b>
+            <div class="div4 word">
+              <b class="">
                 {{'this'| translate}}
-                <ion-text color="primary">{{'match'| translate}}</ion-text>!</b
+                <ion-text  color="primary">{{'match'| translate}}!</ion-text></b
               >
             </div>
-            <div *ngIf="score1 == 0 || score2 == 0" class="div0">
+            <div  *ngIf="score1 == 0 || score2 == 0" class="div0 word">
               {{'goat'| translate}}!
             </div>
           </ion-label>
@@ -70,3 +70,19 @@
     </div>
   </ion-grid>
 </ion-content>
+<ion-footer class="ion-no-border">
+  <ion-row>
+    <ion-col class="col-play-btn" size="6" (click)="rematch()">
+      <div class="div-btn-play ion-activatable">
+        <ion-ripple-effect></ion-ripple-effect>
+        <ion-label> {{'rematch'|translate}}</ion-label>
+      </div>
+    </ion-col>
+    <ion-col class="col-explore-btn" size="6" (click)="cancelCurrentGame()">
+      <div class="div-label1 ion-activatable">
+        <ion-ripple-effect></ion-ripple-effect>
+        <ion-label> {{'new'|translate}}&nbsp;{{'game'|translate}}</ion-label>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-footer>

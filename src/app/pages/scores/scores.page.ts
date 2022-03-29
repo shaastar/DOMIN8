@@ -93,7 +93,7 @@ export class ScoresPage implements OnInit {
       this.selectedPointNumber > this.temptotalscore2
     ) {
       this.isNewround = true;
-    } else if (!this.pointService.isGameEnd) {
+    } else if (!this.pointService.isGameEnd && !this.pointService.isNewGame) {
       this.checkPointandTotal();
     }
 

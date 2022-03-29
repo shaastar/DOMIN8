@@ -62,9 +62,10 @@ ion-header {
           justify-content: center;
           align-items: center;
           ion-item {
+            --padding-start : 0px;
             ion-label {
               text-align: center;
-              font-size: 22px;
+              font-size: 19px;
             }
           }
         }
